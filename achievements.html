@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-title="nav.achievements">Достижения — INTER PACK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="INTER PACK">
+      <svg viewBox="0 0 40 40" fill="none"><rect x="2" y="2" width="36" height="36" rx="10" fill="#171a17"/><path d="M12 24 20 14 28 24" stroke="#7ed321" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M20 14V28" stroke="#7ed321" stroke-width="3" stroke-linecap="round"/><rect x="10" y="28" width="20" height="4" rx="2" fill="#7ed321"/></svg>
+      <span class="logo-word">INTER <span>PACK</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+        <li><a href="about.html" data-i18n="nav.about">О компании</a></li>
+        <li><a href="achievements.html" class="active" data-i18n="nav.achievements">Достижения</a></li>
+        <li><a href="products.html" data-i18n="nav.products">Продукция</a></li>
+        <li><a href="video.html" data-i18n="nav.video">Видео</a></li>
+        <li><a href="team.html" data-i18n="nav.team">Команда</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Связаться</a></li>
+        <li><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" id="langSwitch">
+        <button data-lang="uz">UZ</button>
+        <button data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero container reveal">
+    <span class="eyebrow" data-i18n="achievements.eyebrow">Достижения</span>
+    <h1 data-i18n="achievements.title">INTER PACK в цифрах</h1>
+    <p data-i18n="achievements.subtitle">Результаты нашей работы — лучшее подтверждение качества и надёжности продукции</p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="stats-grid reveal-stagger">
+
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8 58 22 32 36 6 22Z"/><path d="M6 32 32 46 58 32"/><path d="M6 42 32 56 58 42"/></svg></div>
+          <div class="stat-num"><span class="num" data-target="8">0</span><span class="suffix" data-i18n="achievements.stats.0.suffix">млн м²</span></div>
+          <p class="stat-label" data-i18n="achievements.stats.0.label">продукции произведено за всё время</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="20" height="20" rx="3"/><rect x="36" y="8" width="20" height="20" rx="3"/><rect x="8" y="36" width="20" height="20" rx="3"/><rect x="36" y="36" width="20" height="20" rx="3"/></svg></div>
+          <div class="stat-num"><span class="num" data-target="35">0</span><span class="suffix" data-i18n="achievements.stats.1.suffix">+</span></div>
+          <p class="stat-label" data-i18n="achievements.stats.1.label">видов упаковки в каталоге</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 30l12-10 10 6 8-4 8 6 12-8 6 8-16 14-10-6-8 4-8-6z"/><path d="M20 34l8 8M32 30l8 8"/></svg></div>
+          <div class="stat-num"><span class="num" data-target="150">0</span><span class="suffix" data-i18n="achievements.stats.2.suffix">+</span></div>
+          <p class="stat-label" data-i18n="achievements.stats.2.label">постоянных компаний-клиентов</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 44a24 24 0 1 1 48 0"/><path d="M32 44 44 26"/><circle cx="32" cy="44" r="3"/></svg></div>
+          <div class="stat-num"><span class="num" data-target="40">0</span><span class="suffix" data-i18n="achievements.stats.3.suffix">тыс.</span></div>
+          <p class="stat-label" data-i18n="achievements.stats.3.label">коробок выпускается за смену</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="20" r="8"/><circle cx="44" cy="20" r="8"/><path d="M6 52c1.5-10 8-16 16-16s14.5 6 16 16"/><path d="M32 52c1.5-10 8-16 16-16 4 0 7.5 1.5 10 4"/></svg></div>
+          <div class="stat-num"><span class="num" data-target="120">0</span><span class="suffix" data-i18n="achievements.stats.4.suffix">+</span></div>
+          <p class="stat-label" data-i18n="achievements.stats.4.label">квалифицированных специалистов</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 58s18-16.5 18-30A18 18 0 1 0 14 28c0 13.5 18 30 18 30z"/><circle cx="32" cy="27" r="6"/></svg></div>
+          <div class="stat-num"><span class="suffix" style="font-size:26px" data-i18n="achievements.stats.5.suffix"></span></div>
+          <p class="stat-label" data-i18n="achievements.stats.5.label">регион поставок: Узбекистан и страны СНГ</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <h3 data-i18n="footer.title">Реквизиты ООО «INTER PACK»</h3>
+    <ul class="footer-details">
+      <li data-i18n="footer.name">ООО «INTER PACK»</li>
+      <li data-i18n="footer.address">г. Ташкент, Мирзо-Улугбекский р-н, Алишеробод МФЙ, ул. Нурли Замин, 98</li>
+      <li data-i18n="footer.account">р/с: 20208000900795814001</li>
+      <li data-i18n="footer.bank">Таш. обл. отд. ХОАТБ «INFIN BANK»</li>
+      <li data-i18n="footer.mfo">МФО банка: 01056. ОКЭД: 17210</li>
+      <li data-i18n="footer.inn">ИНН: 304 981 794</li>
+      <li data-i18n="footer.phone">Тел: (+99890) 961-20-33</li>
+    </ul>
+    <p class="copyright" data-i18n="footer.copyright">© 2024 ООО «INTER PACK». Все права защищены.</p>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/counters.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-title="nav.products">Продукция — INTER PACK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="INTER PACK">
+      <svg viewBox="0 0 40 40" fill="none"><rect x="2" y="2" width="36" height="36" rx="10" fill="#171a17"/><path d="M12 24 20 14 28 24" stroke="#7ed321" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M20 14V28" stroke="#7ed321" stroke-width="3" stroke-linecap="round"/><rect x="10" y="28" width="20" height="4" rx="2" fill="#7ed321"/></svg>
+      <span class="logo-word">INTER <span>PACK</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+        <li><a href="about.html" data-i18n="nav.about">О компании</a></li>
+        <li><a href="achievements.html" data-i18n="nav.achievements">Достижения</a></li>
+        <li><a href="products.html" class="active" data-i18n="nav.products">Продукция</a></li>
+        <li><a href="video.html" data-i18n="nav.video">Видео</a></li>
+        <li><a href="team.html" data-i18n="nav.team">Команда</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Связаться</a></li>
+        <li><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" id="langSwitch">
+        <button data-lang="uz">UZ</button>
+        <button data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero container reveal">
+    <span class="eyebrow" data-i18n="products.eyebrow">Продукция</span>
+    <h1 data-i18n="products.title">Каталог гофротары и упаковки</h1>
+    <p data-i18n="products.subtitle">Производим полный спектр гофрированной упаковки под задачи любого бизнеса</p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="products-grid reveal-stagger">
+
+        <div class="product-card">
+          <div class="ph ph-1"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20 32 10 56 20 32 30Z"/><path d="M8 20V46L32 56V30"/><path d="M56 20V46L32 56"/></svg></div></div>
+          <div class="product-body">
+            <h3 data-i18n="products.items.0.name">Четырёхклапанные гофроящики</h3>
+            <p data-i18n="products.items.0.short">Универсальная тара для транспортировки и хранения широкого спектра товаров.</p>
+            <a class="btn btn-accent" href="product.html?id=0" data-i18n="common.readMore">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="ph ph-2"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="14" width="48" height="36" rx="3"/><circle cx="32" cy="32" r="12"/><path d="M32 20v24M20 32h24"/></svg></div></div>
+          <div class="product-body">
+            <h3 data-i18n="products.items.1.name">Коробки для пиццы с печатью</h3>
+            <p data-i18n="products.items.1.short">Пищевая упаковка с ярким брендированным дизайном и вентиляцией.</p>
+            <a class="btn btn-accent" href="product.html?id=1" data-i18n="common.readMore">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="ph ph-3"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="16" width="44" height="36" rx="2"/><path d="M10 26h44M24 16v10M40 16v10"/></svg></div></div>
+          <div class="product-body">
+            <h3 data-i18n="products.items.2.name">Архивные короба</h3>
+            <p data-i18n="products.items.2.short">Прочные короба для длительного хранения документов и архивов.</p>
+            <a class="btn btn-accent" href="product.html?id=2" data-i18n="common.readMore">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="ph ph-4"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20 32 10 56 20 32 30Z"/><path d="M8 20V46L32 56V30"/><path d="M56 20V46L32 56"/><path d="M18 22l6 3M40 22l6 3" stroke-width="2"/></svg></div></div>
+          <div class="product-body">
+            <h3 data-i18n="products.items.3.name">Коробки с флексопечатью</h3>
+            <p data-i18n="products.items.3.short">Брендированная упаковка с многоцветной печатью высокого качества.</p>
+            <a class="btn btn-accent" href="product.html?id=3" data-i18n="common.readMore">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="ph ph-5"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="44" height="44" rx="4"/><rect x="18" y="18" width="28" height="20" rx="2"/><path d="M22 44h20"/></svg></div></div>
+          <div class="product-body">
+            <h3 data-i18n="products.items.4.name">Упаковка для бытовой техники</h3>
+            <p data-i18n="products.items.4.short">Усиленная тара с амортизацией для хрупкой и тяжёлой техники.</p>
+            <a class="btn btn-accent" href="product.html?id=4" data-i18n="common.readMore">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="ph ph-6"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h52M6 30h52M6 42h52"/><path d="M6 18v24M58 18v24"/></svg></div></div>
+          <div class="product-body">
+            <h3 data-i18n="products.items.5.name">Гофролист и гофрокартон в листах</h3>
+            <p data-i18n="products.items.5.short">Листовой гофрокартон под раскрой и последующую переработку.</p>
+            <a class="btn btn-accent" href="product.html?id=5" data-i18n="common.readMore">Подробнее</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <h3 data-i18n="footer.title">Реквизиты ООО «INTER PACK»</h3>
+    <ul class="footer-details">
+      <li data-i18n="footer.name">ООО «INTER PACK»</li>
+      <li data-i18n="footer.address">г. Ташкент, Мирзо-Улугбекский р-н, Алишеробод МФЙ, ул. Нурли Замин, 98</li>
+      <li data-i18n="footer.account">р/с: 20208000900795814001</li>
+      <li data-i18n="footer.bank">Таш. обл. отд. ХОАТБ «INFIN BANK»</li>
+      <li data-i18n="footer.mfo">МФО банка: 01056. ОКЭД: 17210</li>
+      <li data-i18n="footer.inn">ИНН: 304 981 794</li>
+      <li data-i18n="footer.phone">Тел: (+99890) 961-20-33</li>
+    </ul>
+    <p class="copyright" data-i18n="footer.copyright">© 2024 ООО «INTER PACK». Все права защищены.</p>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-title="nav.contact">Связаться — INTER PACK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="INTER PACK">
+      <svg viewBox="0 0 40 40" fill="none"><rect x="2" y="2" width="36" height="36" rx="10" fill="#171a17"/><path d="M12 24 20 14 28 24" stroke="#7ed321" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M20 14V28" stroke="#7ed321" stroke-width="3" stroke-linecap="round"/><rect x="10" y="28" width="20" height="4" rx="2" fill="#7ed321"/></svg>
+      <span class="logo-word">INTER <span>PACK</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+        <li><a href="about.html" data-i18n="nav.about">О компании</a></li>
+        <li><a href="achievements.html" data-i18n="nav.achievements">Достижения</a></li>
+        <li><a href="products.html" data-i18n="nav.products">Продукция</a></li>
+        <li><a href="video.html" data-i18n="nav.video">Видео</a></li>
+        <li><a href="team.html" data-i18n="nav.team">Команда</a></li>
+        <li><a href="contact.html" class="active" data-i18n="nav.contact">Связаться</a></li>
+        <li><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" id="langSwitch">
+        <button data-lang="uz">UZ</button>
+        <button data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="contact-wrap">
+
+        <div class="contact-side reveal">
+          <span class="eyebrow" data-i18n="contact.eyebrow">Связаться</span>
+          <h2 data-i18n="contact.title">Оставьте заявку на расчёт</h2>
+          <p data-i18n="contact.subtitle">Заполните форму — наш менеджер свяжется с вами в течение рабочего дня.</p>
+
+          <ul class="contact-perks">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <div><b data-i18n="contact.perks.0.t">Быстрый ответ</b><span data-i18n="contact.perks.0.d">Отвечаем на заявки в течение рабочего дня</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>
+              <div><b data-i18n="contact.perks.1.t">Расчёт под задачу</b><span data-i18n="contact.perks.1.d">Подберём размер, плотность и печать под ваш товар</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 21 7 12 12 3 7Z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>
+              <div><b data-i18n="contact.perks.2.t">Работаем с любым тиражом</b><span data-i18n="contact.perks.2.d">От пробной партии до крупных промышленных заказов</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-card reveal">
+          <form id="contactForm" action="https://formsubmit.co/inter.pack@mail.ru" method="POST">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта INTER PACK">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="form-row">
+              <label data-i18n="contact.form.name">Ваше имя</label>
+              <input type="text" name="name" required data-i18n-ph="contact.form.name">
+            </div>
+            <div class="form-row">
+              <label data-i18n="contact.form.company">Название компании</label>
+              <input type="text" name="company" data-i18n-ph="contact.form.company">
+            </div>
+            <div class="form-row">
+              <label data-i18n="contact.form.phone">Телефон</label>
+              <input type="tel" name="phone" required data-i18n-ph="contact.form.phone">
+            </div>
+            <div class="form-row">
+              <label data-i18n="contact.form.email">Электронная почта</label>
+              <input type="email" name="email" required data-i18n-ph="contact.form.email">
+            </div>
+            <div class="form-row">
+              <label data-i18n="contact.form.message">Сообщение / запрос</label>
+              <textarea name="message" data-i18n-ph="contact.form.messagePh"></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent btn-lg btn-block" data-i18n="contact.form.submit">Отправить заявку</button>
+            <p class="form-note" data-i18n="contact.form.note">Отправляя форму, вы соглашаетесь на обработку персональных данных.</p>
+
+            <div class="form-success">
+              <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+              <h3 data-i18n="contact.success.title">Заявка отправлена!</h3>
+              <p data-i18n="contact.success.text">Спасибо! Наш менеджер свяжется с вами в ближайшее время.</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <h3 data-i18n="footer.title">Реквизиты ООО «INTER PACK»</h3>
+    <ul class="footer-details">
+      <li data-i18n="footer.name">ООО «INTER PACK»</li>
+      <li data-i18n="footer.address">г. Ташкент, Мирзо-Улугбекский р-н, Алишеробод МФЙ, ул. Нурли Замин, 98</li>
+      <li data-i18n="footer.account">р/с: 20208000900795814001</li>
+      <li data-i18n="footer.bank">Таш. обл. отд. ХОАТБ «INFIN BANK»</li>
+      <li data-i18n="footer.mfo">МФО банка: 01056. ОКЭД: 17210</li>
+      <li data-i18n="footer.inn">ИНН: 304 981 794</li>
+      <li data-i18n="footer.phone">Тел: (+99890) 961-20-33</li>
+    </ul>
+    <p class="copyright" data-i18n="footer.copyright">© 2024 ООО «INTER PACK». Все права защищены.</p>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/contact-form.js"></script>
+</body>
+</html>
