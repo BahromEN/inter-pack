@@ -52,8 +52,11 @@
     render(id);
     var overlay = document.getElementById("productModal");
     if(!overlay) return;
-    overlay.classList.add("is-open");
-    document.body.classList.add("modal-open");
+    overlay.style.display = "flex";
+    requestAnimationFrame(function(){
+      overlay.classList.add("is-open");
+      document.body.classList.add("modal-open");
+    });
   }
 
   function closeModal(){
@@ -61,6 +64,7 @@
     if(!overlay) return;
     overlay.classList.remove("is-open");
     document.body.classList.remove("modal-open");
+    setTimeout(function(){ overlay.style.display = "none"; }, 300);
   }
 
   document.addEventListener("DOMContentLoaded", function(){
