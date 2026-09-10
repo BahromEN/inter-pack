@@ -10,9 +10,9 @@
   --c-text:#2a2c2a;
   --c-muted:#6b716b;
   --c-border:#e6e9e6;
-  --c-accent:#7ed321;
-  --c-accent-dark:#63ab19;
-  --c-accent-tint:#eef9e2;
+  --c-accent:#6FAE3E;
+  --c-accent-dark:#588933;
+  --c-accent-tint:#eef6e4;
   --radius-sm:8px;
   --radius-md:16px;
   --radius-lg:28px;
@@ -185,7 +185,7 @@ button{font-family:inherit;cursor:pointer;}
   font-size:12px;font-weight:700;letter-spacing:.03em;color:rgba(255,255,255,.85);
   text-align:center;
 }
-.ph-1{--tint:#7ed321;} .ph-2{--tint:#3fa7d3;} .ph-3{--tint:#e3b23f;}
+.ph-1{--tint:#6FAE3E;} .ph-2{--tint:#3fa7d3;} .ph-3{--tint:#e3b23f;}
 .ph-4{--tint:#d35f3f;} .ph-5{--tint:#8a6fd3;} .ph-6{--tint:#3fd3a7;}
 .ph-1,.ph-2,.ph-3,.ph-4,.ph-5,.ph-6{background:linear-gradient(140deg,var(--c-dark) 0%,#31352f 55%,var(--tint) 145%);}
 
