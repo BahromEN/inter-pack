@@ -1,5 +1,6 @@
 /* ==========================================================================
-   INTER PACK — shared behaviour: language switching, header, reveal-on-scroll
+   INTER PACK — shared behaviour: language switching, header, one-page nav,
+   scrollspy, reveal-on-scroll
    ========================================================================== */
 
 (function(){
@@ -92,6 +93,52 @@
     });
   }
 
+  /* ---------- One-page anchor navigation ---------- */
+  function initAnchorNav(){
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener("click", function(e){
+        var id = a.getAttribute("href").slice(1);
+        var target = id ? document.getElementById(id) : null;
+        if(!target) return;
+        e.preventDefault();
+        target.scrollIntoView({behavior:"smooth", block:"start"});
+        history.replaceState(null, "", "#" + id);
+      });
+    });
+  }
+
+  /* ---------- Scrollspy: highlight the nav link for the section in view ---------- */
+  function initScrollspy(){
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll('.main-nav a[href^="#"]'));
+    if(!navLinks.length) return;
+    var sections = navLinks.map(function(a){
+      return document.getElementById(a.getAttribute("href").slice(1));
+    }).filter(Boolean);
+    if(!sections.length) return;
+
+    function setActive(id){
+      navLinks.forEach(function(a){
+        a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+      });
+    }
+
+    if(!("IntersectionObserver" in window)){
+      setActive(sections[0].id);
+      return;
+    }
+    var current = sections[0].id;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          current = entry.target.id;
+        }
+      });
+      setActive(current);
+    }, {rootMargin:"-45% 0px -50% 0px", threshold:0});
+    sections.forEach(function(s){ io.observe(s); });
+    setActive(current);
+  }
+
   function initReveal(){
     var targets = document.querySelectorAll(".reveal, .reveal-stagger");
     if(!("IntersectionObserver" in window)){
@@ -111,6 +158,8 @@
 
   document.addEventListener("DOMContentLoaded", function(){
     initHeader();
+    initAnchorNav();
+    initScrollspy();
     initReveal();
     var lang = getLang();
     document.documentElement.setAttribute("lang", lang === "uz" ? "uz" : lang);

@@ -2,23 +2,13 @@
   "use strict";
 
   var PH_ICON = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20 32 10 56 20 32 30Z"/><path d="M8 20V46L32 56V30"/><path d="M56 20V46L32 56"/></svg>';
+  var currentId = null;
 
-  function getId(){
-    var params = new URLSearchParams(window.location.search);
-    var id = parseInt(params.get("id"), 10);
-    var items = window.ipT("products.items");
-    if(isNaN(id) || id < 0 || id >= items.length) id = 0;
-    return id;
-  }
-
-  function render(){
-    var id = getId();
+  function render(id){
     var items = window.ipT("products.items");
     var item = items[id];
     var specLabels = window.ipT("products.specLabels");
     if(!item) return;
-
-    document.title = item.name + " — INTER PACK";
 
     document.querySelectorAll("[data-pd='name']").forEach(function(el){ el.textContent = item.name; });
     document.querySelectorAll("[data-pd='desc']").forEach(function(el){ el.textContent = item.desc; });
@@ -57,6 +47,52 @@
     }
   }
 
-  document.addEventListener("DOMContentLoaded", render);
-  document.addEventListener("ip:langchange", render);
+  function openModal(id){
+    currentId = id;
+    render(id);
+    var overlay = document.getElementById("productModal");
+    if(!overlay) return;
+    overlay.classList.add("is-open");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeModal(){
+    var overlay = document.getElementById("productModal");
+    if(!overlay) return;
+    overlay.classList.remove("is-open");
+    document.body.classList.remove("modal-open");
+  }
+
+  document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll("[data-open-product]").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        openModal(parseInt(btn.getAttribute("data-open-product"), 10) || 0);
+      });
+    });
+
+    var overlay = document.getElementById("productModal");
+    if(overlay){
+      overlay.addEventListener("click", function(e){
+        if(e.target === overlay) closeModal();
+      });
+      overlay.querySelectorAll("[data-modal-close]").forEach(function(btn){
+        btn.addEventListener("click", closeModal);
+      });
+      overlay.querySelectorAll("[data-modal-cta]").forEach(function(btn){
+        btn.addEventListener("click", function(){
+          closeModal();
+          var target = document.getElementById(btn.getAttribute("data-modal-cta"));
+          if(target) setTimeout(function(){ target.scrollIntoView({behavior:"smooth", block:"start"}); }, 250);
+        });
+      });
+    }
+
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape") closeModal();
+    });
+  });
+
+  document.addEventListener("ip:langchange", function(){
+    if(currentId !== null) render(currentId);
+  });
 })();
