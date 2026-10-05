@@ -242,6 +242,8 @@ button{font-family:inherit;cursor:pointer;}
 .hero-arrow.prev{left:24px;}
 .hero-arrow.next{right:24px;}
 @media (max-width:640px){
+  .hero-slider{height:auto;aspect-ratio:16/11;min-height:260px;max-height:70vh;}
+  .ph-photo{object-fit:contain;}
   .hero-caption{white-space:normal;border-radius:var(--radius-md);bottom:52px;padding:12px 22px;font-size:14px;}
   .hero-arrow{width:42px;height:42px;}
   .hero-arrow.prev{left:12px;}
