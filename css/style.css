@@ -7,10 +7,10 @@
 :root{
   --c-bg:#FBFBF7;
   --c-bg-alt:#F3F4EE;
-  --c-text:#122033;
-  --c-text-soft:#61717C;
-  --c-dark:#121D2A;
-  --c-dark-alt:#233D4B;
+  --c-text:#13201A;
+  --c-text-soft:#66776C;
+  --c-dark:#0D2A1F;
+  --c-dark-alt:#1C4836;
   --c-accent:#78B9AE;
   --c-accent-deep:#5A958B;
   --c-border:#D7DDDA;
@@ -231,7 +231,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .hero-slide .ph-icon{max-width:130px;}
 .hero-slide::after{
   content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(to top,rgba(18,29,42,.80) 0%,rgba(18,29,42,.08) 42%,rgba(18,29,42,.3) 100%);
+  background:linear-gradient(to top,rgba(13,42,31,.80) 0%,rgba(13,42,31,.08) 42%,rgba(13,42,31,.3) 100%);
 }
 .hero-caption{
   position:absolute;left:var(--gutter);right:var(--gutter);bottom:56px;z-index:2;
@@ -311,7 +311,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 /* ---------- Product detail modal ---------- */
 .modal-overlay{
   position:fixed;inset:0;z-index:2000;
-  background:rgba(18,29,42,.6);
+  background:rgba(13,42,31,.6);
   display:flex;align-items:flex-start;justify-content:center;
   padding:calc(var(--header-h) + 24px) 20px 40px;
   overflow-y:auto;
@@ -354,7 +354,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   overflow:hidden;background:var(--c-dark);
 }
 .video-hero .ph{width:100%;height:100%;}
-.video-overlay{position:absolute;inset:0;background:rgba(18,29,42,.3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:26px;text-align:center;color:#fff;}
+.video-overlay{position:absolute;inset:0;background:rgba(13,42,31,.3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:26px;text-align:center;color:#fff;}
 .play-btn{
   width:84px;height:84px;border-radius:50%;background:transparent;
   border:1px solid rgba(255,255,255,.5);
