@@ -7,8 +7,8 @@
 <meta name="description" content="INTER PACK — производство гофрированной тары и упаковки в Узбекистане.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=8">
 </head>
 <body>
 
@@ -16,35 +16,38 @@
   <div class="container header-inner">
     <a href="#home" class="logo" aria-label="INTER PACK">
       <svg viewBox="0 0 100 118" fill="none">
-        <ellipse cx="54" cy="96" rx="46" ry="11" fill="#6FAE3E"/>
-        <rect x="8" y="2" width="5" height="5" rx="1" fill="#6FAE3E"/>
-        <rect x="16" y="9" width="7" height="7" rx="1.2" fill="#6FAE3E"/>
-        <rect x="25" y="17" width="9" height="9" rx="1.5" fill="#6FAE3E"/>
-        <rect x="36" y="26" width="11" height="11" rx="2" fill="#6FAE3E"/>
-        <rect x="18" y="28" width="14" height="62" rx="1.5" fill="#171a17"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" fill="#171a17" d="M38,28 H72 A18,18 0 0 1 72,64 H52 V90 H38 Z
+        <ellipse cx="54" cy="96" rx="46" ry="11" fill="#78B9AE"/>
+        <rect x="8" y="2" width="5" height="5" rx="1" fill="#78B9AE"/>
+        <rect x="16" y="9" width="7" height="7" rx="1.2" fill="#78B9AE"/>
+        <rect x="25" y="17" width="9" height="9" rx="1.5" fill="#78B9AE"/>
+        <rect x="36" y="26" width="11" height="11" rx="2" fill="#78B9AE"/>
+        <rect x="18" y="28" width="14" height="62" rx="1.5" fill="#0D2A1F"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#0D2A1F" d="M38,28 H72 A18,18 0 0 1 72,64 H52 V90 H38 Z
           M58,36 H59 A9,9 0 0 1 68,45 V47 A9,9 0 0 1 59,56 H58 A9,9 0 0 1 49,47 V45 A9,9 0 0 1 58,36 Z"/>
       </svg>
       <span class="logo-word">INTER <span>PACK</span></span>
     </a>
     <nav class="main-nav" id="mainNav">
       <ul>
-        <li><a href="#home" data-i18n="nav.home">Главная</a></li>
-        <li><a href="#about" data-i18n="nav.about">О компании</a></li>
-        <li><a href="#achievements" data-i18n="nav.achievements">Достижения</a></li>
-        <li><a href="#products" data-i18n="nav.products">Продукция</a></li>
-        <li><a href="#video" data-i18n="nav.video">Видео</a></li>
-        <li><a href="#team" data-i18n="nav.team">Команда</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">Связаться</a></li>
-        <li><a href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
+        <li><a href="#home"><span class="nav-num">01</span><span data-i18n="nav.home">Главная</span><span class="nav-arrow">↗</span></a></li>
+        <li><a href="#about"><span class="nav-num">02</span><span data-i18n="nav.about">О компании</span><span class="nav-arrow">↗</span></a></li>
+        <li><a href="#achievements"><span class="nav-num">03</span><span data-i18n="nav.achievements">Достижения</span><span class="nav-arrow">↗</span></a></li>
+        <li><a href="#products"><span class="nav-num">04</span><span data-i18n="nav.products">Продукция</span><span class="nav-arrow">↗</span></a></li>
+        <li><a href="#video"><span class="nav-num">05</span><span data-i18n="nav.video">Видео</span><span class="nav-arrow">↗</span></a></li>
+        <li><a href="#contact"><span class="nav-num">06</span><span data-i18n="nav.contact">Связаться</span><span class="nav-arrow">↗</span></a></li>
+        <li><a href="#contacts"><span class="nav-num">07</span><span data-i18n="nav.contacts">Контакты</span><span class="nav-arrow">↗</span></a></li>
       </ul>
     </nav>
     <div class="header-actions">
+      <button class="search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
       <div class="lang-switch" id="langSwitch">
-        <button data-lang="uz">UZ</button>
-        <button data-lang="ru">RU</button>
+        <button data-lang="uz">UZ</button><span class="sep">/</span>
+        <button data-lang="ru">RU</button><span class="sep">/</span>
         <button data-lang="en">EN</button>
       </div>
+      <a href="#contact" class="btn header-contact-btn" data-i18n="nav.contact">Связаться</a>
       <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -57,43 +60,43 @@
 
     <div class="hero-slide is-active">
       <div class="ph ph-1"><img class="ph-photo" src="assets/images/hero/hero-01.webp" alt="Четырёхклапанный гофроящик" loading="eager" onerror="this.remove()"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20 32 10 56 20 32 30Z"/><path d="M8 20V46L32 56V30"/><path d="M56 20V46L32 56"/></svg></div></div>
-      <div class="hero-caption" data-i18n="hero.slides.0">Четырёхклапанный гофроящик</div>
+      <div class="hero-caption"><span class="idx">01 / 10</span><span class="txt" data-i18n="hero.slides.0">Четырёхклапанный гофроящик</span></div>
     </div>
     <div class="hero-slide">
       <div class="ph ph-2"><img class="ph-photo" src="assets/images/hero/hero-02.webp" alt="Коробка для пиццы с печатью" loading="lazy" onerror="this.remove()"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="14" width="48" height="36" rx="3"/><circle cx="32" cy="32" r="12"/><path d="M32 20v24M20 32h24"/></svg></div></div>
-      <div class="hero-caption" data-i18n="hero.slides.1">Коробка для пиццы с печатью</div>
+      <div class="hero-caption"><span class="idx">02 / 10</span><span class="txt" data-i18n="hero.slides.1">Коробка для пиццы с печатью</span></div>
     </div>
     <div class="hero-slide">
       <div class="ph ph-3"><img class="ph-photo" src="assets/images/hero/hero-03.webp" alt="Архивный короб для хранения документов" loading="lazy" onerror="this.remove()"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="16" width="44" height="36" rx="2"/><path d="M10 26h44M24 16v10M40 16v10"/></svg></div></div>
-      <div class="hero-caption" data-i18n="hero.slides.2">Архивный короб для хранения документов</div>
+      <div class="hero-caption"><span class="idx">03 / 10</span><span class="txt" data-i18n="hero.slides.2">Архивный короб для хранения документов</span></div>
     </div>
     <div class="hero-slide">
       <div class="ph ph-4"><img class="ph-photo" src="assets/images/hero/hero-04.webp" alt="Упаковка с флексопечатью в 4 цвета" loading="lazy" onerror="this.remove()"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20 32 10 56 20 32 30Z"/><path d="M8 20V46L32 56V30"/><path d="M56 20V46L32 56"/><path d="M18 22l6 3M40 22l6 3" stroke-width="2"/></svg></div></div>
-      <div class="hero-caption" data-i18n="hero.slides.3">Упаковка с флексопечатью в 4 цвета</div>
+      <div class="hero-caption"><span class="idx">04 / 10</span><span class="txt" data-i18n="hero.slides.3">Упаковка с флексопечатью в 4 цвета</span></div>
     </div>
     <div class="hero-slide">
       <div class="ph ph-5"><img class="ph-photo" src="assets/images/hero/hero-05.webp" alt="Короб для бытовой техники" loading="lazy" onerror="this.remove()"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="44" height="44" rx="4"/><rect x="18" y="18" width="28" height="20" rx="2"/><path d="M22 44h20"/></svg></div></div>
-      <div class="hero-caption" data-i18n="hero.slides.4">Короб для бытовой техники</div>
+      <div class="hero-caption"><span class="idx">05 / 10</span><span class="txt" data-i18n="hero.slides.4">Короб для бытовой техники</span></div>
     </div>
     <div class="hero-slide">
       <div class="ph ph-6"><img class="ph-photo" src="assets/images/hero/hero-06.webp" alt="Гофролист форматной резки" loading="lazy" onerror="this.remove()"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h52M6 30h52M6 42h52" /><path d="M6 18v24M58 18v24"/></svg></div></div>
-      <div class="hero-caption" data-i18n="hero.slides.5">Гофролист форматной резки</div>
+      <div class="hero-caption"><span class="idx">06 / 10</span><span class="txt" data-i18n="hero.slides.5">Гофролист форматной резки</span></div>
     </div>
     <div class="hero-slide">
       <div class="ph ph-1"><img class="ph-photo" src="assets/images/hero/hero-07.webp" alt="Ящик для фруктов и овощей" loading="lazy" onerror="this.remove()"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 24 32 14 54 24 32 34Z"/><path d="M10 24V46L32 56V34"/><path d="M54 24V46L32 56"/><path d="M22 8c1 4 1 6 0 10M42 8c-1 4-1 6 0 10" /></svg></div></div>
-      <div class="hero-caption" data-i18n="hero.slides.6">Ящик для фруктов и овощей</div>
+      <div class="hero-caption"><span class="idx">07 / 10</span><span class="txt" data-i18n="hero.slides.6">Ящик для фруктов и овощей</span></div>
     </div>
     <div class="hero-slide">
       <div class="ph ph-2"><img class="ph-photo" src="assets/images/hero/hero-08.webp" alt="Упаковка для мебели усиленная" loading="lazy" onerror="this.remove()"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="12" width="48" height="40" rx="3"/><path d="M8 24h48M20 12v12M44 12v12"/></svg></div></div>
-      <div class="hero-caption" data-i18n="hero.slides.7">Упаковка для мебели усиленная</div>
+      <div class="hero-caption"><span class="idx">08 / 10</span><span class="txt" data-i18n="hero.slides.7">Упаковка для мебели усиленная</span></div>
     </div>
     <div class="hero-slide">
       <div class="ph ph-3"><img class="ph-photo" src="assets/images/hero/hero-09.webp" alt="Пятислойная гофротара" loading="lazy" onerror="this.remove()"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8 58 22 32 36 6 22Z"/><path d="M6 32 32 46 58 32"/><path d="M6 42 32 56 58 42"/></svg></div></div>
-      <div class="hero-caption" data-i18n="hero.slides.8">Пятислойная гофротара</div>
+      <div class="hero-caption"><span class="idx">09 / 10</span><span class="txt" data-i18n="hero.slides.8">Пятислойная гофротара</span></div>
     </div>
     <div class="hero-slide">
       <div class="ph ph-4"><img class="ph-photo" src="assets/images/hero/hero-10.webp" alt="Транспортная упаковка на паллете" loading="lazy" onerror="this.remove()"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="40" width="52" height="8" rx="1"/><rect x="12" y="14" width="18" height="24" rx="2"/><rect x="34" y="20" width="18" height="18" rx="2"/></svg></div></div>
-      <div class="hero-caption" data-i18n="hero.slides.9">Транспортная упаковка на паллете</div>
+      <div class="hero-caption"><span class="idx">10 / 10</span><span class="txt" data-i18n="hero.slides.9">Транспортная упаковка на паллете</span></div>
     </div>
 
     <div class="hero-dots" id="heroDots"></div>
@@ -129,11 +132,11 @@
           </div>
 
           <ul class="about-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg><span data-i18n="about.list.0">Полный производственный цикл</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg><span data-i18n="about.list.1">Современное оборудование и контроль качества</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg><span data-i18n="about.list.2">Индивидуальные размеры и флексопечать под бренд</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg><span data-i18n="about.list.3">Гибкие сроки для любого тиража</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg><span data-i18n="about.list.4">Прозрачное ценообразование и сопровождение менеджера</span></li>
+            <li><span class="n">01</span><span data-i18n="about.list.0">Полный производственный цикл</span></li>
+            <li><span class="n">02</span><span data-i18n="about.list.1">Современное оборудование и контроль качества</span></li>
+            <li><span class="n">03</span><span data-i18n="about.list.2">Индивидуальные размеры и флексопечать под бренд</span></li>
+            <li><span class="n">04</span><span data-i18n="about.list.3">Гибкие сроки для любого тиража</span></li>
+            <li><span class="n">05</span><span data-i18n="about.list.4">Прозрачное ценообразование и сопровождение менеджера</span></li>
           </ul>
         </div>
       </div>
@@ -152,36 +155,42 @@
       <div class="stats-grid reveal-stagger" style="margin-top:56px;">
 
         <div class="stat-card">
+          <span class="card-index">01</span>
           <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8 58 22 32 36 6 22Z"/><path d="M6 32 32 46 58 32"/><path d="M6 42 32 56 58 42"/></svg></div>
           <div class="stat-num"><span class="num" data-target="8">0</span><span class="suffix" data-i18n="achievements.stats.0.suffix">млн м²</span></div>
           <p class="stat-label" data-i18n="achievements.stats.0.label">продукции произведено за всё время</p>
         </div>
 
         <div class="stat-card">
+          <span class="card-index">02</span>
           <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="20" height="20" rx="3"/><rect x="36" y="8" width="20" height="20" rx="3"/><rect x="8" y="36" width="20" height="20" rx="3"/><rect x="36" y="36" width="20" height="20" rx="3"/></svg></div>
           <div class="stat-num"><span class="num" data-target="35">0</span><span class="suffix" data-i18n="achievements.stats.1.suffix">+</span></div>
           <p class="stat-label" data-i18n="achievements.stats.1.label">видов упаковки в каталоге</p>
         </div>
 
         <div class="stat-card">
+          <span class="card-index">03</span>
           <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 30l12-10 10 6 8-4 8 6 12-8 6 8-16 14-10-6-8 4-8-6z"/><path d="M20 34l8 8M32 30l8 8"/></svg></div>
           <div class="stat-num"><span class="num" data-target="150">0</span><span class="suffix" data-i18n="achievements.stats.2.suffix">+</span></div>
           <p class="stat-label" data-i18n="achievements.stats.2.label">постоянных компаний-клиентов</p>
         </div>
 
         <div class="stat-card">
+          <span class="card-index">04</span>
           <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 44a24 24 0 1 1 48 0"/><path d="M32 44 44 26"/><circle cx="32" cy="44" r="3"/></svg></div>
           <div class="stat-num"><span class="num" data-target="40">0</span><span class="suffix" data-i18n="achievements.stats.3.suffix">тыс.</span></div>
           <p class="stat-label" data-i18n="achievements.stats.3.label">коробок выпускается за смену</p>
         </div>
 
         <div class="stat-card">
+          <span class="card-index">05</span>
           <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="20" r="8"/><circle cx="44" cy="20" r="8"/><path d="M6 52c1.5-10 8-16 16-16s14.5 6 16 16"/><path d="M32 52c1.5-10 8-16 16-16 4 0 7.5 1.5 10 4"/></svg></div>
           <div class="stat-num"><span class="num" data-target="120">0</span><span class="suffix" data-i18n="achievements.stats.4.suffix">+</span></div>
           <p class="stat-label" data-i18n="achievements.stats.4.label">квалифицированных специалистов</p>
         </div>
 
         <div class="stat-card">
+          <span class="card-index">06</span>
           <div class="stat-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 58s18-16.5 18-30A18 18 0 1 0 14 28c0 13.5 18 30 18 30z"/><circle cx="32" cy="27" r="6"/></svg></div>
           <div class="stat-num"><span class="suffix" style="font-size:26px" data-i18n="achievements.stats.5.suffix"></span></div>
           <p class="stat-label" data-i18n="achievements.stats.5.label">регион поставок: Узбекистан и страны СНГ</p>
@@ -203,6 +212,7 @@
       <div class="products-grid reveal-stagger" style="margin-top:56px;">
 
         <div class="product-card">
+          <span class="card-index">01</span>
           <div class="ph ph-1"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20 32 10 56 20 32 30Z"/><path d="M8 20V46L32 56V30"/><path d="M56 20V46L32 56"/></svg></div></div>
           <div class="product-body">
             <h3 data-i18n="products.items.0.name">Четырёхклапанные гофроящики</h3>
@@ -212,6 +222,7 @@
         </div>
 
         <div class="product-card">
+          <span class="card-index">02</span>
           <div class="ph ph-2"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="14" width="48" height="36" rx="3"/><circle cx="32" cy="32" r="12"/><path d="M32 20v24M20 32h24"/></svg></div></div>
           <div class="product-body">
             <h3 data-i18n="products.items.1.name">Коробки для пиццы с печатью</h3>
@@ -221,6 +232,7 @@
         </div>
 
         <div class="product-card">
+          <span class="card-index">03</span>
           <div class="ph ph-3"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="16" width="44" height="36" rx="2"/><path d="M10 26h44M24 16v10M40 16v10"/></svg></div></div>
           <div class="product-body">
             <h3 data-i18n="products.items.2.name">Архивные короба</h3>
@@ -230,6 +242,7 @@
         </div>
 
         <div class="product-card">
+          <span class="card-index">04</span>
           <div class="ph ph-4"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20 32 10 56 20 32 30Z"/><path d="M8 20V46L32 56V30"/><path d="M56 20V46L32 56"/><path d="M18 22l6 3M40 22l6 3" stroke-width="2"/></svg></div></div>
           <div class="product-body">
             <h3 data-i18n="products.items.3.name">Коробки с флексопечатью</h3>
@@ -239,6 +252,7 @@
         </div>
 
         <div class="product-card">
+          <span class="card-index">05</span>
           <div class="ph ph-5"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="44" height="44" rx="4"/><rect x="18" y="18" width="28" height="20" rx="2"/><path d="M22 44h20"/></svg></div></div>
           <div class="product-body">
             <h3 data-i18n="products.items.4.name">Упаковка для бытовой техники</h3>
@@ -248,6 +262,7 @@
         </div>
 
         <div class="product-card">
+          <span class="card-index">06</span>
           <div class="ph ph-6"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h52M6 30h52M6 42h52"/><path d="M6 18v24M58 18v24"/></svg></div></div>
           <div class="product-body">
             <h3 data-i18n="products.items.5.name">Гофролист и гофрокартон в листах</h3>
@@ -282,51 +297,6 @@
     <div class="container video-info reveal">
       <h3 data-i18n="video.infoTitle">Современное производство под контролем на каждом этапе</h3>
       <p data-i18n="video.infoText">В ролике — работа гофроагрегата, линии флексопечати, высечки и участка контроля качества.</p>
-    </div>
-  </section>
-
-  <!-- ================= TEAM ================= -->
-  <section class="section section-alt" id="team">
-    <div class="container">
-      <div class="page-hero reveal" style="padding-top:0;">
-        <span class="eyebrow" data-i18n="team.eyebrow">Команда</span>
-        <h1 data-i18n="team.title">Руководство и менеджеры</h1>
-        <p data-i18n="team.subtitle">Опытная команда, которая отвечает за качество и сроки каждого заказа</p>
-      </div>
-
-      <div class="team-grid reveal-stagger" style="margin-top:56px;">
-
-        <div class="team-card">
-          <div class="ph ph-1"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="22" r="12"/><path d="M10 54c2-12 12-20 22-20s20 8 22 20"/></svg></div></div>
-          <div class="team-info"><h3 data-i18n="team.members.0.name">Азиз Каримов</h3><span data-i18n="team.members.0.role">Генеральный директор</span></div>
-        </div>
-
-        <div class="team-card">
-          <div class="ph ph-2"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="22" r="12"/><path d="M10 54c2-12 12-20 22-20s20 8 22 20"/></svg></div></div>
-          <div class="team-info"><h3 data-i18n="team.members.1.name">Дилшод Юсупов</h3><span data-i18n="team.members.1.role">Начальник производства</span></div>
-        </div>
-
-        <div class="team-card">
-          <div class="ph ph-3"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="22" r="12"/><path d="M10 54c2-12 12-20 22-20s20 8 22 20"/></svg></div></div>
-          <div class="team-info"><h3 data-i18n="team.members.2.name">Шерзод Ахмедов</h3><span data-i18n="team.members.2.role">Начальник ОТК</span></div>
-        </div>
-
-        <div class="team-card">
-          <div class="ph ph-4"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="22" r="12"/><path d="M10 54c2-12 12-20 22-20s20 8 22 20"/></svg></div></div>
-          <div class="team-info"><h3 data-i18n="team.members.3.name">Нодира Рахимова</h3><span data-i18n="team.members.3.role">Ведущий менеджер по продажам</span></div>
-        </div>
-
-        <div class="team-card">
-          <div class="ph ph-5"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="22" r="12"/><path d="M10 54c2-12 12-20 22-20s20 8 22 20"/></svg></div></div>
-          <div class="team-info"><h3 data-i18n="team.members.4.name">Бахтиёр Исмоилов</h3><span data-i18n="team.members.4.role">Менеджер по логистике</span></div>
-        </div>
-
-        <div class="team-card">
-          <div class="ph ph-6"><div class="ph-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="22" r="12"/><path d="M10 54c2-12 12-20 22-20s20 8 22 20"/></svg></div></div>
-          <div class="team-info"><h3 data-i18n="team.members.5.name">Мадина Тураева</h3><span data-i18n="team.members.5.role">Менеджер по работе с клиентами</span></div>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -460,7 +430,7 @@
             </iframe>
           </div>
           <p style="text-align:center;margin-top:14px;">
-            <a href="https://www.google.com/maps?q=41.328722,69.415333&z=17" target="_blank" rel="noopener" style="font-weight:700;color:var(--c-accent-dark);">
+            <a href="https://www.google.com/maps?q=41.328722,69.415333&z=17" target="_blank" rel="noopener" style="font-weight:500;color:var(--c-accent-deep);">
               <span data-i18n="contacts.openInMaps">Открыть в Google Картах</span> →
             </a>
           </p>
@@ -489,7 +459,7 @@
     </div>
     <h3 style="margin-top:48px;" data-i18n="pd.galleryTitle">Галерея</h3>
     <div class="pd-gallery" data-pd="gallery"></div>
-    <div class="section-alt" style="margin-top:48px;border-radius:var(--radius-lg);padding:36px;text-align:center;">
+    <div class="section-alt" style="margin-top:48px;border:1px solid var(--c-border);padding:36px;text-align:center;">
       <h2 style="font-size:22px;" data-i18n="pd.ctaTitle">Нужен расчёт под ваш заказ?</h2>
       <p style="max-width:460px;margin:0 auto 20px;" data-i18n="pd.ctaText">Оставьте заявку — менеджер свяжется с вами и подготовит коммерческое предложение.</p>
       <button class="btn btn-accent btn-lg" data-modal-cta="contact" data-i18n="pd.ctaBtn">Оставить заявку</button>
@@ -499,16 +469,21 @@
 
 <footer class="site-footer">
   <div class="container">
-    <h3 data-i18n="footer.title">Реквизиты ООО «INTER PACK»</h3>
-    <ul class="footer-details">
-      <li data-i18n="footer.name">ООО «INTER PACK»</li>
-      <li data-i18n="footer.address">г. Ташкент, Мирзо-Улугбекский р-н, Алишеробод МФЙ, ул. Нурли Замин, 98</li>
-      <li data-i18n="footer.account">р/с: 20208000900795814001</li>
-      <li data-i18n="footer.bank">Таш. обл. отд. ХОАТБ «INFIN BANK»</li>
-      <li data-i18n="footer.mfo">МФО банка: 01056. ОКЭД: 17210</li>
-      <li data-i18n="footer.inn">ИНН: 304 981 794</li>
-      <li data-i18n="footer.phone">Тел: (+99890) 961-20-33</li>
-    </ul>
+    <div class="footer-top">
+      <div class="footer-brand">INTER <span>PACK</span></div>
+    </div>
+    <div class="footer-grid">
+      <h3 data-i18n="footer.title">Реквизиты ООО «INTER PACK»</h3>
+      <ul class="footer-details">
+        <li data-i18n="footer.name">ООО «INTER PACK»</li>
+        <li data-i18n="footer.address">г. Ташкент, Мирзо-Улугбекский р-н, Алишеробод МФЙ, ул. Нурли Замин, 98</li>
+        <li data-i18n="footer.account">р/с: 20208000900795814001</li>
+        <li data-i18n="footer.bank">Таш. обл. отд. ХОАТБ «INFIN BANK»</li>
+        <li data-i18n="footer.mfo">МФО банка: 01056. ОКЭД: 17210</li>
+        <li data-i18n="footer.inn">ИНН: 304 981 794</li>
+        <li data-i18n="footer.phone">Тел: (+99890) 961-20-33</li>
+      </ul>
+    </div>
     <p class="copyright" data-i18n="footer.copyright">© 2024 ООО «INTER PACK». Все права защищены.</p>
   </div>
 </footer>
@@ -522,3 +497,4 @@
 <script src="js/contact-form.js?v=3"></script>
 </body>
 </html>
+<!-- branch: claude/inter-pack-website-kkgw7z, last changed by Claude: 2026-10-29 -->
