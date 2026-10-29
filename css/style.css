@@ -113,7 +113,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   gap:24px;
 }
 .logo{display:flex;align-items:center;gap:12px;flex-shrink:0;}
-.logo svg{height:34px;width:auto;display:block;}
+.logo-mark{height:34px;width:auto;display:block;}
 .logo-word{font-weight:400;font-size:17px;color:var(--c-text);letter-spacing:-.02em;}
 .logo-word span{color:var(--c-accent-deep);}
 
