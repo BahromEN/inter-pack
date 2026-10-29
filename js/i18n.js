@@ -4,7 +4,7 @@
 
 window.TRANSLATIONS = {
   ru: {
-    nav:{home:"Главная",about:"О компании",achievements:"Достижения",products:"Продукция",video:"Видео",team:"Команда",contact:"Связаться",contacts:"Контакты"},
+    nav:{home:"Главная",about:"О компании",achievements:"Достижения",products:"Продукция",video:"Видео",contact:"Связаться",contacts:"Контакты"},
     common:{readMore:"Подробнее",backToProducts:"Ко всей продукции",send:"Отправить заявку",all:"Вся продукция"},
     hero:{
       scroll:"Листайте продукцию",
@@ -105,19 +105,6 @@ window.TRANSLATIONS = {
       infoTitle:"Современное производство под контролем на каждом этапе",
       infoText:"В ролике — работа гофроагрегата, линии флексопечати, высечки и участка контроля качества на производственной площадке INTER PACK. Видео демонстрирует полный технологический процесс и оснащение завода."
     },
-    team:{
-      eyebrow:"Команда",
-      title:"Руководство и менеджеры",
-      subtitle:"Опытная команда, которая отвечает за качество и сроки каждого заказа",
-      members:[
-        {name:"Азиз Каримов",role:"Генеральный директор"},
-        {name:"Дилшод Юсупов",role:"Начальник производства"},
-        {name:"Шерзод Ахмедов",role:"Начальник ОТК"},
-        {name:"Нодира Рахимова",role:"Ведущий менеджер по продажам"},
-        {name:"Бахтиёр Исмоилов",role:"Менеджер по логистике"},
-        {name:"Мадина Тураева",role:"Менеджер по работе с клиентами"}
-      ]
-    },
     contact:{
       eyebrow:"Связаться",
       title:"Оставьте заявку на расчёт",
@@ -155,7 +142,7 @@ window.TRANSLATIONS = {
   },
 
   en: {
-    nav:{home:"Home",about:"About Us",achievements:"Achievements",products:"Products",video:"Video",team:"Team",contact:"Contact",contacts:"Location"},
+    nav:{home:"Home",about:"About Us",achievements:"Achievements",products:"Products",video:"Video",contact:"Contact",contacts:"Location"},
     common:{readMore:"Read more",backToProducts:"Back to products",send:"Send request",all:"All products"},
     hero:{
       scroll:"Browse our products",
@@ -256,19 +243,6 @@ window.TRANSLATIONS = {
       infoTitle:"Modern production under control at every stage",
       infoText:"The video shows the corrugator line, flexo printing, die-cutting and the quality control area at the INTER PACK production site, demonstrating the full technological process and factory equipment."
     },
-    team:{
-      eyebrow:"Team",
-      title:"Management and managers",
-      subtitle:"An experienced team responsible for the quality and timing of every order",
-      members:[
-        {name:"Aziz Karimov",role:"General Director"},
-        {name:"Dilshod Yusupov",role:"Head of Production"},
-        {name:"Sherzod Akhmedov",role:"Head of Quality Control"},
-        {name:"Nodira Rakhimova",role:"Lead Sales Manager"},
-        {name:"Bakhtiyor Ismoilov",role:"Logistics Manager"},
-        {name:"Madina Turaeva",role:"Client Relations Manager"}
-      ]
-    },
     contact:{
       eyebrow:"Contact",
       title:"Request a quote",
@@ -306,7 +280,7 @@ window.TRANSLATIONS = {
   },
 
   uz: {
-    nav:{home:"Bosh sahifa",about:"Kompaniya haqida",achievements:"Yutuqlar",products:"Mahsulotlar",video:"Video",team:"Jamoa",contact:"Bog'lanish",contacts:"Kontaktlar"},
+    nav:{home:"Bosh sahifa",about:"Kompaniya haqida",achievements:"Yutuqlar",products:"Mahsulotlar",video:"Video",contact:"Bog'lanish",contacts:"Kontaktlar"},
     common:{readMore:"Batafsil",backToProducts:"Barcha mahsulotlarga",send:"So'rov yuborish",all:"Barcha mahsulotlar"},
     hero:{
       scroll:"Mahsulotlarni ko'ring",
@@ -406,19 +380,6 @@ window.TRANSLATIONS = {
       playLabel:"Videoni ko'rish",
       infoTitle:"Har bosqichda nazorat ostidagi zamonaviy ishlab chiqarish",
       infoText:"Videoda INTER PACK ishlab chiqarish maydonchasidagi gofroagregat, fleksobosma liniyasi, shtamplash va sifat nazorati bo'limining ishi ko'rsatilgan — to'liq texnologik jarayon va zavod jihozlari namoyish etiladi."
-    },
-    team:{
-      eyebrow:"Jamoa",
-      title:"Rahbariyat va menejerlar",
-      subtitle:"Har bir buyurtmaning sifati va muddatiga javobgar tajribali jamoa",
-      members:[
-        {name:"Aziz Karimov",role:"Bosh direktor"},
-        {name:"Dilshod Yusupov",role:"Ishlab chiqarish boshlig'i"},
-        {name:"Sherzod Ahmedov",role:"Sifat nazorati bo'limi boshlig'i"},
-        {name:"Nodira Rahimova",role:"Yetakchi savdo menejeri"},
-        {name:"Baxtiyor Ismoilov",role:"Logistika menejeri"},
-        {name:"Madina Turayeva",role:"Mijozlar bilan ishlash menejeri"}
-      ]
     },
     contact:{
       eyebrow:"Bog'lanish",
