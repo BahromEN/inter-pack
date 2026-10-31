@@ -39,15 +39,23 @@
     var galleryWrap = document.querySelector("[data-pd='gallery']");
     if(galleryWrap){
       galleryWrap.innerHTML = "";
-      for(var i = 0; i < 5; i++){
-        var gNum = (id + i) % 6;
-        var gHeroNum = String(gNum + 1).padStart(2, "0");
-        var g = document.createElement("div");
-        g.className = "ph ph-" + (gNum + 1);
-        g.innerHTML = '<img class="ph-photo" src="assets/images/hero/hero-' + gHeroNum + '.webp" alt="" onerror="this.remove()"><div class="ph-icon">' + PH_ICON + '</div>';
+      for(var i = 1; i <= 5; i++){
+        var gId = (id + i) % 6;
+        var gItem = items[gId];
+        var gHeroNum = String(gId + 1).padStart(2, "0");
+        var g = document.createElement("button");
+        g.type = "button";
+        g.className = "ph ph-" + (gId + 1) + " pd-gallery-item";
+        g.setAttribute("data-gallery-id", gId);
+        g.setAttribute("aria-label", gItem ? gItem.name : "");
+        g.innerHTML = '<img class="ph-photo" src="assets/images/hero/hero-' + gHeroNum + '.webp" alt="" onerror="this.remove()"><div class="ph-icon">' + PH_ICON + '</div>' +
+          (gItem ? '<span class="pd-gallery-label">' + gItem.name + '</span>' : '');
         galleryWrap.appendChild(g);
       }
     }
+
+    var overlayScroll = document.getElementById("productModal");
+    if(overlayScroll) overlayScroll.scrollTop = 0;
   }
 
   function openModal(id){
@@ -81,6 +89,14 @@
     if(overlay){
       overlay.addEventListener("click", function(e){
         if(e.target === overlay) closeModal();
+        var galleryBtn = e.target.closest("[data-gallery-id]");
+        if(galleryBtn){
+          var newId = parseInt(galleryBtn.getAttribute("data-gallery-id"), 10);
+          if(!isNaN(newId)){
+            currentId = newId;
+            render(newId);
+          }
+        }
       });
       overlay.querySelectorAll("[data-modal-close]").forEach(function(btn){
         btn.addEventListener("click", closeModal);
