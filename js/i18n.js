@@ -25,9 +25,9 @@ window.TRANSLATIONS = {
       eyebrow:"О компании",
       title:"INTER PACK — надёжная упаковка для вашего бизнеса",
       p1:"ООО «INTER PACK» — современное производственное предприятие, специализирующееся на выпуске гофрированной тары и упаковки полного цикла: от гофролиста до готовой коробки с флексопечатью.",
-      p2:"Мы оснастили производство современным европейским оборудованием, что позволяет выпускать продукцию стабильно высокого качества и в сжатые сроки — от небольших партий до крупных промышленных заказов.",
+      p2:"Мы оснастили производство современным оборудованием, что позволяет выпускать продукцию стабильно высокого качества и в сжатые сроки — от небольших партий до крупных промышленных заказов.",
       p3:"Наша миссия — обеспечивать клиентов из Узбекистана и стран СНГ прочной, экологичной и эстетичной упаковкой, которая защищает товар и работает на бренд заказчика.",
-      stat1Num:"10+",stat1Label:"лет на рынке",
+      stat1Num:"6+",stat1Label:"лет на рынке",
       stat2Num:"24/7",stat2Label:"контроль качества",
       stat3Num:"100%",stat3Label:"собственное производство",
       listTitle:"Почему выбирают нас",
@@ -44,11 +44,11 @@ window.TRANSLATIONS = {
       title:"INTER PACK в цифрах",
       subtitle:"Результаты нашей работы — лучшее подтверждение качества и надёжности продукции",
       stats:[
-        {num:8,suffix:"млн м²",label:"продукции произведено за всё время"},
+        {num:50,suffix:"млн м²",label:"продукции произведено за всё время"},
         {num:35,suffix:"+",label:"видов упаковки в каталоге"},
         {num:150,suffix:"+",label:"постоянных компаний-клиентов"},
         {num:40,suffix:"тыс.",label:"коробок выпускается за смену"},
-        {num:120,suffix:"+",label:"квалифицированных специалистов"},
+        {num:40,suffix:"+",label:"квалифицированных специалистов"},
         {num:1,suffix:"",label:"регион поставок: Узбекистан и страны СНГ"}
       ]
     },
@@ -163,9 +163,9 @@ window.TRANSLATIONS = {
       eyebrow:"About the company",
       title:"INTER PACK — reliable packaging for your business",
       p1:"INTER PACK LLC is a modern manufacturing company specializing in the full-cycle production of corrugated containers and packaging — from corrugated sheet to a finished, flexo-printed box.",
-      p2:"Our facility is equipped with modern European machinery, allowing us to deliver consistently high-quality products within tight deadlines — from small batches to large industrial orders.",
+      p2:"Our facility is equipped with modern machinery, allowing us to deliver consistently high-quality products within tight deadlines — from small batches to large industrial orders.",
       p3:"Our mission is to provide customers across Uzbekistan and the CIS with durable, eco-friendly, and attractive packaging that protects the product and works for the client's brand.",
-      stat1Num:"10+",stat1Label:"years on the market",
+      stat1Num:"6+",stat1Label:"years on the market",
       stat2Num:"24/7",stat2Label:"quality control",
       stat3Num:"100%",stat3Label:"in-house production",
       listTitle:"Why choose us",
@@ -182,11 +182,11 @@ window.TRANSLATIONS = {
       title:"INTER PACK in numbers",
       subtitle:"Our results are the best proof of the quality and reliability of our products",
       stats:[
-        {num:8,suffix:"M m²",label:"of products manufactured to date"},
+        {num:50,suffix:"M m²",label:"of products manufactured to date"},
         {num:35,suffix:"+",label:"packaging types in the catalog"},
         {num:150,suffix:"+",label:"regular corporate clients"},
         {num:40,suffix:"K",label:"boxes produced per shift"},
-        {num:120,suffix:"+",label:"qualified specialists"},
+        {num:40,suffix:"+",label:"qualified specialists"},
         {num:1,suffix:"",label:"delivery region: Uzbekistan & the CIS"}
       ]
     },
@@ -301,9 +301,9 @@ window.TRANSLATIONS = {
       eyebrow:"Kompaniya haqida",
       title:"INTER PACK — biznesingiz uchun ishonchli qadoq",
       p1:"«INTER PACK» MChJ — gofrokarton tara va qadoqlarni to'liq siklda ishlab chiqaruvchi zamonaviy korxona: gofra varaqdan tortib, fleksobosma bilan tayyor qutigacha.",
-      p2:"Zavodimiz zamonaviy Yevropa uskunalari bilan jihozlangan, bu esa qisqa muddatlarda barqaror yuqori sifatli mahsulot ishlab chiqarish imkonini beradi — kichik partiyalardan yirik sanoat buyurtmalarigacha.",
+      p2:"Zavodimiz zamonaviy uskunalar bilan jihozlangan, bu esa qisqa muddatlarda barqaror yuqori sifatli mahsulot ishlab chiqarish imkonini beradi — kichik partiyalardan yirik sanoat buyurtmalarigacha.",
       p3:"Bizning maqsadimiz — O'zbekiston va MDH mamlakatlaridagi mijozlarni mahsulotni himoya qiluvchi va brendga xizmat qiluvchi mustahkam, ekologik va chiroyli qadoq bilan ta'minlash.",
-      stat1Num:"10+",stat1Label:"yillik tajriba",
+      stat1Num:"6+",stat1Label:"yillik tajriba",
       stat2Num:"24/7",stat2Label:"sifat nazorati",
       stat3Num:"100%",stat3Label:"o'z ishlab chiqarishimiz",
       listTitle:"Nega bizni tanlashadi",
@@ -320,11 +320,11 @@ window.TRANSLATIONS = {
       title:"INTER PACK raqamlarda",
       subtitle:"Ishimiz natijalari — mahsulot sifati va ishonchliligining eng yaxshi isboti",
       stats:[
-        {num:8,suffix:"mln m²",label:"barcha davr uchun ishlab chiqarilgan mahsulot"},
+        {num:50,suffix:"mln m²",label:"barcha davr uchun ishlab chiqarilgan mahsulot"},
         {num:35,suffix:"+",label:"katalogdagi qadoq turlari"},
         {num:150,suffix:"+",label:"doimiy hamkor kompaniyalar"},
         {num:40,suffix:"ming",label:"smenada ishlab chiqariladigan quti"},
-        {num:120,suffix:"+",label:"malakali mutaxassis"},
+        {num:40,suffix:"+",label:"malakali mutaxassis"},
         {num:1,suffix:"",label:"yetkazib berish hududi: O'zbekiston va MDH"}
       ]
     },

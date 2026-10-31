@@ -46,6 +46,8 @@
   };
   window.ipLang = getLang;
 
+  var FOUNDED_YEAR = 2020;
+
   function applyTranslations(lang){
     document.querySelectorAll("[data-i18n]").forEach(function(el){
       var val = window.ipT(el.getAttribute("data-i18n"), lang);
@@ -58,6 +60,15 @@
     document.querySelectorAll("[data-i18n-title]").forEach(function(el){
       var val = window.ipT(el.getAttribute("data-i18n-title"), lang);
       if(typeof val === "string") document.title = val;
+    });
+
+    var currentYear = new Date().getFullYear();
+    var yearsOnMarket = currentYear - FOUNDED_YEAR;
+    document.querySelectorAll('[data-i18n="about.stat1Num"]').forEach(function(el){
+      el.textContent = yearsOnMarket + "+";
+    });
+    document.querySelectorAll('[data-i18n="footer.copyright"]').forEach(function(el){
+      el.textContent = el.textContent.replace(/\d{4}/, FOUNDED_YEAR + "–" + currentYear);
     });
   }
 
