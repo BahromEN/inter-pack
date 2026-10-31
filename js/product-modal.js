@@ -14,9 +14,10 @@
     document.querySelectorAll("[data-pd='desc']").forEach(function(el){ el.textContent = item.desc; });
 
     var tint = "ph-" + ((id % 6) + 1);
+    var heroNum = String((id % 6) + 1).padStart(2, "0");
     document.querySelectorAll("[data-pd='photo']").forEach(function(el){
       el.className = "ph " + tint;
-      el.innerHTML = '<div class="ph-icon">' + PH_ICON + '</div>';
+      el.innerHTML = '<img class="ph-photo" src="assets/images/hero/hero-' + heroNum + '.webp" alt="' + item.name + '" onerror="this.remove()"><div class="ph-icon">' + PH_ICON + '</div>';
     });
 
     var specsWrap = document.querySelector("[data-pd='specs']");
@@ -39,9 +40,11 @@
     if(galleryWrap){
       galleryWrap.innerHTML = "";
       for(var i = 0; i < 5; i++){
+        var gNum = (id + i) % 6;
+        var gHeroNum = String(gNum + 1).padStart(2, "0");
         var g = document.createElement("div");
-        g.className = "ph ph-" + (((id + i) % 6) + 1);
-        g.innerHTML = '<div class="ph-icon">' + PH_ICON + '</div>';
+        g.className = "ph ph-" + (gNum + 1);
+        g.innerHTML = '<img class="ph-photo" src="assets/images/hero/hero-' + gHeroNum + '.webp" alt="" onerror="this.remove()"><div class="ph-icon">' + PH_ICON + '</div>';
         galleryWrap.appendChild(g);
       }
     }
