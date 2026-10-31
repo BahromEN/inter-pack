@@ -17,6 +17,7 @@ window.TRANSLATIONS = {
         "Гофролист форматной резки",
         "Ящик для фруктов и овощей",
         "Упаковка для мебели усиленная",
+        "Пятислойная гофротара",
         "Транспортная упаковка на паллете"
       ]
     },
@@ -154,6 +155,7 @@ window.TRANSLATIONS = {
         "Corrugated sheet, cut to size",
         "Fruit and vegetable crate",
         "Reinforced furniture packaging",
+        "Five-layer corrugated case",
         "Pallet transport packaging"
       ]
     },
@@ -291,6 +293,7 @@ window.TRANSLATIONS = {
         "O'lchamga kesilgan gofrokarton varaq",
         "Meva-sabzavot uchun yashik",
         "Mustahkamlangan mebel qadog'i",
+        "Besh qatlamli gofra tara",
         "Poddonga mo'ljallangan tashish qadog'i"
       ]
     },
