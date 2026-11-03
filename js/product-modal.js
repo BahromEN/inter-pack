@@ -19,6 +19,71 @@
     11: "assets/images/products/corner-profiles.webp"
   };
 
+  var galleryItemEls = {};
+  var galleryBuilt = false;
+
+  function buildGalleryOnce(){
+    if(galleryBuilt) return;
+    var galleryWrap = document.querySelector("[data-pd='gallery']");
+    if(!galleryWrap) return;
+    var items = window.ipT("products.items");
+    galleryWrap.innerHTML = "";
+    items.forEach(function(gItem, gId){
+      var gPhotoSrc = PRODUCT_PHOTOS[gId];
+      var g = document.createElement("button");
+      g.type = "button";
+      g.className = "ph ph-" + ((gId % 6) + 1) + " pd-gallery-item";
+      g.setAttribute("data-gallery-id", gId);
+      g.innerHTML = (gPhotoSrc ? '<img class="ph-photo" src="' + gPhotoSrc + '" alt="" onerror="this.remove()">' : "") +
+        '<div class="ph-icon">' + PH_ICON + '</div>' +
+        '<span class="pd-gallery-label"></span>';
+      galleryWrap.appendChild(g);
+      galleryItemEls[gId] = g;
+    });
+    initGalleryDrag(galleryWrap);
+    galleryBuilt = true;
+  }
+
+  function updateGalleryLabels(){
+    var items = window.ipT("products.items");
+    items.forEach(function(gItem, gId){
+      var el = galleryItemEls[gId];
+      if(!el) return;
+      el.setAttribute("aria-label", gItem.name);
+      var label = el.querySelector(".pd-gallery-label");
+      if(label) label.textContent = gItem.name;
+    });
+  }
+
+  function updateGalleryActive(id){
+    Object.keys(galleryItemEls).forEach(function(key){
+      galleryItemEls[key].classList.toggle("is-current", Number(key) === id);
+    });
+  }
+
+  function initGalleryDrag(track){
+    var isDown = false, startX = 0, startScroll = 0, moved = false;
+    track.addEventListener("mousedown", function(e){
+      isDown = true;
+      moved = false;
+      startX = e.pageX;
+      startScroll = track.scrollLeft;
+      e.preventDefault();
+    });
+    window.addEventListener("mouseup", function(){ isDown = false; });
+    track.addEventListener("mouseleave", function(){ isDown = false; });
+    track.addEventListener("mousemove", function(e){
+      if(!isDown) return;
+      e.preventDefault();
+      var delta = e.pageX - startX;
+      if(Math.abs(delta) > 5) moved = true;
+      track.scrollLeft = startScroll - delta;
+    });
+    track.addEventListener("click", function(e){
+      if(moved){ e.stopPropagation(); moved = false; }
+    }, true);
+  }
+
   function render(id){
     var items = window.ipT("products.items");
     var item = items[id];
@@ -52,30 +117,9 @@
       });
     }
 
-    var galleryWrap = document.querySelector("[data-pd='gallery']");
-    if(galleryWrap){
-      galleryWrap.innerHTML = "";
-      galleryWrap.scrollLeft = 0;
-      var total = items.length;
-      var count = total - 1;
-      for(var i = 1; i <= count; i++){
-        var gId = (id + i) % total;
-        var gItem = items[gId];
-        var gPhotoSrc = PRODUCT_PHOTOS[gId];
-        var g = document.createElement("button");
-        g.type = "button";
-        g.className = "ph ph-" + ((gId % 6) + 1) + " pd-gallery-item";
-        g.setAttribute("data-gallery-id", gId);
-        g.setAttribute("aria-label", gItem ? gItem.name : "");
-        g.innerHTML = (gPhotoSrc ? '<img class="ph-photo" src="' + gPhotoSrc + '" alt="" onerror="this.remove()">' : "") +
-          '<div class="ph-icon">' + PH_ICON + '</div>' +
-          (gItem ? '<span class="pd-gallery-label">' + gItem.name + '</span>' : '');
-        galleryWrap.appendChild(g);
-      }
-    }
-
-    var overlayScroll = document.getElementById("productModal");
-    if(overlayScroll) overlayScroll.scrollTop = 0;
+    buildGalleryOnce();
+    updateGalleryLabels();
+    updateGalleryActive(id);
   }
 
   function openModal(id){
@@ -84,6 +128,9 @@
     var overlay = document.getElementById("productModal");
     if(!overlay) return;
     overlay.style.display = "flex";
+    overlay.scrollTop = 0;
+    var galleryWrap = document.querySelector("[data-pd='gallery']");
+    if(galleryWrap) galleryWrap.scrollLeft = 0;
     requestAnimationFrame(function(){
       overlay.classList.add("is-open");
       document.body.classList.add("modal-open");
@@ -112,7 +159,7 @@
         var galleryBtn = e.target.closest("[data-gallery-id]");
         if(galleryBtn){
           var newId = parseInt(galleryBtn.getAttribute("data-gallery-id"), 10);
-          if(!isNaN(newId)){
+          if(!isNaN(newId) && newId !== currentId){
             currentId = newId;
             render(newId);
           }
