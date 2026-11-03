@@ -13,7 +13,8 @@
     5: "assets/images/hero/hero-06.webp",
     7: "assets/images/products/telescope-box.webp",
     8: "assets/images/products/fruit-veg-crate.webp",
-    10: "assets/images/products/electronics-box.webp"
+    10: "assets/images/products/electronics-box.webp",
+    11: "assets/images/products/corner-profiles.webp"
   };
 
   function render(id){
