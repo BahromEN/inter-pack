@@ -93,10 +93,47 @@ window.TRANSLATIONS = {
           short:"Листовой гофрокартон под раскрой и последующую переработку.",
           desc:"Гофрокартон в листах форматной резки для производственных нужд, ручной упаковки и переработки в готовые изделия. Поставляется различной плотности и профиля гофры под требования заказчика.",
           specs:[["profile","A / B / C / E"],["layers","3-5 слоёв"],["material","Бурый / белый картон"],["print","без печати"],["load","—"],["size","любой формат резки"]]
+        },
+        {
+          name:"Ящики с полным нахлёстом клапанов",
+          short:"Усиленная тара с полным перекрытием клапанов для тяжёлых и ответственных грузов.",
+          desc:"Короб с полным нахлёстом клапанов (FEFCO 0203) — верхние и нижние клапаны полностью перекрывают друг друга, создавая дополнительную жёсткость стенки. Применяется для тяжёлых, габаритных и ответственных грузов, где обычного четырёхклапанного короба недостаточно.",
+          specs:[["profile","B / C гофра"],["layers","3-слойный"],["material","Бурый картон повышенной плотности"],["print","1-2 цвета флексопечать"],["load","до 35 кг"],["size","по ТЗ заказчика"]]
+        },
+        {
+          name:"Телескопические ящики",
+          short:"Короб из двух независимых частей — крышки и дна — для товаров разной высоты.",
+          desc:"Телескопический короб состоит из двух отдельных деталей: нижней части и крышки, надевающейся сверху. Высота упаковки регулируется глубиной надевания крышки, что удобно для товаров нестандартной или переменной высоты.",
+          specs:[["profile","B / C гофра"],["layers","3-слойный"],["material","Бурый / белый картон"],["print","1-2 цвета"],["load","до 30 кг"],["size","регулируемая высота"]]
+        },
+        {
+          name:"Ящики-лотки для фруктов и овощей",
+          short:"Открытые вентилируемые лотки для сбора и транспортировки свежей продукции.",
+          desc:"Открытый лоток с перфорацией для вентиляции — используется для сбора урожая, хранения и транспортировки овощей и фруктов. Штабелируется при транспортировке, защищает продукцию от механических повреждений.",
+          specs:[["profile","C гофра"],["layers","3-слойный"],["material","Бурый картон"],["print","без печати / 1 цвет"],["load","до 10 кг"],["size","стандартные тарные размеры"]]
+        },
+        {
+          name:"Упаковка для напитков с перегородками",
+          short:"Короба с картонными перегородками для бутылок и банок при транспортировке.",
+          desc:"Транспортная упаковка для напитков с внутренними картонными перегородками, фиксирующими каждую бутылку или банку по отдельности. Предотвращает бой стекла и повреждение тары при перевозке и хранении.",
+          specs:[["profile","B / C гофра"],["layers","3-слойный"],["material","Бурый картон"],["print","1-2 цвета флексопечать"],["load","под тип тары (бутылка/банка)"],["size","под сетку 2x6, 3x4 и др."]]
+        },
+        {
+          name:"Короба для электроники",
+          short:"Жёсткая тара с перегородками и амортизацией для хрупких приборов.",
+          desc:"Усиленная упаковка для бытовой и промышленной электроники с внутренними перегородками и амортизирующими вкладышами. Защищает хрупкие компоненты от ударов и вибрации при транспортировке.",
+          specs:[["profile","C / BC гофра"],["layers","5-слойный"],["material","Бурый картон"],["print","1-2 цвета"],["load","до 20 кг"],["size","по габаритам изделия"]]
+        },
+        {
+          name:"Защитные угловые профили",
+          short:"Уголки из гофрокартона, защищающие кромки груза при обвязке и стяжке.",
+          desc:"Картонные угловые профили устанавливаются на рёбра груза перед обвязкой стрейч-плёнкой или лентой, защищая упаковку от деформации и повреждения при затяжке и транспортировке.",
+          specs:[["profile","C гофра"],["layers","2-3 слоя (ламинация)"],["material","Бурый картон"],["print","без печати"],["load","усиление кромки"],["size","стандартная длина 2 м / под заказ"]]
         }
       ]
     },
     pd:{back:"Ко всей продукции",specsTitle:"Технические характеристики",galleryTitle:"Галерея",ctaTitle:"Нужен расчёт под ваш заказ?",ctaText:"Оставьте заявку — менеджер свяжется с вами и подготовит коммерческое предложение.",ctaBtn:"Оставить заявку"},
+    productsToggle:{show:"Посмотреть всю продукцию",hide:"Скрыть список"},
     video:{
       eyebrow:"Видео о компании",
       title:"Как мы производим упаковку",
@@ -231,10 +268,47 @@ window.TRANSLATIONS = {
           short:"Sheet-form corrugated board for cutting and further conversion.",
           desc:"Corrugated board supplied in cut-to-size sheets for production needs, manual packing and conversion into finished items. Available in various board densities and flute profiles to order.",
           specs:[["profile","A / B / C / E"],["layers","3-5 ply"],["material","Kraft / white board"],["print","unprinted"],["load","—"],["size","any cut size"]]
+        },
+        {
+          name:"Full overlap flap boxes",
+          short:"Reinforced packaging with fully overlapping flaps for heavy, demanding loads.",
+          desc:"A full-overlap box (FEFCO 0203) — the top and bottom flaps completely overlap each other, adding extra wall rigidity. Used for heavy, oversized and demanding loads where a standard four-flap box isn't enough.",
+          specs:[["profile","B / C flute"],["layers","3-ply"],["material","Heavy-duty kraft board"],["print","1-2 color flexo"],["load","up to 35 kg"],["size","made to order"]]
+        },
+        {
+          name:"Telescope boxes",
+          short:"A box made of two independent parts — lid and base — for items of varying height.",
+          desc:"A telescope box consists of two separate pieces: a base and a lid that slides over it. The packaging height adjusts with how far the lid is slid on, making it convenient for non-standard or variable-height items.",
+          specs:[["profile","B / C flute"],["layers","3-ply"],["material","Kraft / white board"],["print","1-2 colors"],["load","up to 30 kg"],["size","adjustable height"]]
+        },
+        {
+          name:"Fruit and vegetable trays",
+          short:"Open, ventilated trays for harvesting and transporting fresh produce.",
+          desc:"An open tray with ventilation perforations, used for harvesting, storing and transporting fruit and vegetables. Stackable in transit, protects produce from mechanical damage.",
+          specs:[["profile","C flute"],["layers","3-ply"],["material","Kraft board"],["print","unprinted / 1 color"],["load","up to 10 kg"],["size","standard crate sizes"]]
+        },
+        {
+          name:"Beverage packaging with dividers",
+          short:"Boxes with cardboard dividers for bottles and cans in transit.",
+          desc:"Transport packaging for beverages with internal cardboard dividers that secure each bottle or can individually. Prevents glass breakage and container damage during transport and storage.",
+          specs:[["profile","B / C flute"],["layers","3-ply"],["material","Kraft board"],["print","1-2 color flexo"],["load","depends on container type"],["size","2x6, 3x4 grid and others"]]
+        },
+        {
+          name:"Electronics packaging",
+          short:"Rigid packaging with dividers and cushioning for fragile devices.",
+          desc:"Reinforced packaging for household and industrial electronics with internal dividers and cushioning inserts. Protects fragile components from impact and vibration during transport.",
+          specs:[["profile","C / BC flute"],["layers","5-ply"],["material","Kraft board"],["print","1-2 colors"],["load","up to 20 kg"],["size","fitted to product"]]
+        },
+        {
+          name:"Protective corner profiles",
+          short:"Corrugated corner guards that protect load edges during strapping.",
+          desc:"Cardboard corner profiles are placed on load edges before strapping with stretch film or tape, protecting the packaging from deformation and damage during tensioning and transport.",
+          specs:[["profile","C flute"],["layers","2-3 ply (laminated)"],["material","Kraft board"],["print","unprinted"],["load","edge reinforcement"],["size","standard 2 m length / made to order"]]
         }
       ]
     },
     pd:{back:"Back to products",specsTitle:"Technical specifications",galleryTitle:"Gallery",ctaTitle:"Need a quote for your order?",ctaText:"Leave a request — our manager will get in touch and prepare a commercial offer.",ctaBtn:"Leave a request"},
+    productsToggle:{show:"View all products",hide:"Hide list"},
     video:{
       eyebrow:"Company video",
       title:"How we manufacture packaging",
@@ -369,10 +443,47 @@ window.TRANSLATIONS = {
           short:"Kesish va qayta ishlash uchun varaq shaklidagi gofrokarton.",
           desc:"Ishlab chiqarish ehtiyojlari, qo'lda qadoqlash va tayyor buyumlarga qayta ishlash uchun o'lchamga kesilgan gofrokarton varaqlari. Buyurtmachi talabiga ko'ra turli zichlik va gofra profilida yetkazib beriladi.",
           specs:[["profile","A / B / C / E"],["layers","3-5 qatlam"],["material","Jigarrang / oq karton"],["print","bosmasiz"],["load","—"],["size","istalgan kesim o'lchami"]]
+        },
+        {
+          name:"To'liq qoplamali qopqoqli qutilar",
+          short:"Og'ir va mas'uliyatli yuklar uchun qopqoqlari to'liq bir-birini qoplaydigan mustahkamlangan tara.",
+          desc:"To'liq qoplamali quti (FEFCO 0203) — yuqori va pastki qopqoqlar bir-birini to'liq qoplaydi, bu devorga qo'shimcha mustahkamlik beradi. Oddiy to'rt qopqoqli quti yetarli bo'lmagan og'ir, gabaritli va mas'uliyatli yuklar uchun ishlatiladi.",
+          specs:[["profile","B / C gofra"],["layers","3 qatlamli"],["material","Yuqori zichlikdagi jigarrang karton"],["print","1-2 rangli fleksobosma"],["load","35 kg gacha"],["size","buyurtma bo'yicha"]]
+        },
+        {
+          name:"Teleskopik qutilar",
+          short:"Turli balandlikdagi mahsulotlar uchun ikki mustaqil qismdan — qopqoq va tagdan — iborat quti.",
+          desc:"Teleskopik quti ikki alohida qismdan iborat: tag qism va uning ustiga kiyintiriladigan qopqoq. Qadoq balandligi qopqoqning qanchalik kiyintirilishiga qarab sozlanadi, bu nostandart yoki o'zgaruvchan balandlikdagi mahsulotlar uchun qulay.",
+          specs:[["profile","B / C gofra"],["layers","3 qatlamli"],["material","Jigarrang / oq karton"],["print","1-2 rangli"],["load","30 kg gacha"],["size","sozlanadigan balandlik"]]
+        },
+        {
+          name:"Meva-sabzavot uchun lotok-yashiklar",
+          short:"Yangi mahsulotni yig'ish va tashish uchun ochiq, ventilyatsiyalangan lotoklar.",
+          desc:"Ventilyatsiya uchun teshiklari bo'lgan ochiq lotok — meva-sabzavotlarni yig'ish, saqlash va tashish uchun ishlatiladi. Tashishda shtabellanadi, mahsulotni mexanik shikastlanishdan himoya qiladi.",
+          specs:[["profile","C gofra"],["layers","3 qatlamli"],["material","Jigarrang karton"],["print","bosmasiz / 1 rangli"],["load","10 kg gacha"],["size","standart tara o'lchamlari"]]
+        },
+        {
+          name:"Bo'linmali ichimlik qadog'i",
+          short:"Tashishda shisha va bankalar uchun karton bo'linmali qutilar.",
+          desc:"Har bir shisha yoki bankani alohida mahkamlaydigan ichki karton bo'linmalariga ega ichimliklar uchun tashish qadog'i. Tashish va saqlashda shisha sinishi va idish shikastlanishining oldini oladi.",
+          specs:[["profile","B / C gofra"],["layers","3 qatlamli"],["material","Jigarrang karton"],["print","1-2 rangli fleksobosma"],["load","idish turiga qarab"],["size","2x6, 3x4 va boshqa to'rlar"]]
+        },
+        {
+          name:"Elektronika uchun qadoq",
+          short:"Nozik qurilmalar uchun bo'linmalar va amortizatsiyaga ega qattiq qadoq.",
+          desc:"Maishiy va sanoat elektronikasi uchun ichki bo'linmalar va amortizatsion qo'shimchalarga ega mustahkamlangan qadoq. Nozik komponentlarni tashish paytida zarba va tebranishdan himoya qiladi.",
+          specs:[["profile","C / BC gofra"],["layers","5 qatlamli"],["material","Jigarrang karton"],["print","1-2 rangli"],["load","20 kg gacha"],["size","mahsulot o'lchamiga mos"]]
+        },
+        {
+          name:"Himoya burchak profillari",
+          short:"Bog'lashda yuk qirralarini himoya qiluvchi gofrokartondan burchaklar.",
+          desc:"Karton burchak profillari strech-plyonka yoki lenta bilan bog'lashdan oldin yuk qirralariga o'rnatiladi, qadoqni tortishda va tashishda deformatsiya va shikastlanishdan himoya qiladi.",
+          specs:[["profile","C gofra"],["layers","2-3 qatlam (laminatsiya)"],["material","Jigarrang karton"],["print","bosmasiz"],["load","qirra mustahkamlash"],["size","standart uzunlik 2 m / buyurtma bo'yicha"]]
         }
       ]
     },
     pd:{back:"Barcha mahsulotlarga",specsTitle:"Texnik xususiyatlar",galleryTitle:"Galereya",ctaTitle:"Buyurtmangiz uchun hisob-kitob kerakmi?",ctaText:"So'rov qoldiring — menejerimiz siz bilan bog'lanib, tijorat taklifini tayyorlaydi.",ctaBtn:"So'rov qoldirish"},
+    productsToggle:{show:"Barcha mahsulotlarni ko'rish",hide:"Ro'yxatni yashirish"},
     video:{
       eyebrow:"Kompaniya videosi",
       title:"Biz qadoqni qanday ishlab chiqaramiz",

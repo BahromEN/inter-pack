@@ -167,11 +167,26 @@
     targets.forEach(function(el){ io.observe(el); });
   }
 
+  function initProductsToggle(){
+    var btn = document.getElementById("productsToggleBtn");
+    var extra = document.getElementById("productsExtra");
+    if(!btn || !extra) return;
+    btn.addEventListener("click", function(){
+      var open = extra.classList.toggle("is-open");
+      btn.setAttribute("data-i18n", open ? "productsToggle.hide" : "productsToggle.show");
+      btn.textContent = window.ipT(open ? "productsToggle.hide" : "productsToggle.show");
+      if(!open){
+        document.getElementById("products").scrollIntoView({behavior:"smooth", block:"start"});
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function(){
     initHeader();
     initAnchorNav();
     initScrollspy();
     initReveal();
+    initProductsToggle();
     var lang = getLang();
     document.documentElement.setAttribute("lang", lang === "uz" ? "uz" : lang);
     applyTranslations(lang);

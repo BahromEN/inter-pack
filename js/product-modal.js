@@ -14,10 +14,12 @@
     document.querySelectorAll("[data-pd='desc']").forEach(function(el){ el.textContent = item.desc; });
 
     var tint = "ph-" + ((id % 6) + 1);
+    var hasPhoto = id < 6;
     var heroNum = String((id % 6) + 1).padStart(2, "0");
     document.querySelectorAll("[data-pd='photo']").forEach(function(el){
       el.className = "ph " + tint;
-      el.innerHTML = '<img class="ph-photo" src="assets/images/hero/hero-' + heroNum + '.webp" alt="' + item.name + '" onerror="this.remove()"><div class="ph-icon">' + PH_ICON + '</div>';
+      el.innerHTML = (hasPhoto ? '<img class="ph-photo" src="assets/images/hero/hero-' + heroNum + '.webp" alt="' + item.name + '" onerror="this.remove()">' : "") +
+        '<div class="ph-icon">' + PH_ICON + '</div>';
     });
 
     var specsWrap = document.querySelector("[data-pd='specs']");
@@ -39,16 +41,20 @@
     var galleryWrap = document.querySelector("[data-pd='gallery']");
     if(galleryWrap){
       galleryWrap.innerHTML = "";
-      for(var i = 1; i <= 5; i++){
-        var gId = (id + i) % 6;
+      var total = items.length;
+      var count = Math.min(5, total - 1);
+      for(var i = 1; i <= count; i++){
+        var gId = (id + i) % total;
         var gItem = items[gId];
+        var gHasPhoto = gId < 6;
         var gHeroNum = String(gId + 1).padStart(2, "0");
         var g = document.createElement("button");
         g.type = "button";
-        g.className = "ph ph-" + (gId + 1) + " pd-gallery-item";
+        g.className = "ph ph-" + ((gId % 6) + 1) + " pd-gallery-item";
         g.setAttribute("data-gallery-id", gId);
         g.setAttribute("aria-label", gItem ? gItem.name : "");
-        g.innerHTML = '<img class="ph-photo" src="assets/images/hero/hero-' + gHeroNum + '.webp" alt="" onerror="this.remove()"><div class="ph-icon">' + PH_ICON + '</div>' +
+        g.innerHTML = (gHasPhoto ? '<img class="ph-photo" src="assets/images/hero/hero-' + gHeroNum + '.webp" alt="" onerror="this.remove()">' : "") +
+          '<div class="ph-icon">' + PH_ICON + '</div>' +
           (gItem ? '<span class="pd-gallery-label">' + gItem.name + '</span>' : '');
         galleryWrap.appendChild(g);
       }
