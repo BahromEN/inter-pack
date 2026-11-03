@@ -14,6 +14,7 @@
     6: "assets/images/products/overlap-flap-box.webp",
     7: "assets/images/products/telescope-box.webp",
     8: "assets/images/products/fruit-veg-crate.webp",
+    9: "assets/images/products/beverage-dividers.webp",
     10: "assets/images/products/electronics-box.webp",
     11: "assets/images/products/corner-profiles.webp"
   };
