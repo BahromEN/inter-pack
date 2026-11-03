@@ -4,6 +4,16 @@
   var PH_ICON = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20 32 10 56 20 32 30Z"/><path d="M8 20V46L32 56V30"/><path d="M56 20V46L32 56"/></svg>';
   var currentId = null;
 
+  var PRODUCT_PHOTOS = {
+    0: "assets/images/hero/hero-01.webp",
+    1: "assets/images/hero/hero-02.webp",
+    2: "assets/images/hero/hero-03.webp",
+    3: "assets/images/hero/hero-04.webp",
+    4: "assets/images/hero/hero-05.webp",
+    5: "assets/images/hero/hero-06.webp",
+    8: "assets/images/products/fruit-veg-crate.webp"
+  };
+
   function render(id){
     var items = window.ipT("products.items");
     var item = items[id];
@@ -14,11 +24,10 @@
     document.querySelectorAll("[data-pd='desc']").forEach(function(el){ el.textContent = item.desc; });
 
     var tint = "ph-" + ((id % 6) + 1);
-    var hasPhoto = id < 6;
-    var heroNum = String((id % 6) + 1).padStart(2, "0");
+    var photoSrc = PRODUCT_PHOTOS[id];
     document.querySelectorAll("[data-pd='photo']").forEach(function(el){
       el.className = "ph " + tint;
-      el.innerHTML = (hasPhoto ? '<img class="ph-photo" src="assets/images/hero/hero-' + heroNum + '.webp" alt="' + item.name + '" onerror="this.remove()">' : "") +
+      el.innerHTML = (photoSrc ? '<img class="ph-photo" src="' + photoSrc + '" alt="' + item.name + '" onerror="this.remove()">' : "") +
         '<div class="ph-icon">' + PH_ICON + '</div>';
     });
 
@@ -46,14 +55,13 @@
       for(var i = 1; i <= count; i++){
         var gId = (id + i) % total;
         var gItem = items[gId];
-        var gHasPhoto = gId < 6;
-        var gHeroNum = String(gId + 1).padStart(2, "0");
+        var gPhotoSrc = PRODUCT_PHOTOS[gId];
         var g = document.createElement("button");
         g.type = "button";
         g.className = "ph ph-" + ((gId % 6) + 1) + " pd-gallery-item";
         g.setAttribute("data-gallery-id", gId);
         g.setAttribute("aria-label", gItem ? gItem.name : "");
-        g.innerHTML = (gHasPhoto ? '<img class="ph-photo" src="assets/images/hero/hero-' + gHeroNum + '.webp" alt="" onerror="this.remove()">' : "") +
+        g.innerHTML = (gPhotoSrc ? '<img class="ph-photo" src="' + gPhotoSrc + '" alt="" onerror="this.remove()">' : "") +
           '<div class="ph-icon">' + PH_ICON + '</div>' +
           (gItem ? '<span class="pd-gallery-label">' + gItem.name + '</span>' : '');
         galleryWrap.appendChild(g);
