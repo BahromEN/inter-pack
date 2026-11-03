@@ -4,6 +4,86 @@
   var PH_ICON = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20 32 10 56 20 32 30Z"/><path d="M8 20V46L32 56V30"/><path d="M56 20V46L32 56"/></svg>';
   var currentId = null;
 
+  var PRODUCT_PHOTOS = {
+    0: "assets/images/hero/hero-01.webp",
+    1: "assets/images/hero/hero-02.webp",
+    2: "assets/images/hero/hero-03.webp",
+    3: "assets/images/hero/hero-04.webp",
+    4: "assets/images/hero/hero-05.webp",
+    5: "assets/images/hero/hero-06.webp",
+    6: "assets/images/products/overlap-flap-box.webp",
+    7: "assets/images/products/telescope-box.webp",
+    8: "assets/images/products/fruit-veg-crate.webp",
+    9: "assets/images/products/beverage-dividers.webp",
+    10: "assets/images/products/electronics-box.webp",
+    11: "assets/images/products/corner-profiles.webp"
+  };
+
+  var galleryItemEls = {};
+  var galleryBuilt = false;
+
+  function buildGalleryOnce(){
+    if(galleryBuilt) return;
+    var galleryWrap = document.querySelector("[data-pd='gallery']");
+    if(!galleryWrap) return;
+    var items = window.ipT("products.items");
+    galleryWrap.innerHTML = "";
+    items.forEach(function(gItem, gId){
+      var gPhotoSrc = PRODUCT_PHOTOS[gId];
+      var g = document.createElement("button");
+      g.type = "button";
+      g.className = "ph ph-" + ((gId % 6) + 1) + " pd-gallery-item";
+      g.setAttribute("data-gallery-id", gId);
+      g.innerHTML = (gPhotoSrc ? '<img class="ph-photo" src="' + gPhotoSrc + '" alt="" onerror="this.remove()">' : "") +
+        '<div class="ph-icon">' + PH_ICON + '</div>' +
+        '<span class="pd-gallery-label"></span>';
+      galleryWrap.appendChild(g);
+      galleryItemEls[gId] = g;
+    });
+    initGalleryDrag(galleryWrap);
+    galleryBuilt = true;
+  }
+
+  function updateGalleryLabels(){
+    var items = window.ipT("products.items");
+    items.forEach(function(gItem, gId){
+      var el = galleryItemEls[gId];
+      if(!el) return;
+      el.setAttribute("aria-label", gItem.name);
+      var label = el.querySelector(".pd-gallery-label");
+      if(label) label.textContent = gItem.name;
+    });
+  }
+
+  function updateGalleryActive(id){
+    Object.keys(galleryItemEls).forEach(function(key){
+      galleryItemEls[key].classList.toggle("is-current", Number(key) === id);
+    });
+  }
+
+  function initGalleryDrag(track){
+    var isDown = false, startX = 0, startScroll = 0, moved = false;
+    track.addEventListener("mousedown", function(e){
+      isDown = true;
+      moved = false;
+      startX = e.pageX;
+      startScroll = track.scrollLeft;
+      e.preventDefault();
+    });
+    window.addEventListener("mouseup", function(){ isDown = false; });
+    track.addEventListener("mouseleave", function(){ isDown = false; });
+    track.addEventListener("mousemove", function(e){
+      if(!isDown) return;
+      e.preventDefault();
+      var delta = e.pageX - startX;
+      if(Math.abs(delta) > 5) moved = true;
+      track.scrollLeft = startScroll - delta;
+    });
+    track.addEventListener("click", function(e){
+      if(moved){ e.stopPropagation(); moved = false; }
+    }, true);
+  }
+
   function render(id){
     var items = window.ipT("products.items");
     var item = items[id];
@@ -14,10 +94,11 @@
     document.querySelectorAll("[data-pd='desc']").forEach(function(el){ el.textContent = item.desc; });
 
     var tint = "ph-" + ((id % 6) + 1);
-    var heroNum = String((id % 6) + 1).padStart(2, "0");
+    var photoSrc = PRODUCT_PHOTOS[id];
     document.querySelectorAll("[data-pd='photo']").forEach(function(el){
       el.className = "ph " + tint;
-      el.innerHTML = '<img class="ph-photo" src="assets/images/hero/hero-' + heroNum + '.webp" alt="' + item.name + '" onerror="this.remove()"><div class="ph-icon">' + PH_ICON + '</div>';
+      el.innerHTML = (photoSrc ? '<img class="ph-photo" src="' + photoSrc + '" alt="' + item.name + '" onerror="this.remove()">' : "") +
+        '<div class="ph-icon">' + PH_ICON + '</div>';
     });
 
     var specsWrap = document.querySelector("[data-pd='specs']");
@@ -36,26 +117,9 @@
       });
     }
 
-    var galleryWrap = document.querySelector("[data-pd='gallery']");
-    if(galleryWrap){
-      galleryWrap.innerHTML = "";
-      for(var i = 1; i <= 5; i++){
-        var gId = (id + i) % 6;
-        var gItem = items[gId];
-        var gHeroNum = String(gId + 1).padStart(2, "0");
-        var g = document.createElement("button");
-        g.type = "button";
-        g.className = "ph ph-" + (gId + 1) + " pd-gallery-item";
-        g.setAttribute("data-gallery-id", gId);
-        g.setAttribute("aria-label", gItem ? gItem.name : "");
-        g.innerHTML = '<img class="ph-photo" src="assets/images/hero/hero-' + gHeroNum + '.webp" alt="" onerror="this.remove()"><div class="ph-icon">' + PH_ICON + '</div>' +
-          (gItem ? '<span class="pd-gallery-label">' + gItem.name + '</span>' : '');
-        galleryWrap.appendChild(g);
-      }
-    }
-
-    var overlayScroll = document.getElementById("productModal");
-    if(overlayScroll) overlayScroll.scrollTop = 0;
+    buildGalleryOnce();
+    updateGalleryLabels();
+    updateGalleryActive(id);
   }
 
   function openModal(id){
@@ -64,6 +128,9 @@
     var overlay = document.getElementById("productModal");
     if(!overlay) return;
     overlay.style.display = "flex";
+    overlay.scrollTop = 0;
+    var galleryWrap = document.querySelector("[data-pd='gallery']");
+    if(galleryWrap) galleryWrap.scrollLeft = 0;
     requestAnimationFrame(function(){
       overlay.classList.add("is-open");
       document.body.classList.add("modal-open");
@@ -92,7 +159,7 @@
         var galleryBtn = e.target.closest("[data-gallery-id]");
         if(galleryBtn){
           var newId = parseInt(galleryBtn.getAttribute("data-gallery-id"), 10);
-          if(!isNaN(newId)){
+          if(!isNaN(newId) && newId !== currentId){
             currentId = newId;
             render(newId);
           }
@@ -100,6 +167,15 @@
       });
       overlay.querySelectorAll("[data-modal-close]").forEach(function(btn){
         btn.addEventListener("click", closeModal);
+      });
+      overlay.querySelectorAll("[data-pd-gallery-nav]").forEach(function(btn){
+        btn.addEventListener("click", function(){
+          var track = overlay.querySelector("[data-pd='gallery']");
+          if(!track) return;
+          var step = track.clientWidth * 0.9;
+          var dir = btn.getAttribute("data-pd-gallery-nav") === "prev" ? -1 : 1;
+          track.scrollBy({left: dir * step, behavior: "smooth"});
+        });
       });
       overlay.querySelectorAll("[data-modal-cta]").forEach(function(btn){
         btn.addEventListener("click", function(){
