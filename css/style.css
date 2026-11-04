@@ -59,6 +59,12 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 }
 .section{padding:clamp(72px,11vw,150px) 0;}
 .section-alt{background:var(--c-bg-alt);}
+#contacts{
+  background-image:url("../assets/images/backgrounds/contacts-bg.webp");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
 .eyebrow{
   display:flex;align-items:center;gap:10px;
   font-size:12px;
