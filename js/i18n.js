@@ -117,18 +117,6 @@ window.TRANSLATIONS = {
           short:"Короба с картонными перегородками для бутылок и банок при транспортировке.",
           desc:"Транспортная упаковка для напитков с внутренними картонными перегородками, фиксирующими каждую бутылку или банку по отдельности. Предотвращает бой стекла и повреждение тары при перевозке и хранении.",
           specs:[["profile","B / C гофра"],["layers","3-слойный"],["material","Бурый картон"],["print","1-2 цвета флексопечать"],["load","под тип тары (бутылка/банка)"],["size","под сетку 2x6, 3x4 и др."]]
-        },
-        {
-          name:"Короба для электроники",
-          short:"Жёсткая тара с перегородками и амортизацией для хрупких приборов.",
-          desc:"Усиленная упаковка для бытовой и промышленной электроники с внутренними перегородками и амортизирующими вкладышами. Защищает хрупкие компоненты от ударов и вибрации при транспортировке.",
-          specs:[["profile","C / BC гофра"],["layers","5-слойный"],["material","Бурый картон"],["print","1-2 цвета"],["load","до 20 кг"],["size","по габаритам изделия"]]
-        },
-        {
-          name:"Защитные угловые профили",
-          short:"Уголки из гофрокартона, защищающие кромки груза при обвязке и стяжке.",
-          desc:"Картонные угловые профили устанавливаются на рёбра груза перед обвязкой стрейч-плёнкой или лентой, защищая упаковку от деформации и повреждения при затяжке и транспортировке.",
-          specs:[["profile","C гофра"],["layers","2-3 слоя (ламинация)"],["material","Бурый картон"],["print","без печати"],["load","усиление кромки"],["size","стандартная длина 2 м / под заказ"]]
         }
       ]
     },
@@ -173,7 +161,7 @@ window.TRANSLATIONS = {
       bank:"Таш. обл. отд. ХОАТБ «INFIN BANK»",
       mfo:"МФО банка: 01056. ОКЭД: 17210",
       inn:"ИНН: 304 981 794",
-      phone:"Тел: (+99890) 961-20-33",
+      phone:"Тел: +998 (90) 961-20-33, +998 (90) 998-33-33",
       copyright:"© 2024 ООО «INTER PACK». Все права защищены."
     }
   },
@@ -292,18 +280,6 @@ window.TRANSLATIONS = {
           short:"Boxes with cardboard dividers for bottles and cans in transit.",
           desc:"Transport packaging for beverages with internal cardboard dividers that secure each bottle or can individually. Prevents glass breakage and container damage during transport and storage.",
           specs:[["profile","B / C flute"],["layers","3-ply"],["material","Kraft board"],["print","1-2 color flexo"],["load","depends on container type"],["size","2x6, 3x4 grid and others"]]
-        },
-        {
-          name:"Electronics packaging",
-          short:"Rigid packaging with dividers and cushioning for fragile devices.",
-          desc:"Reinforced packaging for household and industrial electronics with internal dividers and cushioning inserts. Protects fragile components from impact and vibration during transport.",
-          specs:[["profile","C / BC flute"],["layers","5-ply"],["material","Kraft board"],["print","1-2 colors"],["load","up to 20 kg"],["size","fitted to product"]]
-        },
-        {
-          name:"Protective corner profiles",
-          short:"Corrugated corner guards that protect load edges during strapping.",
-          desc:"Cardboard corner profiles are placed on load edges before strapping with stretch film or tape, protecting the packaging from deformation and damage during tensioning and transport.",
-          specs:[["profile","C flute"],["layers","2-3 ply (laminated)"],["material","Kraft board"],["print","unprinted"],["load","edge reinforcement"],["size","standard 2 m length / made to order"]]
         }
       ]
     },
@@ -348,7 +324,7 @@ window.TRANSLATIONS = {
       bank:"Tashkent regional branch of JSCB “INFIN BANK”",
       mfo:"Bank code (MFO): 01056. OKED: 17210",
       inn:"Tax ID (INN): 304 981 794",
-      phone:"Phone: (+99890) 961-20-33",
+      phone:"Phone: +998 (90) 961-20-33, +998 (90) 998-33-33",
       copyright:"© 2024 INTER PACK LLC. All rights reserved."
     }
   },
@@ -467,18 +443,6 @@ window.TRANSLATIONS = {
           short:"Tashishda shisha va bankalar uchun karton bo'linmali qutilar.",
           desc:"Har bir shisha yoki bankani alohida mahkamlaydigan ichki karton bo'linmalariga ega ichimliklar uchun tashish qadog'i. Tashish va saqlashda shisha sinishi va idish shikastlanishining oldini oladi.",
           specs:[["profile","B / C gofra"],["layers","3 qatlamli"],["material","Jigarrang karton"],["print","1-2 rangli fleksobosma"],["load","idish turiga qarab"],["size","2x6, 3x4 va boshqa to'rlar"]]
-        },
-        {
-          name:"Elektronika uchun qadoq",
-          short:"Nozik qurilmalar uchun bo'linmalar va amortizatsiyaga ega qattiq qadoq.",
-          desc:"Maishiy va sanoat elektronikasi uchun ichki bo'linmalar va amortizatsion qo'shimchalarga ega mustahkamlangan qadoq. Nozik komponentlarni tashish paytida zarba va tebranishdan himoya qiladi.",
-          specs:[["profile","C / BC gofra"],["layers","5 qatlamli"],["material","Jigarrang karton"],["print","1-2 rangli"],["load","20 kg gacha"],["size","mahsulot o'lchamiga mos"]]
-        },
-        {
-          name:"Himoya burchak profillari",
-          short:"Bog'lashda yuk qirralarini himoya qiluvchi gofrokartondan burchaklar.",
-          desc:"Karton burchak profillari strech-plyonka yoki lenta bilan bog'lashdan oldin yuk qirralariga o'rnatiladi, qadoqni tortishda va tashishda deformatsiya va shikastlanishdan himoya qiladi.",
-          specs:[["profile","C gofra"],["layers","2-3 qatlam (laminatsiya)"],["material","Jigarrang karton"],["print","bosmasiz"],["load","qirra mustahkamlash"],["size","standart uzunlik 2 m / buyurtma bo'yicha"]]
         }
       ]
     },
@@ -523,7 +487,7 @@ window.TRANSLATIONS = {
       bank:"Toshkent viloyat filiali XATB «INFIN BANK»",
       mfo:"Bank MFO: 01056. OKED: 17210",
       inn:"STIR: 304 981 794",
-      phone:"Tel: (+99890) 961-20-33",
+      phone:"Tel: +998 (90) 961-20-33, +998 (90) 998-33-33",
       copyright:"© 2024 «INTER PACK» MChJ. Barcha huquqlar himoyalangan."
     }
   }
