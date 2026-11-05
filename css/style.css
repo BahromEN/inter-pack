@@ -127,8 +127,8 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 
 /* Desktop: large header by default, shrinks by half once the page is scrolled */
 @media (min-width:1181px){
-  .site-header{height:224px;}
-  .header-inner{height:224px;}
+  .site-header{height:160px;}
+  .header-inner{height:160px;}
   .logo-mark{height:92px;}
   .logo-word{font-size:42px;}
   .site-header.is-scrolled{height:112px;}
