@@ -161,7 +161,7 @@ window.TRANSLATIONS = {
       bank:"Таш. обл. отд. ХОАТБ «INFIN BANK»",
       mfo:"МФО банка: 01056. ОКЭД: 17210",
       inn:"ИНН: 304 981 794",
-      phone:"Тел: (+99890) 961-20-33",
+      phone:"Тел: (+99890) 961-20-33, (+99890) 998-33-33",
       copyright:"© 2024 ООО «INTER PACK». Все права защищены."
     }
   },
@@ -324,7 +324,7 @@ window.TRANSLATIONS = {
       bank:"Tashkent regional branch of JSCB “INFIN BANK”",
       mfo:"Bank code (MFO): 01056. OKED: 17210",
       inn:"Tax ID (INN): 304 981 794",
-      phone:"Phone: (+99890) 961-20-33",
+      phone:"Phone: (+99890) 961-20-33, (+99890) 998-33-33",
       copyright:"© 2024 INTER PACK LLC. All rights reserved."
     }
   },
@@ -487,7 +487,7 @@ window.TRANSLATIONS = {
       bank:"Toshkent viloyat filiali XATB «INFIN BANK»",
       mfo:"Bank MFO: 01056. OKED: 17210",
       inn:"STIR: 304 981 794",
-      phone:"Tel: (+99890) 961-20-33",
+      phone:"Tel: (+99890) 961-20-33, (+99890) 998-33-33",
       copyright:"© 2024 «INTER PACK» MChJ. Barcha huquqlar himoyalangan."
     }
   }
