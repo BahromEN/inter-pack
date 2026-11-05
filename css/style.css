@@ -242,7 +242,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   align-items:center;
   background-image:url("../assets/images/backgrounds/home-hero.webp");
   background-size:cover;
-  background-position:center right;
+  background-position:right bottom;
   background-repeat:no-repeat;
 }
 .home-hero-content{max-width:600px;}
