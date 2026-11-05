@@ -232,69 +232,31 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .ph-4{--tint:#3E5A6B;} .ph-5{--tint:#6B6F5E;} .ph-6{--tint:#4E7A72;}
 .ph-1,.ph-2,.ph-3,.ph-4,.ph-5,.ph-6{background:linear-gradient(150deg,var(--c-dark) 0%,var(--c-dark-alt) 55%,var(--tint) 160%);}
 
-/* ---------- Hero slider (home) ---------- */
-.hero-slider{
+/* ---------- Home hero (static image + copy) ---------- */
+.home-hero{
   position:relative;
   width:100%;
   height:calc(100vh - var(--header-h));
   min-height:460px;
-  overflow:hidden;
-  background:var(--c-dark);
+  display:flex;
+  align-items:center;
+  background-image:url("../assets/images/backgrounds/home-hero.webp");
+  background-size:cover;
+  background-position:center right;
+  background-repeat:no-repeat;
 }
-.hero-slide{
-  position:absolute;inset:0;
-  opacity:0;visibility:hidden;
-  transition:opacity 1.1s var(--ease);
+.home-hero-content{max-width:600px;}
+.home-hero-content h1{
+  font-size:clamp(32px,4.4vw,52px);font-weight:300;letter-spacing:-.03em;
+  color:var(--c-text);line-height:1.12;margin-bottom:22px;
 }
-.hero-slide.is-active{opacity:1;visibility:visible;z-index:1;}
-.hero-slide .ph{width:100%;height:100%;}
-.hero-slide .ph-icon{max-width:130px;}
+.home-hero-content p{font-size:16.5px;color:var(--c-text-soft);max-width:480px;margin-bottom:34px;}
+@media (max-width:860px){
+  .home-hero{background-position:center 70%;}
+  .home-hero-content{background:rgba(251,251,247,.86);padding:28px;margin:-28px;}
+}
 @media (max-width:640px){
-  .hero-slider{height:auto;aspect-ratio:16/11;min-height:260px;max-height:70vh;}
-  .hero-slide .ph-photo{object-fit:contain;}
-}
-.hero-slide::after{
-  content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(to top,rgba(13,42,31,.80) 0%,rgba(13,42,31,.08) 42%,rgba(13,42,31,.3) 100%);
-}
-.hero-caption{
-  position:absolute;left:var(--gutter);right:var(--gutter);bottom:56px;z-index:2;
-  display:flex;align-items:baseline;gap:18px;
-  color:#fff;
-}
-.hero-caption .idx{font-size:13px;letter-spacing:.08em;color:rgba(255,255,255,.6);font-variant-numeric:tabular-nums;}
-.hero-caption .txt{font-size:clamp(18px,2.4vw,28px);font-weight:300;letter-spacing:-.02em;}
-.hero-scroll-hint{
-  position:absolute;right:var(--gutter);bottom:56px;z-index:2;
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap;
-}
-.hero-arrow{
-  position:absolute;top:50%;transform:translateY(-50%);
-  z-index:3;
-  width:48px;height:48px;border-radius:50%;
-  background:transparent;
-  border:1px solid rgba(255,255,255,.4);
-  color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  transition:border-color .3s var(--ease),background .3s var(--ease);
-}
-.hero-arrow:hover{background:rgba(255,255,255,.1);border-color:#fff;}
-.hero-arrow svg{width:17px;height:17px;stroke-width:1.5;}
-.hero-arrow.prev{left:var(--gutter);}
-.hero-arrow.next{right:var(--gutter);}
-.hero-dots{
-  position:absolute;left:var(--gutter);top:36px;
-  z-index:3;display:flex;gap:8px;
-}
-.hero-dots button{width:18px;height:1px;background:rgba(255,255,255,.4);border:none;transition:background .3s var(--ease),width .3s var(--ease);}
-.hero-dots button.is-active{background:var(--c-accent);width:30px;}
-@media (max-width:640px){
-  .hero-caption{bottom:76px;right:var(--gutter);}
-  .hero-scroll-hint{bottom:40px;}
-  .hero-caption .txt{font-size:19px;}
-  .hero-arrow{width:40px;height:40px;}
-  .hero-arrow.prev{left:14px;}
-  .hero-arrow.next{right:14px;}
+  .home-hero{height:auto;min-height:560px;padding:150px 0 64px;background-position:center 75%;}
 }
 
 /* ---------- Open composition (shared: achievements / products) ---------- */

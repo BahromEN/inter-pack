@@ -6,20 +6,11 @@ window.TRANSLATIONS = {
   ru: {
     nav:{home:"Главная",about:"О компании",achievements:"Достижения",products:"Продукция",video:"Видео",contact:"Связаться",contacts:"Контакты"},
     common:{readMore:"Подробнее",backToProducts:"Ко всей продукции",send:"Отправить заявку",all:"Вся продукция"},
-    hero:{
-      scroll:"Листайте продукцию",
-      slides:[
-        "Четырёхклапанный гофроящик",
-        "Коробка для пиццы с печатью",
-        "Архивный короб для хранения документов",
-        "Упаковка с флексопечатью в 4 цвета",
-        "Короб для бытовой техники",
-        "Гофролист форматной резки",
-        "Ящик для фруктов и овощей",
-        "Упаковка для мебели усиленная",
-        "Пятислойная гофротара",
-        "Транспортная упаковка на паллете"
-      ]
+    home:{
+      eyebrow:"INTER PACK",
+      title:"Современные решения в упаковке из гофрокартона",
+      subtitle:"Разрабатываем и производим надёжную, функциональную и эстетичную упаковку для бизнеса любого масштаба.",
+      cta:"О компании"
     },
     about:{
       eyebrow:"О компании",
@@ -169,20 +160,11 @@ window.TRANSLATIONS = {
   en: {
     nav:{home:"Home",about:"About Us",achievements:"Achievements",products:"Products",video:"Video",contact:"Contact",contacts:"Location"},
     common:{readMore:"Read more",backToProducts:"Back to products",send:"Send request",all:"All products"},
-    hero:{
-      scroll:"Browse our products",
-      slides:[
-        "Four-flap corrugated box",
-        "Printed pizza box",
-        "Archive storage box",
-        "4-color flexo-printed packaging",
-        "Home appliance box",
-        "Corrugated sheet, cut to size",
-        "Fruit and vegetable crate",
-        "Reinforced furniture packaging",
-        "Five-layer corrugated case",
-        "Pallet transport packaging"
-      ]
+    home:{
+      eyebrow:"INTER PACK",
+      title:"Modern solutions in corrugated packaging",
+      subtitle:"We design and manufacture reliable, functional and attractive packaging for businesses of any scale.",
+      cta:"About us"
     },
     about:{
       eyebrow:"About the company",
@@ -332,20 +314,11 @@ window.TRANSLATIONS = {
   uz: {
     nav:{home:"Bosh sahifa",about:"Kompaniya haqida",achievements:"Yutuqlar",products:"Mahsulotlar",video:"Video",contact:"Bog'lanish",contacts:"Kontaktlar"},
     common:{readMore:"Batafsil",backToProducts:"Barcha mahsulotlarga",send:"So'rov yuborish",all:"Barcha mahsulotlar"},
-    hero:{
-      scroll:"Mahsulotlarni ko'ring",
-      slides:[
-        "To'rt qopqoqli gofra quti",
-        "Bosma pitsa qutisi",
-        "Arxiv uchun quti",
-        "4 rangli fleksobosma qadoq",
-        "Maishiy texnika uchun quti",
-        "O'lchamga kesilgan gofrokarton varaq",
-        "Meva-sabzavot uchun yashik",
-        "Mustahkamlangan mebel qadog'i",
-        "Besh qatlamli gofra tara",
-        "Poddonga mo'ljallangan tashish qadog'i"
-      ]
+    home:{
+      eyebrow:"INTER PACK",
+      title:"Gofrokartondan qadoqlash bo'yicha zamonaviy yechimlar",
+      subtitle:"Har qanday ko'lamdagi biznes uchun ishonchli, funktsional va chiroyli qadoqni ishlab chiqamiz.",
+      cta:"Kompaniya haqida"
     },
     about:{
       eyebrow:"Kompaniya haqida",
