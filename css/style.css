@@ -18,7 +18,7 @@
   --radius:2px;
   --shadow-sm:none;
   --shadow-md:none;
-  --header-h:96px;
+  --header-h:112px;
   --ease:cubic-bezier(.22,.61,.36,1);
   --gutter:28px;
 }
@@ -119,8 +119,8 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   gap:24px;
 }
 .logo{display:flex;align-items:center;gap:12px;flex-shrink:0;}
-.logo-mark{height:34px;width:auto;display:block;}
-.logo-word{font-weight:400;font-size:17px;color:var(--c-text);letter-spacing:-.02em;}
+.logo-mark{height:46px;width:auto;display:block;}
+.logo-word{font-weight:400;font-size:21px;color:var(--c-text);letter-spacing:-.02em;}
 .logo-word span{color:var(--c-accent-deep);}
 
 .main-nav ul{display:flex;align-items:center;gap:2px;}
