@@ -112,7 +112,11 @@
         var target = id ? document.getElementById(id) : null;
         if(!target) return;
         e.preventDefault();
-        target.scrollIntoView({behavior:"smooth", block:"start"});
+        if(id === "home"){
+          window.scrollTo({top:0, behavior:"smooth"});
+        } else {
+          target.scrollIntoView({behavior:"smooth", block:"start"});
+        }
         history.replaceState(null, "", "#" + id);
       });
     });
