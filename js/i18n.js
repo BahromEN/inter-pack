@@ -7,7 +7,6 @@ window.TRANSLATIONS = {
     nav:{home:"Главная",about:"О компании",achievements:"Достижения",products:"Продукция",video:"Видео",contact:"Связаться",contacts:"Контакты"},
     common:{readMore:"Подробнее",backToProducts:"Ко всей продукции",send:"Отправить заявку",all:"Вся продукция"},
     home:{
-      eyebrow:"INTER PACK",
       title:"Современные решения в упаковке из гофрокартона",
       subtitle:"Разрабатываем и производим надёжную, функциональную и эстетичную упаковку для бизнеса любого масштаба.",
       cta:"О компании"
@@ -161,7 +160,6 @@ window.TRANSLATIONS = {
     nav:{home:"Home",about:"About Us",achievements:"Achievements",products:"Products",video:"Video",contact:"Contact",contacts:"Location"},
     common:{readMore:"Read more",backToProducts:"Back to products",send:"Send request",all:"All products"},
     home:{
-      eyebrow:"INTER PACK",
       title:"Modern solutions in corrugated packaging",
       subtitle:"We design and manufacture reliable, functional and attractive packaging for businesses of any scale.",
       cta:"About us"
@@ -315,7 +313,6 @@ window.TRANSLATIONS = {
     nav:{home:"Bosh sahifa",about:"Kompaniya haqida",achievements:"Yutuqlar",products:"Mahsulotlar",video:"Video",contact:"Bog'lanish",contacts:"Kontaktlar"},
     common:{readMore:"Batafsil",backToProducts:"Barcha mahsulotlarga",send:"So'rov yuborish",all:"Barcha mahsulotlar"},
     home:{
-      eyebrow:"INTER PACK",
       title:"Gofrokartondan qadoqlash bo'yicha zamonaviy yechimlar",
       subtitle:"Har qanday ko'lamdagi biznes uchun ishonchli, funktsional va chiroyli qadoqni ishlab chiqamiz.",
       cta:"Kompaniya haqida"
