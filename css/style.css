@@ -111,17 +111,31 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   height:var(--header-h);
   background:var(--c-bg);
   border-bottom:1px solid var(--c-border);
+  transition:height .45s var(--ease);
 }
 .site-header .container{max-width:1540px;}
 .header-inner{
   height:var(--header-h);
   display:flex;align-items:center;justify-content:space-between;
   gap:24px;
+  transition:height .45s var(--ease);
 }
 .logo{display:flex;align-items:center;gap:12px;flex-shrink:0;}
-.logo-mark{height:46px;width:auto;display:block;}
-.logo-word{font-weight:400;font-size:21px;color:var(--c-text);letter-spacing:-.02em;}
+.logo-mark{height:46px;width:auto;display:block;transition:height .45s var(--ease);}
+.logo-word{font-weight:400;font-size:21px;color:var(--c-text);letter-spacing:-.02em;transition:font-size .45s var(--ease);}
 .logo-word span{color:var(--c-accent-deep);}
+
+/* Desktop: large header by default, shrinks by half once the page is scrolled */
+@media (min-width:1181px){
+  .site-header{height:224px;}
+  .header-inner{height:224px;}
+  .logo-mark{height:92px;}
+  .logo-word{font-size:42px;}
+  .site-header.is-scrolled{height:112px;}
+  .site-header.is-scrolled .header-inner{height:112px;}
+  .site-header.is-scrolled .logo-mark{height:46px;}
+  .site-header.is-scrolled .logo-word{font-size:21px;}
+}
 
 .main-nav ul{display:flex;align-items:center;gap:2px;}
 .main-nav a{
