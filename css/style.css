@@ -503,10 +503,10 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   height:48px;
   border-radius:50%;
   border:1px solid var(--c-border-on-dark);
-  background:rgba(13,42,31,.55);
+  background:var(--c-accent);
   backdrop-filter:blur(6px);
   -webkit-backdrop-filter:blur(6px);
-  color:#fff;
+  color:var(--c-dark);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -514,11 +514,11 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   opacity:0;
   visibility:hidden;
   transform:translateY(12px);
-  transition:opacity .35s var(--ease),transform .35s var(--ease),background .3s var(--ease);
+  transition:opacity .35s var(--ease),transform .35s var(--ease);
 }
 .back-to-top svg{width:20px;height:20px;}
-.back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0);}
-.back-to-top:hover{background:rgba(13,42,31,.8);}
+.back-to-top.is-visible{opacity:.5;visibility:visible;transform:translateY(0);}
+.back-to-top:hover{opacity:1;}
 @media (max-width:640px){
   .back-to-top{right:16px;bottom:16px;width:44px;height:44px;}
 }
