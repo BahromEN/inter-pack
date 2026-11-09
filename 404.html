@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Страница не найдена — INTER PACK</title>
+<meta name="robots" content="noindex, follow">
+
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=23">
+
+<style>
+.error-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 24px;
+  text-align:center;
+}
+.error-page .container{max-width:560px;}
+.error-page .logo-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:48px;
+}
+.error-page .logo-row img{height:34px;}
+.error-page .logo-row span{
+  font-size:19px;letter-spacing:.02em;color:var(--c-text);
+}
+.error-page .logo-row span b{color:var(--c-accent-deep);font-weight:600;}
+.error-code{
+  font-size:clamp(72px,14vw,120px);
+  font-weight:300;
+  letter-spacing:-.03em;
+  color:var(--c-accent-deep);
+  line-height:1;
+  margin-bottom:18px;
+}
+.error-page h1{font-size:clamp(22px,3vw,30px);font-weight:400;margin-bottom:14px;}
+.error-page p{font-size:16px;max-width:420px;margin:0 auto 34px;}
+.error-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+</style>
+</head>
+<body style="padding-top:0;">
+
+<main class="error-page">
+  <div class="container">
+    <a href="/" class="logo-row" aria-label="INTER PACK">
+      <img src="assets/logo-icon.png" alt="INTER PACK">
+      <span>INTER <b>PACK</b></span>
+    </a>
+
+    <div class="error-code">404</div>
+    <h1>Страница не найдена</h1>
+    <p>Возможно, страница была перемещена, удалена, либо в адресе есть опечатка. Проверьте ссылку или вернитесь на главную.</p>
+
+    <div class="error-actions">
+      <a href="/" class="btn btn-accent">На главную</a>
+      <a href="/#contacts" class="btn">Связаться с нами</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

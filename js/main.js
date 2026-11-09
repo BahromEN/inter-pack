@@ -171,6 +171,20 @@
     targets.forEach(function(el){ io.observe(el); });
   }
 
+  /* ---------- Back to top ---------- */
+  function initBackToTop(){
+    var btn = document.getElementById("backToTop");
+    if(!btn) return;
+    var onScroll = function(){
+      btn.classList.toggle("is-visible", window.scrollY > window.innerHeight);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, {passive:true});
+    btn.addEventListener("click", function(){
+      window.scrollTo({top:0, behavior:"smooth"});
+    });
+  }
+
   function initProductsToggle(){
     var btn = document.getElementById("productsToggleBtn");
     var extra = document.getElementById("productsExtra");
@@ -191,13 +205,23 @@
     initScrollspy();
     initReveal();
     initProductsToggle();
-    var lang = getLang();
-    document.documentElement.setAttribute("lang", lang === "uz" ? "uz" : lang);
-    applyTranslations(lang);
-    document.querySelectorAll(".lang-switch button").forEach(function(btn){
-      btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
-    });
-    document.dispatchEvent(new CustomEvent("ip:langchange", {detail:{lang:lang}}));
+    initBackToTop();
+
+    function applyInitialLang(){
+      var lang = getLang();
+      document.documentElement.setAttribute("lang", lang === "uz" ? "uz" : lang);
+      applyTranslations(lang);
+      document.querySelectorAll(".lang-switch button").forEach(function(btn){
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+      });
+      document.dispatchEvent(new CustomEvent("ip:langchange", {detail:{lang:lang}}));
+    }
+
+    if(window.ipContentReady && typeof window.ipContentReady.then === "function"){
+      window.ipContentReady.then(applyInitialLang);
+    } else {
+      applyInitialLang();
+    }
   });
 
 })();

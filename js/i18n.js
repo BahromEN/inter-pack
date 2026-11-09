@@ -4,7 +4,7 @@
 
 window.TRANSLATIONS = {
   ru: {
-    nav:{home:"Главная",about:"О компании",achievements:"Достижения",products:"Продукция",video:"Видео",contact:"Связаться",contacts:"Контакты"},
+    nav:{home:"Главная",about:"О компании",achievements:"Достижения",products:"Продукция",video:"Видео",blog:"Блог",contact:"Связаться",contacts:"Контакты"},
     common:{readMore:"Подробнее",backToProducts:"Ко всей продукции",send:"Отправить заявку",all:"Вся продукция"},
     home:{
       title:"Современные решения в упаковке из гофрокартона",
@@ -49,16 +49,16 @@ window.TRANSLATIONS = {
       specLabels:{profile:"Профиль гофры",layers:"Слойность",material:"Материал",print:"Печать",load:"Нагрузка",size:"Размеры"},
       items:[
         {
+          name:"Пятислойные гофроящики",
+          short:"Усиленная пятислойная тара повышенной прочности для тяжёлых и крупногабаритных грузов.",
+          desc:"Пятислойный гофрокороб из картона профиля BC обеспечивает повышенную прочность стенок и устойчивость к деформации при транспортировке и штабелировании. Применяется для тяжёлых, крупногабаритных и ответственных грузов, где обычной трёхслойной тары недостаточно.",
+          specs:[["profile","B / C гофра (BC)"],["layers","5-слойный"],["material","Бурый картон повышенной плотности"],["print","1-2 цвета флексопечать"],["load","до 50 кг"],["size","по ТЗ заказчика"]]
+        },
+        {
           name:"Четырёхклапанные гофроящики",
           short:"Универсальная тара для транспортировки и хранения широкого спектра товаров.",
           desc:"Классический четырёхклапанный гофроящик — основа складской и транспортной логистики. Подходит для упаковки продуктов питания, бытовых товаров, запчастей и промышленной продукции. Изготавливается по индивидуальным размерам заказчика с учётом требуемой нагрузки.",
           specs:[["profile","B / C гофра"],["layers","3-слойный"],["material","Бурый / белый картон"],["print","1-2 цвета флексопечать"],["load","до 25 кг"],["size","по ТЗ заказчика"]]
-        },
-        {
-          name:"Коробки для пиццы с печатью",
-          short:"Пищевая упаковка с ярким брендированным дизайном и вентиляцией.",
-          desc:"Коробка для пиццы из пищевого гофрокартона с системой вентиляции, сохраняющей текстуру продукта. Возможна флексопечать логотипа и фирменного дизайна заказчика в 1-4 цвета. Используется сертифицированный пищевой картон.",
-          specs:[["profile","E гофра (микрогофра)"],["layers","3-слойный"],["material","Пищевой картон"],["print","до 4 цветов"],["load","пищевая продукция"],["size","26 / 30 / 33 / 40 см"]]
         },
         {
           name:"Архивные короба",
@@ -116,9 +116,15 @@ window.TRANSLATIONS = {
       eyebrow:"Видео о компании",
       title:"Как мы производим упаковку",
       subtitle:"Полный цикл — от приёмки сырья до контроля качества готовой продукции",
-      playLabel:"Смотреть видео",
-      infoTitle:"Современное производство под контролем на каждом этапе",
-      infoText:"В ролике — работа гофроагрегата, линии флексопечати, высечки и участка контроля качества на производственной площадке INTER PACK. Видео демонстрирует полный технологический процесс и оснащение завода."
+      playLabel:"Смотреть видео"
+    },
+    blog:{
+      eyebrow:"Блог",
+      title:"Новости и статьи",
+      subtitle:"Новости компании, материалы о производстве и упаковке",
+      empty:"Пока нет опубликованных статей — загляните позже.",
+      readMore:"Читать статью",
+      back:"Ко всем статьям"
     },
     contact:{
       eyebrow:"Связаться",
@@ -157,7 +163,7 @@ window.TRANSLATIONS = {
   },
 
   en: {
-    nav:{home:"Home",about:"About Us",achievements:"Achievements",products:"Products",video:"Video",contact:"Contact",contacts:"Location"},
+    nav:{home:"Home",about:"About Us",achievements:"Achievements",products:"Products",video:"Video",blog:"Blog",contact:"Contact",contacts:"Location"},
     common:{readMore:"Read more",backToProducts:"Back to products",send:"Send request",all:"All products"},
     home:{
       title:"Modern solutions in corrugated packaging",
@@ -202,16 +208,16 @@ window.TRANSLATIONS = {
       specLabels:{profile:"Flute profile",layers:"Layers",material:"Material",print:"Printing",load:"Load capacity",size:"Dimensions"},
       items:[
         {
+          name:"Five-layer corrugated boxes",
+          short:"Reinforced five-ply packaging with extra strength for heavy, oversized loads.",
+          desc:"The five-layer corrugated box, made from BC-flute board, provides increased wall strength and resistance to deformation during transport and stacking. Used for heavy, oversized and critical loads where standard three-ply packaging isn't enough.",
+          specs:[["profile","B / C flute (BC)"],["layers","5-ply"],["material","High-density kraft board"],["print","1-2 color flexo"],["load","up to 50 kg"],["size","made to order"]]
+        },
+        {
           name:"Four-flap corrugated boxes",
           short:"Universal containers for transporting and storing a wide range of goods.",
           desc:"The classic four-flap corrugated box is the backbone of warehouse and transport logistics. Suitable for packing food, household goods, spare parts and industrial products. Manufactured to custom sizes based on the required load.",
           specs:[["profile","B / C flute"],["layers","3-ply"],["material","Kraft / white board"],["print","1-2 color flexo"],["load","up to 25 kg"],["size","made to order"]]
-        },
-        {
-          name:"Printed pizza boxes",
-          short:"Food-grade packaging with vivid branded design and ventilation.",
-          desc:"Pizza box made from food-grade corrugated board with a ventilation system that preserves the product's texture. Flexo printing of the customer's logo and branded design in 1-4 colors is available, using certified food-grade board.",
-          specs:[["profile","E flute (micro)"],["layers","3-ply"],["material","Food-grade board"],["print","up to 4 colors"],["load","food products"],["size","26 / 30 / 33 / 40 cm"]]
         },
         {
           name:"Archive storage boxes",
@@ -269,9 +275,15 @@ window.TRANSLATIONS = {
       eyebrow:"Company video",
       title:"How we manufacture packaging",
       subtitle:"The full cycle — from raw material intake to finished product quality control",
-      playLabel:"Watch video",
-      infoTitle:"Modern production under control at every stage",
-      infoText:"The video shows the corrugator line, flexo printing, die-cutting and the quality control area at the INTER PACK production site, demonstrating the full technological process and factory equipment."
+      playLabel:"Watch video"
+    },
+    blog:{
+      eyebrow:"Blog",
+      title:"News and articles",
+      subtitle:"Company news and articles about production and packaging",
+      empty:"No published articles yet — check back later.",
+      readMore:"Read article",
+      back:"Back to all articles"
     },
     contact:{
       eyebrow:"Contact",
@@ -310,7 +322,7 @@ window.TRANSLATIONS = {
   },
 
   uz: {
-    nav:{home:"Bosh sahifa",about:"Kompaniya haqida",achievements:"Yutuqlar",products:"Mahsulotlar",video:"Video",contact:"Bog'lanish",contacts:"Kontaktlar"},
+    nav:{home:"Bosh sahifa",about:"Kompaniya haqida",achievements:"Yutuqlar",products:"Mahsulotlar",video:"Video",blog:"Blog",contact:"Bog'lanish",contacts:"Kontaktlar"},
     common:{readMore:"Batafsil",backToProducts:"Barcha mahsulotlarga",send:"So'rov yuborish",all:"Barcha mahsulotlar"},
     home:{
       title:"Gofrokartondan qadoqlash bo'yicha zamonaviy yechimlar",
@@ -355,16 +367,16 @@ window.TRANSLATIONS = {
       specLabels:{profile:"Gofra profili",layers:"Qatlamlar soni",material:"Material",print:"Bosma",load:"Yuklama",size:"O'lchamlar"},
       items:[
         {
+          name:"Besh qatlamli gofra qutilar",
+          short:"Og'ir va yirik o'lchamdagi yuklar uchun mustahkamlangan besh qatlamli tara.",
+          desc:"BC gofra kartonidan tayyorlangan besh qatlamli gofra quti devorlar mustahkamligini oshiradi va tashish hamda shtabellashda deformatsiyadan himoya qiladi. Oddiy uch qatlamli tara yetarli bo'lmagan og'ir, yirik o'lchamdagi va mas'uliyatli yuklar uchun qo'llaniladi.",
+          specs:[["profile","B / C gofra (BC)"],["layers","5 qatlamli"],["material","Yuqori zichlikdagi jigarrang karton"],["print","1-2 rangli fleksobosma"],["load","50 kg gacha"],["size","buyurtma bo'yicha"]]
+        },
+        {
           name:"To'rt qopqoqli gofra qutilar",
           short:"Turli xil tovarlarni tashish va saqlash uchun universal tara.",
           desc:"Klassik to'rt qopqoqli gofra quti — ombor va transport logistikasining asosi. Oziq-ovqat, maishiy tovarlar, ehtiyot qismlar va sanoat mahsulotlarini qadoqlash uchun mos. Kerakli yuklamaga mos individual o'lchamlarda ishlab chiqariladi.",
           specs:[["profile","B / C gofra"],["layers","3 qatlamli"],["material","Jigarrang / oq karton"],["print","1-2 rangli fleksobosma"],["load","25 kg gacha"],["size","buyurtma bo'yicha"]]
-        },
-        {
-          name:"Bosma pitsa qutilari",
-          short:"Yorqin brendlangan dizayn va ventilyatsiyaga ega oziq-ovqat qadog'i.",
-          desc:"Mahsulot teksturasini saqlab qoluvchi ventilyatsiya tizimiga ega oziq-ovqat gofrokartonidan tayyorlangan pitsa qutisi. Mijozning logotipi va firma dizaynini 1-4 rangda fleksobosma qilish mumkin. Sertifikatlangan oziq-ovqat kartoni ishlatiladi.",
-          specs:[["profile","E gofra (mikro)"],["layers","3 qatlamli"],["material","Oziq-ovqat kartoni"],["print","4 ranggacha"],["load","oziq-ovqat mahsuloti"],["size","26 / 30 / 33 / 40 sm"]]
         },
         {
           name:"Arxiv qutilari",
@@ -422,9 +434,15 @@ window.TRANSLATIONS = {
       eyebrow:"Kompaniya videosi",
       title:"Biz qadoqni qanday ishlab chiqaramiz",
       subtitle:"To'liq sikl — xomashyoni qabul qilishdan tayyor mahsulot sifatini nazorat qilishgacha",
-      playLabel:"Videoni ko'rish",
-      infoTitle:"Har bosqichda nazorat ostidagi zamonaviy ishlab chiqarish",
-      infoText:"Videoda INTER PACK ishlab chiqarish maydonchasidagi gofroagregat, fleksobosma liniyasi, shtamplash va sifat nazorati bo'limining ishi ko'rsatilgan — to'liq texnologik jarayon va zavod jihozlari namoyish etiladi."
+      playLabel:"Videoni ko'rish"
+    },
+    blog:{
+      eyebrow:"Blog",
+      title:"Yangiliklar va maqolalar",
+      subtitle:"Kompaniya yangiliklari va qadoqlash ishlab chiqarishi haqida maqolalar",
+      empty:"Hozircha chop etilgan maqola yo'q — keyinroq qayta tashrif buyuring.",
+      readMore:"Maqolani o'qish",
+      back:"Barcha maqolalarga"
     },
     contact:{
       eyebrow:"Bog'lanish",
