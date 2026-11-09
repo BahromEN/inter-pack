@@ -5,15 +5,16 @@
   var currentId = null;
 
   var PRODUCT_PHOTOS = {
-    0: "assets/images/hero/hero-01.webp",
-    1: "assets/images/hero/hero-03.webp",
-    2: "assets/images/hero/hero-04.webp",
-    3: "assets/images/hero/hero-05.webp",
-    4: "assets/images/hero/hero-06.webp",
-    5: "assets/images/products/overlap-flap-box.webp",
-    6: "assets/images/products/telescope-box.webp",
-    7: "assets/images/products/fruit-veg-crate.webp",
-    8: "assets/images/products/beverage-dividers.webp"
+    0: "assets/images/products/five-layer-box.webp",
+    1: "assets/images/hero/hero-01.webp",
+    2: "assets/images/hero/hero-03.webp",
+    3: "assets/images/hero/hero-04.webp",
+    4: "assets/images/hero/hero-05.webp",
+    5: "assets/images/hero/hero-06.webp",
+    6: "assets/images/products/overlap-flap-box.webp",
+    7: "assets/images/products/telescope-box.webp",
+    8: "assets/images/products/fruit-veg-crate.webp",
+    9: "assets/images/products/beverage-dividers.webp"
   };
 
   var galleryItemEls = {};

@@ -49,6 +49,12 @@ window.TRANSLATIONS = {
       specLabels:{profile:"Профиль гофры",layers:"Слойность",material:"Материал",print:"Печать",load:"Нагрузка",size:"Размеры"},
       items:[
         {
+          name:"Пятислойные гофроящики",
+          short:"Усиленная пятислойная тара повышенной прочности для тяжёлых и крупногабаритных грузов.",
+          desc:"Пятислойный гофрокороб из картона профиля BC обеспечивает повышенную прочность стенок и устойчивость к деформации при транспортировке и штабелировании. Применяется для тяжёлых, крупногабаритных и ответственных грузов, где обычной трёхслойной тары недостаточно.",
+          specs:[["profile","B / C гофра (BC)"],["layers","5-слойный"],["material","Бурый картон повышенной плотности"],["print","1-2 цвета флексопечать"],["load","до 50 кг"],["size","по ТЗ заказчика"]]
+        },
+        {
           name:"Четырёхклапанные гофроящики",
           short:"Универсальная тара для транспортировки и хранения широкого спектра товаров.",
           desc:"Классический четырёхклапанный гофроящик — основа складской и транспортной логистики. Подходит для упаковки продуктов питания, бытовых товаров, запчастей и промышленной продукции. Изготавливается по индивидуальным размерам заказчика с учётом требуемой нагрузки.",
@@ -194,6 +200,12 @@ window.TRANSLATIONS = {
       specLabels:{profile:"Flute profile",layers:"Layers",material:"Material",print:"Printing",load:"Load capacity",size:"Dimensions"},
       items:[
         {
+          name:"Five-layer corrugated boxes",
+          short:"Reinforced five-ply packaging with extra strength for heavy, oversized loads.",
+          desc:"The five-layer corrugated box, made from BC-flute board, provides increased wall strength and resistance to deformation during transport and stacking. Used for heavy, oversized and critical loads where standard three-ply packaging isn't enough.",
+          specs:[["profile","B / C flute (BC)"],["layers","5-ply"],["material","High-density kraft board"],["print","1-2 color flexo"],["load","up to 50 kg"],["size","made to order"]]
+        },
+        {
           name:"Four-flap corrugated boxes",
           short:"Universal containers for transporting and storing a wide range of goods.",
           desc:"The classic four-flap corrugated box is the backbone of warehouse and transport logistics. Suitable for packing food, household goods, spare parts and industrial products. Manufactured to custom sizes based on the required load.",
@@ -338,6 +350,12 @@ window.TRANSLATIONS = {
       subtitle:"Har qanday biznes ehtiyoji uchun gofra qadoqning to'liq assortimentini ishlab chiqaramiz",
       specLabels:{profile:"Gofra profili",layers:"Qatlamlar soni",material:"Material",print:"Bosma",load:"Yuklama",size:"O'lchamlar"},
       items:[
+        {
+          name:"Besh qatlamli gofra qutilar",
+          short:"Og'ir va yirik o'lchamdagi yuklar uchun mustahkamlangan besh qatlamli tara.",
+          desc:"BC gofra kartonidan tayyorlangan besh qatlamli gofra quti devorlar mustahkamligini oshiradi va tashish hamda shtabellashda deformatsiyadan himoya qiladi. Oddiy uch qatlamli tara yetarli bo'lmagan og'ir, yirik o'lchamdagi va mas'uliyatli yuklar uchun qo'llaniladi.",
+          specs:[["profile","B / C gofra (BC)"],["layers","5 qatlamli"],["material","Yuqori zichlikdagi jigarrang karton"],["print","1-2 rangli fleksobosma"],["load","50 kg gacha"],["size","buyurtma bo'yicha"]]
+        },
         {
           name:"To'rt qopqoqli gofra qutilar",
           short:"Turli xil tovarlarni tashish va saqlash uchun universal tara.",
