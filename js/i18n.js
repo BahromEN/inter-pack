@@ -55,12 +55,6 @@ window.TRANSLATIONS = {
           specs:[["profile","B / C гофра"],["layers","3-слойный"],["material","Бурый / белый картон"],["print","1-2 цвета флексопечать"],["load","до 25 кг"],["size","по ТЗ заказчика"]]
         },
         {
-          name:"Коробки для пиццы с печатью",
-          short:"Пищевая упаковка с ярким брендированным дизайном и вентиляцией.",
-          desc:"Коробка для пиццы из пищевого гофрокартона с системой вентиляции, сохраняющей текстуру продукта. Возможна флексопечать логотипа и фирменного дизайна заказчика в 1-4 цвета. Используется сертифицированный пищевой картон.",
-          specs:[["profile","E гофра (микрогофра)"],["layers","3-слойный"],["material","Пищевой картон"],["print","до 4 цветов"],["load","пищевая продукция"],["size","26 / 30 / 33 / 40 см"]]
-        },
-        {
           name:"Архивные короба",
           short:"Прочные короба для длительного хранения документов и архивов.",
           desc:"Архивный короб усиленной конструкции для хранения бухгалтерских документов, дел и папок в архивах компаний и госучреждений. Удобная ручка-прорезь и крышка для быстрого доступа.",
@@ -206,12 +200,6 @@ window.TRANSLATIONS = {
           specs:[["profile","B / C flute"],["layers","3-ply"],["material","Kraft / white board"],["print","1-2 color flexo"],["load","up to 25 kg"],["size","made to order"]]
         },
         {
-          name:"Printed pizza boxes",
-          short:"Food-grade packaging with vivid branded design and ventilation.",
-          desc:"Pizza box made from food-grade corrugated board with a ventilation system that preserves the product's texture. Flexo printing of the customer's logo and branded design in 1-4 colors is available, using certified food-grade board.",
-          specs:[["profile","E flute (micro)"],["layers","3-ply"],["material","Food-grade board"],["print","up to 4 colors"],["load","food products"],["size","26 / 30 / 33 / 40 cm"]]
-        },
-        {
           name:"Archive storage boxes",
           short:"Durable boxes for long-term storage of documents and archives.",
           desc:"A reinforced archive box for storing accounting documents and files in company and government archives. Features a convenient cut-out handle and lid for quick access.",
@@ -355,12 +343,6 @@ window.TRANSLATIONS = {
           short:"Turli xil tovarlarni tashish va saqlash uchun universal tara.",
           desc:"Klassik to'rt qopqoqli gofra quti — ombor va transport logistikasining asosi. Oziq-ovqat, maishiy tovarlar, ehtiyot qismlar va sanoat mahsulotlarini qadoqlash uchun mos. Kerakli yuklamaga mos individual o'lchamlarda ishlab chiqariladi.",
           specs:[["profile","B / C gofra"],["layers","3 qatlamli"],["material","Jigarrang / oq karton"],["print","1-2 rangli fleksobosma"],["load","25 kg gacha"],["size","buyurtma bo'yicha"]]
-        },
-        {
-          name:"Bosma pitsa qutilari",
-          short:"Yorqin brendlangan dizayn va ventilyatsiyaga ega oziq-ovqat qadog'i.",
-          desc:"Mahsulot teksturasini saqlab qoluvchi ventilyatsiya tizimiga ega oziq-ovqat gofrokartonidan tayyorlangan pitsa qutisi. Mijozning logotipi va firma dizaynini 1-4 rangda fleksobosma qilish mumkin. Sertifikatlangan oziq-ovqat kartoni ishlatiladi.",
-          specs:[["profile","E gofra (mikro)"],["layers","3 qatlamli"],["material","Oziq-ovqat kartoni"],["print","4 ranggacha"],["load","oziq-ovqat mahsuloti"],["size","26 / 30 / 33 / 40 sm"]]
         },
         {
           name:"Arxiv qutilari",
