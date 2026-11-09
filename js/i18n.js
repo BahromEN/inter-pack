@@ -116,9 +116,7 @@ window.TRANSLATIONS = {
       eyebrow:"Видео о компании",
       title:"Как мы производим упаковку",
       subtitle:"Полный цикл — от приёмки сырья до контроля качества готовой продукции",
-      playLabel:"Смотреть видео",
-      infoTitle:"Современное производство под контролем на каждом этапе",
-      infoText:"В ролике — работа гофроагрегата, линии флексопечати, высечки и участка контроля качества на производственной площадке INTER PACK. Видео демонстрирует полный технологический процесс и оснащение завода."
+      playLabel:"Смотреть видео"
     },
     contact:{
       eyebrow:"Связаться",
@@ -269,9 +267,7 @@ window.TRANSLATIONS = {
       eyebrow:"Company video",
       title:"How we manufacture packaging",
       subtitle:"The full cycle — from raw material intake to finished product quality control",
-      playLabel:"Watch video",
-      infoTitle:"Modern production under control at every stage",
-      infoText:"The video shows the corrugator line, flexo printing, die-cutting and the quality control area at the INTER PACK production site, demonstrating the full technological process and factory equipment."
+      playLabel:"Watch video"
     },
     contact:{
       eyebrow:"Contact",
@@ -422,9 +418,7 @@ window.TRANSLATIONS = {
       eyebrow:"Kompaniya videosi",
       title:"Biz qadoqni qanday ishlab chiqaramiz",
       subtitle:"To'liq sikl — xomashyoni qabul qilishdan tayyor mahsulot sifatini nazorat qilishgacha",
-      playLabel:"Videoni ko'rish",
-      infoTitle:"Har bosqichda nazorat ostidagi zamonaviy ishlab chiqarish",
-      infoText:"Videoda INTER PACK ishlab chiqarish maydonchasidagi gofroagregat, fleksobosma liniyasi, shtamplash va sifat nazorati bo'limining ishi ko'rsatilgan — to'liq texnologik jarayon va zavod jihozlari namoyish etiladi."
+      playLabel:"Videoni ko'rish"
     },
     contact:{
       eyebrow:"Bog'lanish",
