@@ -4,7 +4,7 @@
 
 window.TRANSLATIONS = {
   ru: {
-    nav:{home:"Главная",about:"О компании",achievements:"Достижения",products:"Продукция",video:"Видео",contact:"Связаться",contacts:"Контакты"},
+    nav:{home:"Главная",about:"О компании",achievements:"Достижения",products:"Продукция",video:"Видео",blog:"Блог",contact:"Связаться",contacts:"Контакты"},
     common:{readMore:"Подробнее",backToProducts:"Ко всей продукции",send:"Отправить заявку",all:"Вся продукция"},
     home:{
       title:"Современные решения в упаковке из гофрокартона",
@@ -118,6 +118,14 @@ window.TRANSLATIONS = {
       subtitle:"Полный цикл — от приёмки сырья до контроля качества готовой продукции",
       playLabel:"Смотреть видео"
     },
+    blog:{
+      eyebrow:"Блог",
+      title:"Новости и статьи",
+      subtitle:"Новости компании, материалы о производстве и упаковке",
+      empty:"Пока нет опубликованных статей — загляните позже.",
+      readMore:"Читать статью",
+      back:"Ко всем статьям"
+    },
     contact:{
       eyebrow:"Связаться",
       title:"Оставьте заявку на расчёт",
@@ -155,7 +163,7 @@ window.TRANSLATIONS = {
   },
 
   en: {
-    nav:{home:"Home",about:"About Us",achievements:"Achievements",products:"Products",video:"Video",contact:"Contact",contacts:"Location"},
+    nav:{home:"Home",about:"About Us",achievements:"Achievements",products:"Products",video:"Video",blog:"Blog",contact:"Contact",contacts:"Location"},
     common:{readMore:"Read more",backToProducts:"Back to products",send:"Send request",all:"All products"},
     home:{
       title:"Modern solutions in corrugated packaging",
@@ -269,6 +277,14 @@ window.TRANSLATIONS = {
       subtitle:"The full cycle — from raw material intake to finished product quality control",
       playLabel:"Watch video"
     },
+    blog:{
+      eyebrow:"Blog",
+      title:"News and articles",
+      subtitle:"Company news and articles about production and packaging",
+      empty:"No published articles yet — check back later.",
+      readMore:"Read article",
+      back:"Back to all articles"
+    },
     contact:{
       eyebrow:"Contact",
       title:"Request a quote",
@@ -306,7 +322,7 @@ window.TRANSLATIONS = {
   },
 
   uz: {
-    nav:{home:"Bosh sahifa",about:"Kompaniya haqida",achievements:"Yutuqlar",products:"Mahsulotlar",video:"Video",contact:"Bog'lanish",contacts:"Kontaktlar"},
+    nav:{home:"Bosh sahifa",about:"Kompaniya haqida",achievements:"Yutuqlar",products:"Mahsulotlar",video:"Video",blog:"Blog",contact:"Bog'lanish",contacts:"Kontaktlar"},
     common:{readMore:"Batafsil",backToProducts:"Barcha mahsulotlarga",send:"So'rov yuborish",all:"Barcha mahsulotlar"},
     home:{
       title:"Gofrokartondan qadoqlash bo'yicha zamonaviy yechimlar",
@@ -419,6 +435,14 @@ window.TRANSLATIONS = {
       title:"Biz qadoqni qanday ishlab chiqaramiz",
       subtitle:"To'liq sikl — xomashyoni qabul qilishdan tayyor mahsulot sifatini nazorat qilishgacha",
       playLabel:"Videoni ko'rish"
+    },
+    blog:{
+      eyebrow:"Blog",
+      title:"Yangiliklar va maqolalar",
+      subtitle:"Kompaniya yangiliklari va qadoqlash ishlab chiqarishi haqida maqolalar",
+      empty:"Hozircha chop etilgan maqola yo'q — keyinroq qayta tashrif buyuring.",
+      readMore:"Maqolani o'qish",
+      back:"Barcha maqolalarga"
     },
     contact:{
       eyebrow:"Bog'lanish",

@@ -1,0 +1,81 @@
+:root{
+  --c-bg:#FBFBF7;
+  --c-bg-alt:#F3F4EE;
+  --c-text:#13201A;
+  --c-text-soft:#66776C;
+  --c-dark:#0D2A1F;
+  --c-accent:#78B9AE;
+  --c-accent-deep:#5A958B;
+  --c-border:#D7DDDA;
+  --danger:#C14A3A;
+}
+*,*::before,*::after{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Inter','Helvetica Neue',Arial,sans-serif;
+  background:var(--c-bg-alt);
+  color:var(--c-text);
+  line-height:1.5;
+}
+a{color:inherit;}
+.admin-shell{min-height:100vh;display:flex;}
+.admin-nav{
+  width:230px;flex-shrink:0;background:var(--c-dark);color:#fff;
+  padding:28px 20px;display:flex;flex-direction:column;gap:4px;
+}
+.admin-nav .brand{font-size:17px;font-weight:600;margin-bottom:24px;letter-spacing:-.01em;}
+.admin-nav .brand span{color:var(--c-accent);}
+.admin-nav a{
+  display:block;padding:10px 12px;border-radius:6px;color:rgba(255,255,255,.78);
+  font-size:14.5px;text-decoration:none;
+}
+.admin-nav a:hover,.admin-nav a.active{background:rgba(255,255,255,.08);color:#fff;}
+.admin-nav .logout{margin-top:auto;color:rgba(255,255,255,.55);}
+.admin-main{flex:1;padding:36px 44px;max-width:1100px;}
+.admin-main h1{font-size:26px;font-weight:600;margin:0 0 6px;}
+.admin-main .sub{color:var(--c-text-soft);margin:0 0 28px;font-size:14.5px;}
+.card{background:#fff;border:1px solid var(--c-border);border-radius:10px;padding:24px 26px;margin-bottom:22px;}
+.card h2{font-size:16px;font-weight:600;margin:0 0 16px;}
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--c-text-soft);margin-bottom:6px;}
+.field input[type=text],.field input[type=password],.field input[type=file],.field textarea,.field select{
+  width:100%;padding:10px 12px;border:1px solid var(--c-border);border-radius:6px;font-size:14.5px;
+  font-family:inherit;background:#fff;color:var(--c-text);
+}
+.field textarea{resize:vertical;min-height:70px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:6px;
+  border:1px solid var(--c-dark);background:var(--c-dark);color:#fff;font-size:14px;font-weight:500;
+  cursor:pointer;text-decoration:none;
+}
+.btn:hover{background:#163d2c;}
+.btn.secondary{background:#fff;color:var(--c-text);border-color:var(--c-border);}
+.btn.secondary:hover{background:var(--c-bg-alt);}
+.btn.danger{background:var(--danger);border-color:var(--danger);}
+.btn.danger:hover{background:#a53b2d;}
+.msg{padding:12px 16px;border-radius:6px;margin-bottom:20px;font-size:14px;}
+.msg.ok{background:#E4F3EF;color:#2A6B57;}
+.msg.err{background:#FBEAE7;color:#A33A2A;}
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;}
+.login-box{background:#fff;border:1px solid var(--c-border);border-radius:12px;padding:40px;width:360px;}
+.login-box h1{font-size:20px;margin:0 0 20px;}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--c-border);}
+th{color:var(--c-text-soft);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;}
+.pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600;}
+.pill.on{background:#E4F3EF;color:#2A6B57;}
+.pill.off{background:#F0ECE4;color:#8A7C5A;}
+.section-group{margin-bottom:10px;}
+.section-group summary{cursor:pointer;font-weight:600;padding:10px 0;font-size:15px;}
+.image-slot{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--c-border);}
+.image-slot:last-child{border-bottom:none;}
+.image-slot img{width:84px;height:60px;object-fit:cover;border-radius:6px;border:1px solid var(--c-border);background:var(--c-bg-alt);}
+.image-slot .slot-info{flex:1;}
+.image-slot .slot-info b{display:block;font-size:14px;margin-bottom:2px;}
+.image-slot .slot-info code{font-size:12px;color:var(--c-text-soft);}
+.image-slot form{display:flex;gap:8px;align-items:center;}
+.row-actions a{margin-right:14px;font-size:13px;}
+.row-actions a.danger{color:var(--danger);}
+.lang-tabs{display:flex;gap:6px;margin-bottom:18px;}
+.lang-tabs a{padding:7px 16px;border-radius:6px;border:1px solid var(--c-border);font-size:13.5px;text-decoration:none;color:var(--c-text);}
+.lang-tabs a.active{background:var(--c-dark);color:#fff;border-color:var(--c-dark);}

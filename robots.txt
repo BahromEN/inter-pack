@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /data/
+Disallow: /includes/
+Disallow: /api/
 
 Sitemap: https://inter-pack.uz/sitemap.xml

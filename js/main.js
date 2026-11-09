@@ -206,13 +206,22 @@
     initReveal();
     initProductsToggle();
     initBackToTop();
-    var lang = getLang();
-    document.documentElement.setAttribute("lang", lang === "uz" ? "uz" : lang);
-    applyTranslations(lang);
-    document.querySelectorAll(".lang-switch button").forEach(function(btn){
-      btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
-    });
-    document.dispatchEvent(new CustomEvent("ip:langchange", {detail:{lang:lang}}));
+
+    function applyInitialLang(){
+      var lang = getLang();
+      document.documentElement.setAttribute("lang", lang === "uz" ? "uz" : lang);
+      applyTranslations(lang);
+      document.querySelectorAll(".lang-switch button").forEach(function(btn){
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+      });
+      document.dispatchEvent(new CustomEvent("ip:langchange", {detail:{lang:lang}}));
+    }
+
+    if(window.ipContentReady && typeof window.ipContentReady.then === "function"){
+      window.ipContentReady.then(applyInitialLang);
+    } else {
+      applyInitialLang();
+    }
   });
 
 })();
