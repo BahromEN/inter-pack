@@ -3,4 +3,5 @@
 /data/cms.sqlite-wal
 /data/cms.sqlite-shm
 /assets/**/_backups/
-/data/uploads/
+/data/uploads/*
+!/data/uploads/.htaccess
