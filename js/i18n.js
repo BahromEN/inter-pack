@@ -124,7 +124,8 @@ window.TRANSLATIONS = {
       subtitle:"Новости компании, материалы о производстве и упаковке",
       empty:"Пока нет опубликованных статей — загляните позже.",
       readMore:"Читать статью",
-      back:"Ко всем статьям"
+      back:"Ко всем статьям",
+      viewAll:"Все статьи"
     },
     contact:{
       eyebrow:"Связаться",
@@ -283,7 +284,8 @@ window.TRANSLATIONS = {
       subtitle:"Company news and articles about production and packaging",
       empty:"No published articles yet — check back later.",
       readMore:"Read article",
-      back:"Back to all articles"
+      back:"Back to all articles",
+      viewAll:"All articles"
     },
     contact:{
       eyebrow:"Contact",
@@ -442,7 +444,8 @@ window.TRANSLATIONS = {
       subtitle:"Kompaniya yangiliklari va qadoqlash ishlab chiqarishi haqida maqolalar",
       empty:"Hozircha chop etilgan maqola yo'q — keyinroq qayta tashrif buyuring.",
       readMore:"Maqolani o'qish",
-      back:"Barcha maqolalarga"
+      back:"Barcha maqolalarga",
+      viewAll:"Barcha maqolalar"
     },
     contact:{
       eyebrow:"Bog'lanish",

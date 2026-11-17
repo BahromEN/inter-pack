@@ -28,6 +28,17 @@
     return el ? el.getAttribute("data-blog-base") : "../";
   }
 
+  function cardHtml(p, base, lang){
+    var img = p.cover_image ? (base + p.cover_image) : "";
+    return '' +
+      '<a class="blog-card" href="' + base + 'blog/post.php?slug=' + encodeURIComponent(p.slug) + '">' +
+        (img ? '<div class="blog-card-img"><img src="' + img + '" alt="" loading="lazy"></div>' : '') +
+        '<time>' + escapeHtml(formatDate(p.published_at, lang)) + '</time>' +
+        '<h3>' + escapeHtml(p.title) + '</h3>' +
+        '<p>' + escapeHtml(p.excerpt) + '</p>' +
+      '</a>';
+  }
+
   function renderList(force){
     var root = document.getElementById("blogList");
     if(!root) return;
@@ -42,19 +53,30 @@
           root.innerHTML = '<p class="blog-empty" data-i18n="blog.empty">' + escapeHtml(window.ipT ? window.ipT("blog.empty", lang) : "") + '</p>';
           return;
         }
-        root.innerHTML = posts.map(function(p){
-          var img = p.cover_image ? (base + p.cover_image) : "";
-          return '' +
-            '<a class="blog-card" href="' + base + 'blog/post.php?slug=' + encodeURIComponent(p.slug) + '">' +
-              (img ? '<div class="blog-card-img"><img src="' + img + '" alt="" loading="lazy"></div>' : '') +
-              '<time>' + escapeHtml(formatDate(p.published_at, lang)) + '</time>' +
-              '<h3>' + escapeHtml(p.title) + '</h3>' +
-              '<p>' + escapeHtml(p.excerpt) + '</p>' +
-            '</a>';
-        }).join("");
+        root.innerHTML = posts.map(function(p){ return cardHtml(p, base, lang); }).join("");
       })
       .catch(function(){
         root.innerHTML = '<p class="blog-empty">Не удалось загрузить статьи.</p>';
+      });
+  }
+
+  function renderHomePreview(){
+    var root = document.getElementById("homeBlogPreview");
+    if(!root) return;
+    var lang = window.ipLang ? window.ipLang() : "ru";
+    var base = basePrefix();
+
+    fetch(base + "api/blog.php?lang=" + lang, {cache:"no-store"})
+      .then(function(res){ return res.json(); })
+      .then(function(posts){
+        if(!posts || !posts.length){
+          root.innerHTML = "";
+          return;
+        }
+        root.innerHTML = posts.slice(0, 2).map(function(p){ return cardHtml(p, base, lang); }).join("");
+      })
+      .catch(function(){
+        root.innerHTML = "";
       });
   }
 
@@ -97,6 +119,7 @@
   function renderAllInitial(){
     renderList(false);
     renderPost(false);
+    renderHomePreview();
     hasRenderedInitial = true;
   }
 
@@ -115,5 +138,6 @@
     if(!hasRenderedInitial) return;
     renderList(true);
     renderPost(true);
+    renderHomePreview();
   });
 })();
