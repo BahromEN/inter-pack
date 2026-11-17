@@ -46,7 +46,7 @@ $posts = $pdo->query("
   <?php include __DIR__ . '/_nav.php'; ?>
   <main class="admin-main">
     <h1>Блог / новости</h1>
-    <p class="sub"><a href="blog_edit.php" class="btn">+ Новая статья</a></p>
+    <p class="sub"><a href="blog_edit.php" class="btn">+ Новая статья</a> <a href="seed_articles.php" class="btn secondary">Добавить стартовые статьи</a></p>
 
     <div class="card">
       <?php if (!$posts): ?>
