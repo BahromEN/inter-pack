@@ -5,9 +5,28 @@
  * target asset path in place. Keeps one timestamped backup of the old file.
  */
 
+function cms_upload_error_message(int $code): string {
+    switch ($code) {
+        case UPLOAD_ERR_INI_SIZE:
+        case UPLOAD_ERR_FORM_SIZE:
+            $limit = ini_get('upload_max_filesize') ?: '?';
+            return "Файл слишком большой для настроек сервера (лимит хостинга: $limit). Сожмите фото или уменьшите его размер и попробуйте снова.";
+        case UPLOAD_ERR_PARTIAL:
+            return 'Файл загрузился не полностью — попробуйте ещё раз.';
+        case UPLOAD_ERR_NO_FILE:
+            return 'Файл не выбран.';
+        case UPLOAD_ERR_NO_TMP_DIR:
+        case UPLOAD_ERR_CANT_WRITE:
+        case UPLOAD_ERR_EXTENSION:
+            return 'Сервер не смог сохранить файл. Обратитесь к хостинг-провайдеру.';
+        default:
+            return 'Загрузка не удалась (код ошибки: ' . $code . ').';
+    }
+}
+
 function cms_handle_image_upload(array $file, string $targetRelativePath): array {
     if (!isset($file['error']) || $file['error'] !== UPLOAD_ERR_OK) {
-        return [false, 'Загрузка не удалась (код ошибки: ' . ($file['error'] ?? '?') . ').'];
+        return [false, cms_upload_error_message((int) ($file['error'] ?? -1))];
     }
     if ($file['size'] <= 0 || $file['size'] > 8 * 1024 * 1024) {
         return [false, 'Файл пустой или больше 8 МБ.'];
