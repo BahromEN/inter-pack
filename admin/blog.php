@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_id'])) {
 }
 
 $posts = $pdo->query("
-    SELECT p.id, p.slug, p.published, p.published_at, p.updated_at,
+    SELECT p.id, p.slug, p.published, p.published_at, p.updated_at, p.views,
            (SELECT title FROM blog_post_i18n WHERE post_id = p.id AND lang = 'ru' LIMIT 1) AS title_ru
     FROM blog_posts p
     ORDER BY p.created_at DESC
@@ -53,12 +53,13 @@ $posts = $pdo->query("
         <p>Пока нет ни одной статьи.</p>
       <?php else: ?>
       <table>
-        <thead><tr><th>Заголовок (RU)</th><th>Статус</th><th>Обновлено</th><th></th></tr></thead>
+        <thead><tr><th>Заголовок (RU)</th><th>Статус</th><th>Просмотры</th><th>Обновлено</th><th></th></tr></thead>
         <tbody>
         <?php foreach ($posts as $p): ?>
           <tr>
             <td><?= htmlspecialchars($p['title_ru'] ?: '(без заголовка)') ?><br><code style="color:#9aa39c;font-size:12px;"><?= htmlspecialchars($p['slug']) ?></code></td>
             <td><span class="pill <?= $p['published'] ? 'on' : 'off' ?>"><?= $p['published'] ? 'Опубликовано' : 'Черновик' ?></span></td>
+            <td><?= (int) $p['views'] ?></td>
             <td><?= htmlspecialchars($p['updated_at']) ?></td>
             <td class="row-actions">
               <a href="blog_edit.php?id=<?= (int) $p['id'] ?>">Редактировать</a>
