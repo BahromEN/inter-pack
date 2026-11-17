@@ -28,12 +28,27 @@
     return el ? el.getAttribute("data-blog-base") : "../";
   }
 
+  function viewsLabel(n, lang){
+    n = parseInt(n, 10) || 0;
+    if(lang === "en") return n + " " + (n === 1 ? "view" : "views");
+    if(lang === "uz") return n + " marta ko'rilgan";
+    var mod10 = n % 10, mod100 = n % 100;
+    var word;
+    if(mod10 === 1 && mod100 !== 11) word = "просмотр";
+    else if([2,3,4].indexOf(mod10) !== -1 && [12,13,14].indexOf(mod100) === -1) word = "просмотра";
+    else word = "просмотров";
+    return n + " " + word;
+  }
+
   function cardHtml(p, base, lang){
     var img = p.cover_image ? (base + p.cover_image) : "";
     return '' +
       '<a class="blog-card" href="' + base + 'blog/post.php?slug=' + encodeURIComponent(p.slug) + '">' +
         (img ? '<div class="blog-card-img"><img src="' + img + '" alt="" loading="lazy"></div>' : '') +
-        '<time>' + escapeHtml(formatDate(p.published_at, lang)) + '</time>' +
+        '<div class="blog-meta">' +
+          '<time>' + escapeHtml(formatDate(p.published_at, lang)) + '</time>' +
+          '<span class="blog-views">' + escapeHtml(viewsLabel(p.views, lang)) + '</span>' +
+        '</div>' +
         '<h3>' + escapeHtml(p.title) + '</h3>' +
         '<p>' + escapeHtml(p.excerpt) + '</p>' +
       '</a>';
@@ -104,7 +119,10 @@
         document.title = post.title + " — INTER PACK";
         root.innerHTML = '' +
           '<a class="blog-back" href="' + base + 'blog/"><span aria-hidden="true">&larr;</span> <span data-i18n="blog.back">' + escapeHtml(window.ipT ? window.ipT("blog.back", lang) : "") + '</span></a>' +
-          '<time>' + escapeHtml(formatDate(post.published_at, lang)) + '</time>' +
+          '<div class="blog-meta">' +
+            '<time>' + escapeHtml(formatDate(post.published_at, lang)) + '</time>' +
+            '<span class="blog-views">' + escapeHtml(viewsLabel(post.views, lang)) + '</span>' +
+          '</div>' +
           '<h1>' + escapeHtml(post.title) + '</h1>' +
           (img ? '<div class="blog-cover"><img src="' + img + '" alt=""></div>' : '') +
           '<div class="blog-body">' + escapeHtml(post.body) + '</div>';

@@ -1,14 +1,7 @@
 <?php
 $base = '../';
 require_once __DIR__ . '/../includes/db.php';
-
-function blog_fmt_date_ru(?string $iso): string {
-    if (!$iso) return '';
-    $ts = strtotime($iso);
-    if (!$ts) return '';
-    $months = [1=>'января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
-    return (int) date('j', $ts) . ' ' . $months[(int) date('n', $ts)] . ' ' . date('Y', $ts) . ' г.';
-}
+require_once __DIR__ . '/../includes/blog_helpers.php';
 
 $slug = (string) ($_GET['slug'] ?? '');
 $post = null;
@@ -16,7 +9,7 @@ $post = null;
 if ($slug !== '') {
     $pdo = cms_db();
     $stmt = $pdo->prepare("
-        SELECT p.slug, p.cover_image, p.published_at, i.title, i.excerpt, i.body
+        SELECT p.id, p.slug, p.cover_image, p.published_at, p.views, i.title, i.excerpt, i.body
         FROM blog_posts p
         JOIN blog_post_i18n i ON i.post_id = p.id AND i.lang = 'ru'
         WHERE p.slug = ? AND p.published = 1
@@ -24,6 +17,11 @@ if ($slug !== '') {
     ");
     $stmt->execute([$slug]);
     $post = $stmt->fetch();
+
+    if ($post) {
+        $pdo->prepare('UPDATE blog_posts SET views = views + 1 WHERE id = ?')->execute([$post['id']]);
+        $post['views']++;
+    }
 }
 
 if (!$post) {
@@ -71,7 +69,7 @@ $coverUrl = ($post && $post['cover_image']) ? ('https://inter-pack.uz/' . $post[
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=28">
-<link rel="stylesheet" href="../css/blog.css?v=1">
+<link rel="stylesheet" href="../css/blog.css?v=2">
 </head>
 <body>
 
@@ -85,7 +83,10 @@ $coverUrl = ($post && $post['cover_image']) ? ('https://inter-pack.uz/' . $post[
       <article class="blog-article" id="blogPost" data-ssr-lang="<?= $post ? 'ru' : '' ?>">
         <?php if ($post): ?>
           <a class="blog-back" href="./"><span aria-hidden="true">&larr;</span> <span data-i18n="blog.back">Ко всем статьям</span></a>
-          <time><?= htmlspecialchars(blog_fmt_date_ru($post['published_at'])) ?></time>
+          <div class="blog-meta">
+            <time><?= htmlspecialchars(blog_fmt_date_ru($post['published_at'])) ?></time>
+            <span class="blog-views"><?= htmlspecialchars(blog_views_label_ru((int) $post['views'])) ?></span>
+          </div>
           <h1><?= htmlspecialchars($post['title']) ?></h1>
           <?php if ($post['cover_image']): ?>
             <div class="blog-cover"><img src="../<?= htmlspecialchars($post['cover_image']) ?>" alt=""></div>
@@ -105,6 +106,6 @@ $coverUrl = ($post && $post['cover_image']) ? ('https://inter-pack.uz/' . $post[
 <script src="../js/i18n.js?v=14"></script>
 <script src="../js/cms-override.js?v=1"></script>
 <script src="../js/main.js?v=9"></script>
-<script src="../js/blog.js?v=2"></script>
+<script src="../js/blog.js?v=3"></script>
 </body>
 </html>

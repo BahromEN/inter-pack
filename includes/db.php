@@ -50,6 +50,7 @@ function cms_bootstrap_schema(PDO $pdo): void {
             cover_image TEXT,
             published INTEGER NOT NULL DEFAULT 0,
             published_at TEXT,
+            views INTEGER NOT NULL DEFAULT 0,
             created_at TEXT DEFAULT CURRENT_TIMESTAMP,
             updated_at TEXT DEFAULT CURRENT_TIMESTAMP
         );
@@ -298,5 +299,8 @@ EOT,
  * missing on an existing DB (safe to run every request; cheap no-ops).
  */
 function cms_migrate_schema(PDO $pdo): void {
-    // Reserved for future ALTERs. Nothing to do yet.
+    $columns = $pdo->query('PRAGMA table_info(blog_posts)')->fetchAll(PDO::FETCH_COLUMN, 1);
+    if (!in_array('views', $columns, true)) {
+        $pdo->exec('ALTER TABLE blog_posts ADD COLUMN views INTEGER NOT NULL DEFAULT 0');
+    }
 }

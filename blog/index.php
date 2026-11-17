@@ -1,18 +1,11 @@
 <?php
 $base = '../';
 require_once __DIR__ . '/../includes/db.php';
-
-function blog_fmt_date_ru(?string $iso): string {
-    if (!$iso) return '';
-    $ts = strtotime($iso);
-    if (!$ts) return '';
-    $months = [1=>'января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
-    return (int) date('j', $ts) . ' ' . $months[(int) date('n', $ts)] . ' ' . date('Y', $ts) . ' г.';
-}
+require_once __DIR__ . '/../includes/blog_helpers.php';
 
 $pdo = cms_db();
 $posts = $pdo->query("
-    SELECT p.slug, p.cover_image, p.published_at, i.title, i.excerpt
+    SELECT p.slug, p.cover_image, p.published_at, p.views, i.title, i.excerpt
     FROM blog_posts p
     JOIN blog_post_i18n i ON i.post_id = p.id AND i.lang = 'ru'
     WHERE p.published = 1
@@ -36,7 +29,7 @@ $posts = $pdo->query("
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=28">
-<link rel="stylesheet" href="../css/blog.css?v=1">
+<link rel="stylesheet" href="../css/blog.css?v=2">
 </head>
 <body>
 
@@ -61,7 +54,10 @@ $posts = $pdo->query("
             <?php if ($p['cover_image']): ?>
               <div class="blog-card-img"><img src="../<?= htmlspecialchars($p['cover_image']) ?>" alt="" loading="lazy"></div>
             <?php endif; ?>
-            <time><?= htmlspecialchars(blog_fmt_date_ru($p['published_at'])) ?></time>
+            <div class="blog-meta">
+              <time><?= htmlspecialchars(blog_fmt_date_ru($p['published_at'])) ?></time>
+              <span class="blog-views"><?= htmlspecialchars(blog_views_label_ru((int) $p['views'])) ?></span>
+            </div>
             <h3><?= htmlspecialchars($p['title']) ?></h3>
             <p><?= htmlspecialchars($p['excerpt']) ?></p>
           </a>
@@ -76,6 +72,6 @@ $posts = $pdo->query("
 <script src="../js/i18n.js?v=14"></script>
 <script src="../js/cms-override.js?v=1"></script>
 <script src="../js/main.js?v=9"></script>
-<script src="../js/blog.js?v=2"></script>
+<script src="../js/blog.js?v=3"></script>
 </body>
 </html>

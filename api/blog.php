@@ -14,7 +14,7 @@ $pdo = cms_db();
 if (isset($_GET['slug'])) {
     $slug = (string) $_GET['slug'];
     $stmt = $pdo->prepare('
-        SELECT p.id, p.slug, p.cover_image, p.published, p.published_at,
+        SELECT p.id, p.slug, p.cover_image, p.published, p.published_at, p.views,
                i.title, i.excerpt, i.body
         FROM blog_posts p
         JOIN blog_post_i18n i ON i.post_id = p.id AND i.lang = ?
@@ -33,7 +33,7 @@ if (isset($_GET['slug'])) {
 }
 
 $stmt = $pdo->prepare('
-    SELECT p.id, p.slug, p.cover_image, p.published_at,
+    SELECT p.id, p.slug, p.cover_image, p.published_at, p.views,
            i.title, i.excerpt
     FROM blog_posts p
     JOIN blog_post_i18n i ON i.post_id = p.id AND i.lang = ?
