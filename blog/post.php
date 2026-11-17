@@ -1,11 +1,68 @@
-<?php $base = '../'; ?>
+<?php
+$base = '../';
+require_once __DIR__ . '/../includes/db.php';
+
+function blog_fmt_date_ru(?string $iso): string {
+    if (!$iso) return '';
+    $ts = strtotime($iso);
+    if (!$ts) return '';
+    $months = [1=>'января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+    return (int) date('j', $ts) . ' ' . $months[(int) date('n', $ts)] . ' ' . date('Y', $ts) . ' г.';
+}
+
+$slug = (string) ($_GET['slug'] ?? '');
+$post = null;
+
+if ($slug !== '') {
+    $pdo = cms_db();
+    $stmt = $pdo->prepare("
+        SELECT p.slug, p.cover_image, p.published_at, i.title, i.excerpt, i.body
+        FROM blog_posts p
+        JOIN blog_post_i18n i ON i.post_id = p.id AND i.lang = 'ru'
+        WHERE p.slug = ? AND p.published = 1
+        LIMIT 1
+    ");
+    $stmt->execute([$slug]);
+    $post = $stmt->fetch();
+}
+
+if (!$post) {
+    http_response_code(404);
+}
+
+$pageTitle = $post ? $post['title'] . ' — INTER PACK' : 'Статья не найдена — INTER PACK';
+$pageDescription = $post ? $post['excerpt'] : 'Запрошенная статья не найдена.';
+$canonicalUrl = $post ? ('https://inter-pack.uz/blog/post.php?slug=' . rawurlencode($post['slug'])) : '';
+$coverUrl = ($post && $post['cover_image']) ? ('https://inter-pack.uz/' . $post['cover_image']) : '';
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Статья — INTER PACK</title>
+<title><?= htmlspecialchars($pageTitle) ?></title>
+<meta name="description" content="<?= htmlspecialchars($pageDescription) ?>">
+<?php if ($post): ?>
+<link rel="canonical" href="<?= htmlspecialchars($canonicalUrl) ?>">
+<meta property="og:type" content="article">
+<meta property="og:title" content="<?= htmlspecialchars($post['title']) ?>">
+<meta property="og:description" content="<?= htmlspecialchars($post['excerpt']) ?>">
+<meta property="og:url" content="<?= htmlspecialchars($canonicalUrl) ?>">
+<?php if ($coverUrl): ?><meta property="og:image" content="<?= htmlspecialchars($coverUrl) ?>"><?php endif; ?>
+<script type="application/ld+json">
+<?= json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'BlogPosting',
+    'headline' => $post['title'],
+    'description' => $post['excerpt'],
+    'datePublished' => $post['published_at'],
+    'image' => $coverUrl ?: null,
+    'publisher' => ['@type' => 'Organization', 'name' => 'INTER PACK'],
+], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>
+</script>
+<?php else: ?>
 <meta name="robots" content="noindex, follow">
+<?php endif; ?>
 <link rel="icon" href="../assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
@@ -25,7 +82,20 @@
 <main>
   <section class="section">
     <div class="container">
-      <article class="blog-article" id="blogPost"></article>
+      <article class="blog-article" id="blogPost" data-ssr-lang="<?= $post ? 'ru' : '' ?>">
+        <?php if ($post): ?>
+          <a class="blog-back" href="./"><span aria-hidden="true">&larr;</span> <span data-i18n="blog.back">Ко всем статьям</span></a>
+          <time><?= htmlspecialchars(blog_fmt_date_ru($post['published_at'])) ?></time>
+          <h1><?= htmlspecialchars($post['title']) ?></h1>
+          <?php if ($post['cover_image']): ?>
+            <div class="blog-cover"><img src="../<?= htmlspecialchars($post['cover_image']) ?>" alt=""></div>
+          <?php endif; ?>
+          <div class="blog-body"><?= htmlspecialchars($post['body']) ?></div>
+        <?php else: ?>
+          <a class="blog-back" href="./"><span aria-hidden="true">&larr;</span> <span data-i18n="blog.back">Ко всем статьям</span></a>
+          <p class="blog-empty">Статья не найдена.</p>
+        <?php endif; ?>
+      </article>
     </div>
   </section>
 </main>
@@ -35,6 +105,6 @@
 <script src="../js/i18n.js?v=14"></script>
 <script src="../js/cms-override.js?v=1"></script>
 <script src="../js/main.js?v=9"></script>
-<script src="../js/blog.js?v=1"></script>
+<script src="../js/blog.js?v=2"></script>
 </body>
 </html>

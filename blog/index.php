@@ -1,4 +1,24 @@
-<?php $base = '../'; ?>
+<?php
+$base = '../';
+require_once __DIR__ . '/../includes/db.php';
+
+function blog_fmt_date_ru(?string $iso): string {
+    if (!$iso) return '';
+    $ts = strtotime($iso);
+    if (!$ts) return '';
+    $months = [1=>'января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+    return (int) date('j', $ts) . ' ' . $months[(int) date('n', $ts)] . ' ' . date('Y', $ts) . ' г.';
+}
+
+$pdo = cms_db();
+$posts = $pdo->query("
+    SELECT p.slug, p.cover_image, p.published_at, i.title, i.excerpt
+    FROM blog_posts p
+    JOIN blog_post_i18n i ON i.post_id = p.id AND i.lang = 'ru'
+    WHERE p.published = 1
+    ORDER BY p.published_at DESC
+")->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -33,7 +53,20 @@
         <p data-i18n="blog.subtitle">Новости компании, материалы о производстве и упаковке</p>
       </div>
 
-      <div class="blog-grid" id="blogList"></div>
+      <div class="blog-grid" id="blogList" data-ssr-lang="ru">
+        <?php if (!$posts): ?>
+          <p class="blog-empty" data-i18n="blog.empty">Пока нет опубликованных статей — загляните позже.</p>
+        <?php else: foreach ($posts as $p): ?>
+          <a class="blog-card" href="post.php?slug=<?= urlencode($p['slug']) ?>">
+            <?php if ($p['cover_image']): ?>
+              <div class="blog-card-img"><img src="../<?= htmlspecialchars($p['cover_image']) ?>" alt="" loading="lazy"></div>
+            <?php endif; ?>
+            <time><?= htmlspecialchars(blog_fmt_date_ru($p['published_at'])) ?></time>
+            <h3><?= htmlspecialchars($p['title']) ?></h3>
+            <p><?= htmlspecialchars($p['excerpt']) ?></p>
+          </a>
+        <?php endforeach; endif; ?>
+      </div>
     </div>
   </section>
 </main>
@@ -43,6 +76,6 @@
 <script src="../js/i18n.js?v=14"></script>
 <script src="../js/cms-override.js?v=1"></script>
 <script src="../js/main.js?v=9"></script>
-<script src="../js/blog.js?v=1"></script>
+<script src="../js/blog.js?v=2"></script>
 </body>
 </html>
