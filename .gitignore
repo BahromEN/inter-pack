@@ -2,4 +2,5 @@
 /data/cms.sqlite-journal
 /data/cms.sqlite-wal
 /data/cms.sqlite-shm
-/assets/images/_backups/
+/assets/**/_backups/
+/data/uploads/

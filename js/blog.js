@@ -73,7 +73,7 @@
           root.innerHTML = "";
           return;
         }
-        root.innerHTML = posts.slice(0, 2).map(function(p){ return cardHtml(p, base, lang); }).join("");
+        root.innerHTML = posts.slice(0, 3).map(function(p){ return cardHtml(p, base, lang); }).join("");
       })
       .catch(function(){
         root.innerHTML = "";

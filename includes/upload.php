@@ -75,9 +75,11 @@ function cms_handle_image_upload(array $file, string $targetRelativePath): array
         return [false, 'Недопустимый путь назначения.'];
     }
 
-    // Backup current file before overwriting.
+    // Backup current file before overwriting (kept alongside the target,
+    // so proxy-mode overrides under data/uploads/ back up there too — both
+    // are outside git either way).
     if (file_exists($targetPath)) {
-        $backupDir = $siteRoot . '/assets/images/_backups';
+        $backupDir = $targetDir . '/_backups';
         if (!is_dir($backupDir)) {
             @mkdir($backupDir, 0755, true);
         }

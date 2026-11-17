@@ -17,6 +17,12 @@
     9: "assets/images/products/beverage-dividers.webp"
   };
 
+  function getPhotoSrc(id){
+    var overrides = window.ipImageOverridesMap;
+    if(overrides && overrides["product_" + id]) return overrides["product_" + id];
+    return PRODUCT_PHOTOS[id];
+  }
+
   var galleryItemEls = {};
   var galleryBuilt = false;
 
@@ -27,7 +33,7 @@
     var items = window.ipT("products.items");
     galleryWrap.innerHTML = "";
     items.forEach(function(gItem, gId){
-      var gPhotoSrc = PRODUCT_PHOTOS[gId];
+      var gPhotoSrc = getPhotoSrc(gId);
       var g = document.createElement("button");
       g.type = "button";
       g.className = "ph ph-" + ((gId % 6) + 1) + " pd-gallery-item";
@@ -92,7 +98,7 @@
     document.querySelectorAll("[data-pd='desc']").forEach(function(el){ el.textContent = item.desc; });
 
     var tint = "ph-" + ((id % 6) + 1);
-    var photoSrc = PRODUCT_PHOTOS[id];
+    var photoSrc = getPhotoSrc(id);
     document.querySelectorAll("[data-pd='photo']").forEach(function(el){
       el.className = "ph " + tint;
       el.innerHTML = (photoSrc ? '<img class="ph-photo" src="' + photoSrc + '" alt="' + item.name + '" onerror="this.remove()">' : "") +
