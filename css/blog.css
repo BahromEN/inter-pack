@@ -5,9 +5,6 @@
 @media (max-width:960px){.blog-grid{grid-template-columns:repeat(2,1fr);}}
 @media (max-width:640px){.blog-grid{grid-template-columns:1fr;gap:36px;}}
 
-.blog-grid-preview{grid-template-columns:repeat(2,1fr);max-width:860px;margin-left:auto;margin-right:auto;}
-@media (max-width:640px){.blog-grid-preview{grid-template-columns:1fr;}}
-
 .blog-card{display:block;border-top:1px solid var(--c-border);padding-top:22px;}
 .blog-card .blog-card-img{
   width:100%;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;background:var(--c-bg-alt);margin-bottom:18px;
