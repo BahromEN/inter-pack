@@ -83,7 +83,7 @@ function cms_bootstrap_schema(PDO $pdo): void {
  * once when the database is first created, so the blog isn't empty on a
  * fresh deploy. Safe to edit or delete afterwards from the admin panel.
  */
-function cms_seed_initial_blog_posts(PDO $pdo): void {
+function cms_seed_initial_blog_posts(PDO $pdo): int {
     $posts = [
         [
             'slug' => 'kak-proizvodyat-gofrokarton',
@@ -273,16 +273,24 @@ EOT,
         ],
     ];
 
+    $checkExists = $pdo->prepare('SELECT 1 FROM blog_posts WHERE slug = ?');
     $insertPost = $pdo->prepare('INSERT INTO blog_posts (slug, cover_image, published, published_at) VALUES (?, ?, 1, ?)');
     $insertI18n = $pdo->prepare('INSERT INTO blog_post_i18n (post_id, lang, title, excerpt, body) VALUES (?, ?, ?, ?, ?)');
 
+    $added = 0;
     foreach ($posts as $post) {
+        $checkExists->execute([$post['slug']]);
+        if ($checkExists->fetch()) {
+            continue; // already exists (earlier seed or manually created) — don't duplicate
+        }
         $insertPost->execute([$post['slug'], $post['cover_image'], $post['published_at']]);
         $postId = (int) $pdo->lastInsertId();
         foreach ($post['i18n'] as $lang => $fields) {
             $insertI18n->execute([$postId, $lang, $fields['title'], $fields['excerpt'], $fields['body']]);
         }
+        $added++;
     }
+    return $added;
 }
 
 /**
