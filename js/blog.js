@@ -11,6 +11,40 @@
     return div.innerHTML;
   }
 
+  function inlineFormat(text){
+    var escaped = escapeHtml(text);
+    escaped = escaped.replace(/\*\*([\s\S]+?)\*\*/g, "<strong>$1</strong>");
+    escaped = escaped.replace(/\*([\s\S]+?)\*/g, "<em>$1</em>");
+    escaped = escaped.replace(/\n/g, "<br>");
+    return escaped;
+  }
+
+  function renderBody(raw){
+    raw = String(raw == null ? "" : raw).replace(/\r\n/g, "\n").trim();
+    if(!raw) return "";
+    var blocks = raw.split(/\n{2,}/);
+    return blocks.map(function(block){
+      block = block.trim();
+      if(!block) return "";
+      var lines = block.split("\n");
+      var isQuote = lines.every(function(l){
+        var t = l.replace(/^\s+/, "");
+        return t.indexOf("> ") === 0 || t === ">";
+      });
+      if(isQuote){
+        var inner = lines.map(function(l){
+          return l.replace(/^\s+/, "").replace(/^>\s?/, "");
+        }).join("\n");
+        return '<blockquote class="blog-quote">' + inlineFormat(inner) + '</blockquote>';
+      }
+      var heading = block.match(/^##\s+([\s\S]*)$/);
+      if(heading){
+        return '<h3>' + inlineFormat(heading[1]) + '</h3>';
+      }
+      return '<p>' + inlineFormat(block) + '</p>';
+    }).join("");
+  }
+
   function formatDate(iso, lang){
     if(!iso) return "";
     var d = new Date(iso.replace(" ", "T"));
@@ -125,7 +159,7 @@
           '</div>' +
           '<h1>' + escapeHtml(post.title) + '</h1>' +
           (img ? '<div class="blog-cover"><img src="' + img + '" alt=""></div>' : '') +
-          '<div class="blog-body">' + escapeHtml(post.body) + '</div>';
+          '<div class="blog-body">' + renderBody(post.body) + '</div>';
       })
       .catch(function(){
         root.innerHTML = '<p class="blog-empty">Статья не найдена.</p>';

@@ -29,7 +29,7 @@ $posts = $pdo->query("
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=28">
-<link rel="stylesheet" href="../css/blog.css?v=2">
+<link rel="stylesheet" href="../css/blog.css?v=3">
 </head>
 <body>
 
@@ -72,6 +72,6 @@ $posts = $pdo->query("
 <script src="../js/i18n.js?v=14"></script>
 <script src="../js/cms-override.js?v=1"></script>
 <script src="../js/main.js?v=9"></script>
-<script src="../js/blog.js?v=3"></script>
+<script src="../js/blog.js?v=4"></script>
 </body>
 </html>

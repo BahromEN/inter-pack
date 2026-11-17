@@ -69,7 +69,7 @@ $coverUrl = ($post && $post['cover_image']) ? ('https://inter-pack.uz/' . $post[
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=28">
-<link rel="stylesheet" href="../css/blog.css?v=2">
+<link rel="stylesheet" href="../css/blog.css?v=3">
 </head>
 <body>
 
@@ -91,7 +91,7 @@ $coverUrl = ($post && $post['cover_image']) ? ('https://inter-pack.uz/' . $post[
           <?php if ($post['cover_image']): ?>
             <div class="blog-cover"><img src="../<?= htmlspecialchars($post['cover_image']) ?>" alt=""></div>
           <?php endif; ?>
-          <div class="blog-body"><?= htmlspecialchars($post['body']) ?></div>
+          <div class="blog-body"><?= blog_render_body($post['body']) ?></div>
         <?php else: ?>
           <a class="blog-back" href="./"><span aria-hidden="true">&larr;</span> <span data-i18n="blog.back">Ко всем статьям</span></a>
           <p class="blog-empty">Статья не найдена.</p>
@@ -106,6 +106,6 @@ $coverUrl = ($post && $post['cover_image']) ? ('https://inter-pack.uz/' . $post[
 <script src="../js/i18n.js?v=14"></script>
 <script src="../js/cms-override.js?v=1"></script>
 <script src="../js/main.js?v=9"></script>
-<script src="../js/blog.js?v=3"></script>
+<script src="../js/blog.js?v=4"></script>
 </body>
 </html>

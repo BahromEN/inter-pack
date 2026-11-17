@@ -7,11 +7,16 @@ cms_require_login();
 
 $active = 'blog';
 $added = null;
+$upgraded = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     cms_require_csrf();
     $pdo = cms_db();
-    $added = cms_seed_initial_blog_posts($pdo);
+    if (isset($_POST['action']) && $_POST['action'] === 'upgrade') {
+        $upgraded = cms_upgrade_starter_blog_content($pdo);
+    } else {
+        $added = cms_seed_initial_blog_posts($pdo);
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -27,8 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="admin-shell">
   <?php include __DIR__ . '/_nav.php'; ?>
   <main class="admin-main">
-    <h1>Добавить стартовые статьи</h1>
-    <p class="sub">Добавляет 3 готовые статьи о производстве гофрокартона (на RU/EN/UZ), если их ещё нет в блоге. Безопасно нажимать несколько раз — уже существующие статьи (по URL-адресу) не дублируются.</p>
+    <h1>Стартовые статьи</h1>
 
     <?php if ($added !== null): ?>
       <div class="msg ok">
@@ -39,11 +43,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
       </div>
     <?php endif; ?>
+    <?php if ($upgraded !== null): ?>
+      <div class="msg ok">
+        <?php if ($upgraded > 0): ?>
+          Текст обновлён у <?= (int) $upgraded ?> из 3 статей. <a href="blog.php">Перейти к списку статей →</a>
+        <?php else: ?>
+          Ни одна из 3 стартовых статей не найдена (возможно, удалены) — обновлять нечего.
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
 
-    <div class="card" style="max-width:480px;">
+    <div class="card" style="max-width:560px;">
+      <h2>Добавить</h2>
+      <p class="sub" style="margin-bottom:16px;">Добавляет 3 готовые статьи о производстве гофрокартона (на RU/EN/UZ), если их ещё нет в блоге. Безопасно нажимать несколько раз — уже существующие статьи (по URL-адресу) не дублируются.</p>
       <form method="post">
         <?= cms_csrf_field() ?>
+        <input type="hidden" name="action" value="add">
         <button type="submit" class="btn">Добавить 3 стартовые статьи</button>
+      </form>
+    </div>
+
+    <div class="card" style="max-width:560px;">
+      <h2>Обновить текст и оформление</h2>
+      <p class="sub" style="margin-bottom:16px;">Если эти 3 статьи уже добавлены, но текст выглядит «сухо» (без форматирования) — эта кнопка заменит их текст на новую версию с выделением жирным/курсивом и мнением эксперта. <b>Внимание:</b> если вы сами редактировали текст одной из этих 3 статей, ваши правки будут заменены. На остальные (ваши собственные) статьи это не влияет.</p>
+      <form method="post" onsubmit="return confirm('Заменить текст 3 стартовых статей на новую версию? Ваши собственные правки в них (если были) потеряются.');">
+        <?= cms_csrf_field() ?>
+        <input type="hidden" name="action" value="upgrade">
+        <button type="submit" class="btn secondary">Обновить текст стартовых статей</button>
       </form>
     </div>
   </main>

@@ -63,15 +63,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    $coverChanged = false;
     if (!$error) {
         $coverImage = $post['cover_image'] ?? '';
         if (!empty($_FILES['cover']) && $_FILES['cover']['error'] !== UPLOAD_ERR_NO_FILE) {
-            $targetPath = 'assets/images/blog/' . $slug . '.webp';
+            // Stored outside git (data/uploads/), so a future code deploy never reverts it.
+            $targetPath = 'data/uploads/blog/' . $slug . '.webp';
             [$ok, $err] = cms_handle_image_upload($_FILES['cover'], $targetPath);
             if (!$ok) {
                 $error = $err;
             } else {
                 $coverImage = $targetPath;
+                $coverChanged = true;
             }
         }
     }
@@ -105,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $pdo->commit();
 
-        header('Location: blog_edit.php?id=' . $id . '&saved=1');
+        header('Location: blog_edit.php?id=' . $id . '&saved=1' . ($coverChanged ? '&cover=1' : ''));
         exit;
     }
 
@@ -124,6 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if (isset($_GET['saved'])) {
     $saved = true;
 }
+$coverJustChanged = isset($_GET['cover']);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -141,7 +145,7 @@ if (isset($_GET['saved'])) {
     <h1><?= $isNew ? 'Новая статья' : 'Редактирование статьи' ?></h1>
     <p class="sub"><a href="blog.php">&larr; ко всем статьям</a></p>
 
-    <?php if ($saved): ?><div class="msg ok">Сохранено.</div><?php endif; ?>
+    <?php if ($saved): ?><div class="msg ok">Сохранено.<?= $coverJustChanged ? ' Обложка обновлена — после перезагрузки формы ниже вы увидите новое фото (поле выбора файла всегда показывает «Файл не выбран» после сохранения, это нормально).' : '' ?></div><?php endif; ?>
     <?php if ($error): ?><div class="msg err"><?= htmlspecialchars($error) ?></div><?php endif; ?>
 
     <form method="post" enctype="multipart/form-data">
@@ -181,8 +185,8 @@ if (isset($_GET['saved'])) {
             <textarea name="i18n[<?= $lang ?>][excerpt]"><?= htmlspecialchars($i18n[$lang]['excerpt']) ?></textarea>
           </div>
           <div class="field">
-            <label>Текст статьи</label>
-            <textarea name="i18n[<?= $lang ?>][body]" style="min-height:220px;"><?= htmlspecialchars($i18n[$lang]['body']) ?></textarea>
+            <label>Текст статьи — поддерживается простое форматирование: <code>**жирный**</code>, <code>*курсив*</code>, строка с «<code>&gt; </code>» в начале — как цитата/мнение эксперта, «<code>## </code>» в начале строки — подзаголовок. Пустая строка между абзацами обязательна.</label>
+            <textarea name="i18n[<?= $lang ?>][body]" style="min-height:260px;"><?= htmlspecialchars($i18n[$lang]['body']) ?></textarea>
           </div>
         </div>
       <?php endforeach; ?>
