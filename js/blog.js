@@ -28,10 +28,11 @@
     return el ? el.getAttribute("data-blog-base") : "../";
   }
 
-  function renderList(){
+  function renderList(force){
     var root = document.getElementById("blogList");
     if(!root) return;
     var lang = window.ipLang ? window.ipLang() : "ru";
+    if(!force && root.getAttribute("data-ssr-lang") === lang) return;
     var base = basePrefix();
 
     fetch(base + "api/blog.php?lang=" + lang, {cache:"no-store"})
@@ -57,16 +58,17 @@
       });
   }
 
-  function renderPost(){
+  function renderPost(force){
     var root = document.getElementById("blogPost");
     if(!root) return;
     var lang = window.ipLang ? window.ipLang() : "ru";
+    if(!force && root.getAttribute("data-ssr-lang") === lang) return;
     var base = basePrefix();
     var params = new URLSearchParams(window.location.search);
     var slug = params.get("slug") || "";
 
     if(!slug){
-      root.innerHTML = '<p class="blog-empty">Статья не найдена.</p>';
+      if(force) root.innerHTML = '<p class="blog-empty">Статья не найдена.</p>';
       return;
     }
 
@@ -79,7 +81,7 @@
         var img = post.cover_image ? (base + post.cover_image) : "";
         document.title = post.title + " — INTER PACK";
         root.innerHTML = '' +
-          '<a class="blog-back" href="' + base + 'blog/" data-i18n="blog.back">&larr; ' + escapeHtml(window.ipT ? window.ipT("blog.back", lang) : "") + '</a>' +
+          '<a class="blog-back" href="' + base + 'blog/"><span aria-hidden="true">&larr;</span> <span data-i18n="blog.back">' + escapeHtml(window.ipT ? window.ipT("blog.back", lang) : "") + '</span></a>' +
           '<time>' + escapeHtml(formatDate(post.published_at, lang)) + '</time>' +
           '<h1>' + escapeHtml(post.title) + '</h1>' +
           (img ? '<div class="blog-cover"><img src="' + img + '" alt=""></div>' : '') +
@@ -90,17 +92,28 @@
       });
   }
 
-  function renderAll(){
-    renderList();
-    renderPost();
+  var hasRenderedInitial = false;
+
+  function renderAllInitial(){
+    renderList(false);
+    renderPost(false);
+    hasRenderedInitial = true;
   }
 
   document.addEventListener("DOMContentLoaded", function(){
     if(window.ipContentReady && typeof window.ipContentReady.then === "function"){
-      window.ipContentReady.then(renderAll);
+      window.ipContentReady.then(renderAllInitial);
     } else {
-      renderAll();
+      renderAllInitial();
     }
   });
-  document.addEventListener("ip:langchange", renderAll);
+
+  // main.js fires this once on initial load too (not just on an explicit
+  // language switch) — ignore that first occurrence so the server-rendered
+  // Russian content isn't immediately replaced by an identical JS render.
+  document.addEventListener("ip:langchange", function(){
+    if(!hasRenderedInitial) return;
+    renderList(true);
+    renderPost(true);
+  });
 })();
