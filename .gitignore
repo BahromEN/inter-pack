@@ -5,3 +5,4 @@
 /assets/**/_backups/
 /data/uploads/*
 !/data/uploads/.htaccess
+/includes/telegram_config.php

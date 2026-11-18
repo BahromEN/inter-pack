@@ -11,6 +11,11 @@
       e.preventDefault();
       if(submitBtn) submitBtn.disabled = true;
 
+      fetch("api/lead.php", {
+        method: "POST",
+        body: new FormData(form)
+      }).catch(function(){ /* Telegram — необязательный канал, почта важнее */ });
+
       fetch(form.action, {
         method: "POST",
         headers: {"Accept": "application/json"},
