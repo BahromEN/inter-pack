@@ -3,6 +3,7 @@ require_once __DIR__ . '/../includes/auth.php';
 require_once __DIR__ . '/../includes/csrf.php';
 require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/upload.php';
+require_once __DIR__ . '/../includes/telegram.php';
 cms_start_session();
 cms_require_login();
 
@@ -107,6 +108,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$id, $lang, $title, $excerpt, $body]);
         }
         $pdo->commit();
+
+        // Announce in the Telegram channel once, the first time the post goes live.
+        if ($published && empty($post['telegram_announced'])) {
+            $announced = cms_send_telegram_channel_post([
+                'slug'        => $slug,
+                'cover_image' => $coverImage,
+                'title'       => $postedI18n['ru']['title'] ?? '',
+                'excerpt'     => $postedI18n['ru']['excerpt'] ?? '',
+            ]);
+            if ($announced) {
+                $pdo->prepare('UPDATE blog_posts SET telegram_announced = 1 WHERE id = ?')->execute([$id]);
+            }
+        }
 
         header('Location: blog_edit.php?id=' . $id . '&saved=1' . ($coverChanged ? '&cover=1' : ''));
         exit;

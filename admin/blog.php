@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../includes/auth.php';
 require_once __DIR__ . '/../includes/csrf.php';
 require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../includes/telegram.php';
 cms_start_session();
 cms_require_login();
 
@@ -12,14 +13,28 @@ $pdo = cms_db();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_id'])) {
     cms_require_csrf();
     $id = (int) $_POST['toggle_id'];
-    $stmt = $pdo->prepare('SELECT published FROM blog_posts WHERE id = ?');
+    $stmt = $pdo->prepare('SELECT * FROM blog_posts WHERE id = ?');
     $stmt->execute([$id]);
-    $cur = $stmt->fetchColumn();
-    if ($cur !== false) {
-        $new = $cur ? 0 : 1;
+    $post = $stmt->fetch();
+    if ($post) {
+        $new = $post['published'] ? 0 : 1;
         $publishedAt = $new ? "datetime('now')" : 'NULL';
         $pdo->prepare("UPDATE blog_posts SET published = ?, published_at = COALESCE(published_at, $publishedAt), updated_at = CURRENT_TIMESTAMP WHERE id = ?")
             ->execute([$new, $id]);
+
+        if ($new && empty($post['telegram_announced'])) {
+            $i18nStmt = $pdo->prepare("SELECT title, excerpt FROM blog_post_i18n WHERE post_id = ? AND lang = 'ru'");
+            $i18nStmt->execute([$id]);
+            $i18nRow = $i18nStmt->fetch();
+            if ($i18nRow && cms_send_telegram_channel_post([
+                'slug'        => $post['slug'],
+                'cover_image' => $post['cover_image'],
+                'title'       => $i18nRow['title'],
+                'excerpt'     => $i18nRow['excerpt'],
+            ])) {
+                $pdo->prepare('UPDATE blog_posts SET telegram_announced = 1 WHERE id = ?')->execute([$id]);
+            }
+        }
     }
     header('Location: blog.php');
     exit;
