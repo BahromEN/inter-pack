@@ -16,9 +16,7 @@
     window.ipImageOverridesMap = map;
 
     var bgTargets = {
-      home_hero: document.querySelector(".home-hero"),
-      achievements_bg: document.getElementById("achievements"),
-      contacts_bg: document.getElementById("contacts")
+      home_hero: document.querySelector(".home-hero")
     };
     Object.keys(bgTargets).forEach(function(key){
       var el = bgTargets[key];

@@ -110,8 +110,6 @@ function cms_image_slots(): array {
     return [
         'home_hero'   => ['label' => 'Фон главной страницы (hero)', 'path' => 'assets/images/backgrounds/home-hero.webp', 'mode' => 'proxy'],
         'about_photo' => ['label' => 'Фото в разделе «О компании»', 'path' => 'assets/images/about/factory.webp', 'mode' => 'proxy'],
-        'achievements_bg' => ['label' => 'Фон раздела «Достижения»', 'path' => 'assets/images/backgrounds/achievements-bg.webp', 'mode' => 'proxy'],
-        'contacts_bg' => ['label' => 'Фон раздела «Контакты»', 'path' => 'assets/images/backgrounds/contacts-bg.webp', 'mode' => 'proxy'],
         'og_image'    => ['label' => 'Превью для соцсетей/мессенджеров (OG image)', 'path' => 'assets/og-image.jpg', 'mode' => 'direct'],
         'logo'        => ['label' => 'Логотип (значок)', 'path' => 'assets/logo-icon.png', 'mode' => 'direct'],
         'product_0' => ['label' => 'Фото товара №1 (Пятислойные гофроящики)', 'path' => 'assets/images/products/five-layer-box.webp', 'mode' => 'proxy'],
