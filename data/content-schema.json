@@ -457,7 +457,8 @@
         "message": "Сообщение / запрос",
         "messagePh": "Опишите, какая упаковка вам нужна: тип, размеры, тираж...",
         "submit": "Отправить заявку",
-        "note": "Отправляя форму, вы соглашаетесь на обработку персональных данных. Заявка поступит на inter.pack@mail.ru"
+        "note": "Отправляя форму, вы соглашаетесь на обработку персональных данных. Заявка поступит на inter.pack@mail.ru",
+        "policyLink": "Политика обработки персональных данных"
       },
       "success": {
         "title": "Заявка отправлена!",
@@ -945,7 +946,8 @@
         "message": "Message / request",
         "messagePh": "Describe the packaging you need: type, size, quantity...",
         "submit": "Send request",
-        "note": "By submitting the form you agree to the processing of personal data. Your request will be sent to inter.pack@mail.ru"
+        "note": "By submitting the form you agree to the processing of personal data. Your request will be sent to inter.pack@mail.ru",
+        "policyLink": "Personal Data Processing Policy"
       },
       "success": {
         "title": "Request sent!",
@@ -1433,7 +1435,8 @@
         "message": "Xabar / so'rov",
         "messagePh": "Sizga kerak bo'lgan qadoqni tasvirlab bering: turi, o'lchami, hajmi...",
         "submit": "So'rov yuborish",
-        "note": "Formani yuborish orqali siz shaxsiy ma'lumotlarni qayta ishlashga rozilik bildirasiz. So'rov inter.pack@mail.ru manziliga yuboriladi"
+        "note": "Formani yuborish orqali siz shaxsiy ma'lumotlarni qayta ishlashga rozilik bildirasiz. So'rov inter.pack@mail.ru manziliga yuboriladi",
+        "policyLink": "Shaxsiy ma'lumotlarni qayta ishlash siyosati"
       },
       "success": {
         "title": "So'rov yuborildi!",

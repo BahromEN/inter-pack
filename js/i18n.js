@@ -136,7 +136,7 @@ window.TRANSLATIONS = {
         {t:"Расчёт под задачу",d:"Подберём размер, плотность и печать под ваш товар"},
         {t:"Работаем с любым тиражом",d:"От пробной партии до крупных промышленных заказов"}
       ],
-      form:{name:"Ваше имя",company:"Название компании",phone:"Телефон",email:"Электронная почта",message:"Сообщение / запрос",messagePh:"Опишите, какая упаковка вам нужна: тип, размеры, тираж...",submit:"Отправить заявку",note:"Отправляя форму, вы соглашаетесь на обработку персональных данных. Заявка поступит на inter.pack@mail.ru"},
+      form:{name:"Ваше имя",company:"Название компании",phone:"Телефон",email:"Электронная почта",message:"Сообщение / запрос",messagePh:"Опишите, какая упаковка вам нужна: тип, размеры, тираж...",submit:"Отправить заявку",note:"Отправляя форму, вы соглашаетесь на обработку персональных данных. Заявка поступит на inter.pack@mail.ru",policyLink:"Политика обработки персональных данных"},
       success:{title:"Заявка отправлена!",text:"Спасибо! Наш менеджер свяжется с вами в ближайшее время."}
     },
     contacts:{
@@ -296,7 +296,7 @@ window.TRANSLATIONS = {
         {t:"Tailored quote",d:"We match size, board density and printing to your product"},
         {t:"Any order size",d:"From trial batches to large industrial orders"}
       ],
-      form:{name:"Your name",company:"Company name",phone:"Phone",email:"Email",message:"Message / request",messagePh:"Describe the packaging you need: type, size, quantity...",submit:"Send request",note:"By submitting the form you agree to the processing of personal data. Your request will be sent to inter.pack@mail.ru"},
+      form:{name:"Your name",company:"Company name",phone:"Phone",email:"Email",message:"Message / request",messagePh:"Describe the packaging you need: type, size, quantity...",submit:"Send request",note:"By submitting the form you agree to the processing of personal data. Your request will be sent to inter.pack@mail.ru",policyLink:"Personal Data Processing Policy"},
       success:{title:"Request sent!",text:"Thank you! Our manager will contact you shortly."}
     },
     contacts:{
@@ -456,7 +456,7 @@ window.TRANSLATIONS = {
         {t:"Vazifangizga mos hisob-kitob",d:"Mahsulotingizga mos o'lcham, karton zichligi va bosmani tanlaymiz"},
         {t:"Har qanday hajmda ishlaymiz",d:"Sinov partiyasidan yirik sanoat buyurtmalarigacha"}
       ],
-      form:{name:"Ismingiz",company:"Kompaniya nomi",phone:"Telefon",email:"Elektron pochta",message:"Xabar / so'rov",messagePh:"Sizga kerak bo'lgan qadoqni tasvirlab bering: turi, o'lchami, hajmi...",submit:"So'rov yuborish",note:"Formani yuborish orqali siz shaxsiy ma'lumotlarni qayta ishlashga rozilik bildirasiz. So'rov inter.pack@mail.ru manziliga yuboriladi"},
+      form:{name:"Ismingiz",company:"Kompaniya nomi",phone:"Telefon",email:"Elektron pochta",message:"Xabar / so'rov",messagePh:"Sizga kerak bo'lgan qadoqni tasvirlab bering: turi, o'lchami, hajmi...",submit:"So'rov yuborish",note:"Formani yuborish orqali siz shaxsiy ma'lumotlarni qayta ishlashga rozilik bildirasiz. So'rov inter.pack@mail.ru manziliga yuboriladi",policyLink:"Shaxsiy ma'lumotlarni qayta ishlash siyosati"},
       success:{title:"So'rov yuborildi!",text:"Rahmat! Menejerimiz tez orada siz bilan bog'lanadi."}
     },
     contacts:{
