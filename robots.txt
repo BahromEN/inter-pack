@@ -5,4 +5,4 @@ Disallow: /data/
 Disallow: /includes/
 Disallow: /api/
 
-Sitemap: https://inter-pack.uz/sitemap.xml
+Sitemap: https://inter-pack.uz/sitemap.php
