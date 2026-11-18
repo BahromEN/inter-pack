@@ -51,6 +51,7 @@ function cms_bootstrap_schema(PDO $pdo): void {
             published INTEGER NOT NULL DEFAULT 0,
             published_at TEXT,
             views INTEGER NOT NULL DEFAULT 0,
+            telegram_announced INTEGER NOT NULL DEFAULT 0,
             created_at TEXT DEFAULT CURRENT_TIMESTAMP,
             updated_at TEXT DEFAULT CURRENT_TIMESTAMP
         );
@@ -358,5 +359,8 @@ function cms_migrate_schema(PDO $pdo): void {
     $columns = $pdo->query('PRAGMA table_info(blog_posts)')->fetchAll(PDO::FETCH_COLUMN, 1);
     if (!in_array('views', $columns, true)) {
         $pdo->exec('ALTER TABLE blog_posts ADD COLUMN views INTEGER NOT NULL DEFAULT 0');
+    }
+    if (!in_array('telegram_announced', $columns, true)) {
+        $pdo->exec('ALTER TABLE blog_posts ADD COLUMN telegram_announced INTEGER NOT NULL DEFAULT 0');
     }
 }
